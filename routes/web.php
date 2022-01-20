@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['guest'])->group(function() {
+    Route::get('/login', [PagesController::class, 'login'])->name('login');
 });
 
-Route::view('/dashboard', 'admin.dashboard.index');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [PagesController::class, 'home']);
+    Route::get('/dashboard', [PagesController::class, 'dashboard']);
+});
