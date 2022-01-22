@@ -20,4 +20,9 @@ class PagesController extends Controller
     {
         return view('admin.dashboard.index');
     }
+
+    public function outlet()
+    {
+        return view('admin.outlet.index');
+    }
 }

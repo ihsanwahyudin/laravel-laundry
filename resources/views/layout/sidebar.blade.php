@@ -30,68 +30,27 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
-                <li class="sidebar-item has-sub">
+                {{--
+                    <li class="sidebar-item has-sub">
                     <a href="#" class="sidebar-link">
                         <i class="bi bi-stack"></i>
                         <span>Data</span>
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item">
-                            <a href="component-alert.html">Outlet</a>
+                            <a href="/data/outlet">Outlet</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
-                <li class="sidebar-item has-sub">
-                    <a href="#" class="sidebar-link">
-                        <i class="bi bi-collection-fill"></i>
-                        <span>Extra Components</span>
+                <li class="sidebar-title">Data</li>
+
+                <li class="sidebar-item {{ request()->is('data/outlet') ? ' active' : '' }}">
+                    <a href="/data/outlet" class="sidebar-link">
+                        <i class="bi bi-shop"></i>
+                        <span>Outlet</span>
                     </a>
-                    <ul class="submenu">
-                        <li class="submenu-item">
-                            <a href="extra-component-avatar.html">Avatar</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="extra-component-toastify.html">Toastify</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="extra-component-rating.html">Rating</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="extra-component-divider.html">Divider</a>
-                        </li>
-                    </ul>
                 </li>
-
-                <li class="sidebar-item has-sub">
-                    <a href="#" class="sidebar-link">
-                        <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Layouts</span>
-                    </a>
-                    <ul class="submenu">
-                        <li class="submenu-item">
-                            <a href="layout-default.html">Default Layout</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="layout-vertical-1-column.html">1 Column</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="layout-vertical-navbar.html">Vertical Navbar</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="layout-rtl.html">RTL Layout</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="layout-horizontal.html">Horizontal Menu</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="sidebar-title">Forms &amp; Tables</li>
 
                 <li class="sidebar-item has-sub">
                     <a href="#" class="sidebar-link">

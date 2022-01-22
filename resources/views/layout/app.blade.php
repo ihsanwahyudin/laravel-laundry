@@ -11,9 +11,11 @@
 	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/iconly/bold.css') }}">
 	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
-	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css') }}}">
+	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
 	<link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/css/app.css') }}">
 	<link rel="shortcut icon" href="{{ asset('vendors/mazer/dist/assets/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/fontawesome/all.min.css') }}">
+    @stack('css')
 </head>
 <body>
 
@@ -26,10 +28,11 @@
     </div>
 
 	<script src="{{ asset('vendors/mazer/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('vendors/mazer/dist/assets/vendors/apexcharts/apexcharts.js') }}"></script>
 	<script src="{{ asset('vendors/mazer/dist/assets/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ asset('vendors/mazer/dist/assets/vendors/apexcharts/apexcharts.js') }}"></script>
 	<script src="{{ asset('vendors/mazer/dist/assets/js/pages/dashboard.js') }}"></script>
 	<script src="{{ asset('vendors/mazer/dist/assets/js/mazer.js') }}"></script>
+    @stack('script')
 </body>
 
 </html>

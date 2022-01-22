@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware(['guest'])->group(function() {
     Route::get('/login', [PagesController::class, 'login'])->name('login');
+    Route::post('/authenticate', [AuthController::class, 'authenticate']);
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [PagesController::class, 'home']);
     Route::get('/dashboard', [PagesController::class, 'dashboard']);
+    Route::get('/data/outlet', [PagesController::class, 'outlet']);
+
+    Route::resource('/outlet', OutletController::class);
 });
