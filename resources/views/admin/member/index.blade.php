@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Data Outlet')
+@section('title', 'Data Member')
 @push('css')
 <link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css') }}">
 @endpush
@@ -27,7 +27,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <h3>Data Outlet</h3>
+                <h3>Data Member</h3>
             </div>
             <div class="card-body">
                 <div class="d-flex mb-3">
@@ -36,12 +36,13 @@
                         Buat Data
                     </button>
                 </div>
-                <table class="table" id="outlet-table">
+                <table class="table" id="member-table">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
                             <th>Alamat</th>
+                            <th>Jenis</th>
                             <th>Telepon</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -53,11 +54,11 @@
     </section>
     <!-- Basic Tables end -->
 </div>
-@include('admin.outlet.modal')
+@include('admin.member.modal')
 @endsection
 @push('script')
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
-    <script type="module" src="{{ asset('js/crud/outlet.js') }}"></script>
+    <script type="module" src="{{ asset('js/crud/member.js') }}"></script>
 @endpush

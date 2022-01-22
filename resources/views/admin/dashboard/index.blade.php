@@ -259,3 +259,7 @@
     </section>
 </div>
 @endsection
+@push('script')
+    <script src="{{ asset('vendors/mazer/dist/assets/vendors/apexcharts/apexcharts.js') }}"></script>
+	<script src="{{ asset('vendors/mazer/dist/assets/js/pages/dashboard.js') }}"></script>
+@endpush

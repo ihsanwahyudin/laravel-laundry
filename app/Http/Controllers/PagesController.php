@@ -25,4 +25,14 @@ class PagesController extends Controller
     {
         return view('admin.outlet.index');
     }
+
+    public function member()
+    {
+        return view('admin.member.index');
+    }
+
+    public function karyawan()
+    {
+        return view('admin.karyawan.index');
+    }
 }

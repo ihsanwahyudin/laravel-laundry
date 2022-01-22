@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [PagesController::class, 'home']);
     Route::get('/dashboard', [PagesController::class, 'dashboard']);
     Route::get('/data/outlet', [PagesController::class, 'outlet']);
+    Route::get('/data/member', [PagesController::class, 'member']);
+    Route::get('/data/karyawan', [PagesController::class, 'karyawan']);
 
-    Route::resource('/outlet', OutletController::class);
+    Route::resource('/api/outlet', OutletController::class);
+    Route::resource('/api/member', MemberController::class);
+    Route::resource('/api/user', UserController::class);
 });

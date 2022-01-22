@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\OutletRequest;
-use App\Services\OutletService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\DataTables;
 
-class OutletController extends Controller
+class UserController extends Controller
 {
-    private $outletService;
+    private $userService;
 
-    public function __construct(OutletService $outletService)
+    public function __construct(UserService $userService)
     {
-        $this->outletService = $outletService;
+        $this->userService = $userService;
     }
     /**
      * Display a listing of the resource.
@@ -23,15 +22,15 @@ class OutletController extends Controller
      */
     public function index()
     {
-        $outlet = $this->outletService->getAllData();
-        return DataTables::of($outlet)
+        $user = $this->userService->getAllData();
+        return DataTables::of($user)
             ->addIndexColumn()
-            ->addColumn('action', function ($outlet) {
+            ->addColumn('action', function ($user) {
                 $buttons = '<div class="d-flex justify-content-center gap-2">';
                 $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$outlet->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
+                    '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$user->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
                 $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$outlet->id.'"><i class="bi bi-trash"></i></button>';
+                    '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$user->id.'"><i class="bi bi-trash"></i></button>';
                 $buttons .= '</div>';
 
                 return $buttons;
@@ -55,9 +54,9 @@ class OutletController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(OutletRequest $request)
+    public function store(Request $request)
     {
-        $data = $this->outletService->storeData($request->all());
+        $data = $this->userService->storeData($request->all());
 
         return response()->json($data, Response::HTTP_OK);
     }
@@ -91,9 +90,9 @@ class OutletController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(OutletRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $this->outletService->updateDataById($request->all(), $id);
+        $data = $this->userService->updateDataById($request->all(), $id);
 
         return response()->json($data, Response::HTTP_OK);
     }
@@ -106,7 +105,7 @@ class OutletController extends Controller
      */
     public function destroy($id)
     {
-        $data = $this->outletService->deleteDataById($id);
+        $data = $this->userService->deleteDataById($id);
 
         return response()->json($data, Response::HTTP_OK);
     }
