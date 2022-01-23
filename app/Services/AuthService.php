@@ -13,7 +13,7 @@ class AuthService
 
     public function credentialsCheck($payload)
     {
-        if(Auth::attempt($payload->only(['email', 'password']))) {
+        if(Auth::attempt($payload->only(['email', 'password']), (boolean)$payload->remember)) {
             $payload->session()->regenerate();
             return redirect()->intended('home');
         }

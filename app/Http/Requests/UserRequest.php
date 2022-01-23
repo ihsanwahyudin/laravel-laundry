@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UserRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -24,7 +25,11 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'max:50'],
+            'email' => $this->header('status') !== 'update' ? ['required', 'email:dns', 'unique:tb_user,email,except,id'] : ['nullable'],
+            'role' => ['required', 'in:admin,kasir'],
+            'outlet_id' => ['required', 'numeric'],
+            'password' => $this->header('status') !== 'update' ? ['required', 'confirmed', 'min:3'] : ['nullable']
         ];
     }
 }

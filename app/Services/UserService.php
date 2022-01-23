@@ -27,7 +27,6 @@ class UserService
 
     public function updateDataById($payload, $id)
     {
-        $payload['password'] = Hash::make($payload['password']);
         return $this->userRepository->updateDataById($payload, $id);
     }
 

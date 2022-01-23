@@ -69,9 +69,6 @@ $(function() {
         e.preventDefault()
         const id = selectedData.id
         const data = new FormData(this)
-        for (const key of data) {
-            console.info(key)
-        }
         data.append('_method', 'PUT')
         updateDataToServer(data, id)
     })
@@ -85,6 +82,23 @@ $(function() {
             }
         })
     })
+
+    const getOutletData = () => {
+        clientRequest('/api/outlet/create', 'GET', '', (status, res) => {
+            if(status) {
+                drawOutletData(res.data)
+            }
+        })
+    }
+
+    const drawOutletData = (data) => {
+        let xml = '<option selected disabled>Choose Outlet...</option>'
+        data.map(item => {
+            xml += `<option value="${item.id}">${item.nama}</option>`
+        })
+        $('#create-data-modal [name="outlet_id"]').html(xml)
+        $('#update-data-modal [name="outlet_id"]').html(xml)
+    }
 
     const storeDataToServer = (data) => {
         clientRequest('/api/user', 'POST', data, (status, res) => {
@@ -114,18 +128,23 @@ $(function() {
     }
 
     const updateDataToServer = (data, id) => {
-        clientRequest(`/api/user/${id}`, 'POST', data, (status, res) => {
-            if(status) {
-                showToast('Success', 'success', 'Update Data Successfully')
+        axios({
+            baseURL: `/api/user/${id}`,
+            method: 'POST',
+            headers: {
+                status: 'update'
+            },
+            data
+        }).then(res => {
+            showToast('Success', 'success', 'Update Data Successfully')
                 userTable.ajax.reload()
                 $('#update-data-modal').modal('toggle')
+        }).catch(err => {
+            if(err.response.status === 422) {
+                displayErrors('#update-data-modal', res.data.errors)
+                showToast('Failed', 'warning', 'Please Check your data before submit')
             } else {
-                if(res.status === 422) {
-                    displayErrors('#update-data-modal', res.data.errors)
-                    showToast('Failed', 'warning', 'Please Check your data before submit')
-                } else {
-                    showToast('Failed', 'error', 'Internal Server Error')
-                }
+                showToast('Failed', 'error', 'Internal Server Error')
             }
         })
     }
@@ -162,4 +181,5 @@ $(function() {
 		$(`${el} textarea.form-control`).val('')
 	}
 
+    getOutletData()
 })

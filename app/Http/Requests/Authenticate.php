@@ -26,6 +26,7 @@ class Authenticate extends FormRequest
         return [
             'email' => ['required', 'email'],
             'password' => ['required'],
+            'remember' => ['nullable', 'in:true']
         ];
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateOutletsTable extends Migration
 {
-    /**
+    /**r
      * Run the migrations.
      *
      * @return void

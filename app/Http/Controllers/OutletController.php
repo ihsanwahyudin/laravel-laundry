@@ -46,7 +46,9 @@ class OutletController extends Controller
      */
     public function create()
     {
-        //
+        $data = $this->outletService->getAllData();
+
+        return response()->json($data, Response::HTTP_OK);
     }
 
     /**
