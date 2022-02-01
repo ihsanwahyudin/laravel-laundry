@@ -18,14 +18,11 @@ class CreateTransaksisTable extends Migration
             $table->unsignedBigInteger('outlet_id');
             $table->string('kode_invoice', 100);
             $table->unsignedBigInteger('member_id');
-            $table->date('tgl');
-            $table->date('batas_waktu');
             $table->date('tgl_bayar');
-            $table->double('biaya_tambahan');
-            $table->double('diskon');
-            $table->double('pajak');
-            $table->enum('status', ['baru', 'proses', 'selesai', 'diambil']);
-            $table->enum('status_pembayaran', ['dibayar', 'belum dibayar']);
+            $table->date('batas_waktu');
+            $table->enum('metode_pembayaran', ['cash', 'dp', 'bayar nanti']);
+            $table->enum('status_transaksi', ['baru', 'proses', 'selesai', 'diambil']);
+            $table->enum('status_pembayaran', ['lunas', 'belum lunas']);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('outlet_id')->references('id')->on('tb_outlet');

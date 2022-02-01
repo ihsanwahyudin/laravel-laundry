@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -34,5 +35,25 @@ class PagesController extends Controller
     public function karyawan()
     {
         return view('admin.karyawan.index');
+    }
+
+    public function paket()
+    {
+        return view('admin.paket.index');
+    }
+
+    public function transaksi()
+    {
+        return view('admin.transaksi.index');
+    }
+
+    public function daftarTransaksi()
+    {
+        return view('admin.daftar-transaksi.index');
+    }
+
+    public function laporanTransaksi()
+    {
+        return view('admin.laporan-transaksi.index');
     }
 }

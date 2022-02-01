@@ -5,17 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DetailTransaksi extends Model
+class Pembayaran extends Model
 {
     use HasFactory;
 
-    protected $table = 'tb_detail_transaksi';
+    protected $table = 'tb_pembayaran';
     protected $guarded = [
         'id', 'created_at', 'updated_at'
     ];
-
-    public function paket()
-    {
-        return $this->belongsTo(Paket::class, 'paket_id', 'id');
-    }
 }

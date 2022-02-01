@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PaketController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +31,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/data/outlet', [PagesController::class, 'outlet']);
     Route::get('/data/member', [PagesController::class, 'member']);
     Route::get('/data/karyawan', [PagesController::class, 'karyawan']);
+    Route::get('/data/paket', [PagesController::class, 'paket']);
+    Route::get('/transaksi/baru', [PagesController::class, 'transaksi']);
+    Route::get('/transaksi/list', [PagesController::class, 'daftarTransaksi']);
+    Route::get('/laporan/transaksi', [PagesController::class, 'laporanTransaksi']);
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::resource('/api/outlet', OutletController::class);
     Route::resource('/api/member', MemberController::class);
     Route::resource('/api/user', UserController::class);
+    Route::resource('/api/paket', PaketController::class);
+    Route::get('/api/transaksi', [TransaksiController::class, 'index']);
+    Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
+
+    // Laporan
+    Route::get('/api/laporan/transaksi', [LaporanController::class, 'getLaporanTransaksi']);
 });

@@ -76,7 +76,15 @@ $(function() {
     $('#user-table').on('click', '.delete-btn', function(e) {
         e.preventDefault()
         const id = $(this).data('id')
-        showConfirmAlert('Warning !', 'warning', 'Are you sure, want delete this data ?', 'Yes', (result) => {
+        Swal.fire({
+            title: 'Warning',
+            icon: 'warning',
+            text: 'Are you sure, want delete this data ?',
+            confirmButtonText: 'Delete',
+            showCancelButton: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#797979'
+        }).then((result) => {
             if(result.value) {
                 deleteDataToServer(id)
             }

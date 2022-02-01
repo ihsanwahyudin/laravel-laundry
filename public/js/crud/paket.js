@@ -2,23 +2,36 @@ import clientRequest from "../api.js"
 import { showConfirmAlert, showToast } from "../sweetalert.js"
 
 $(function() {
-    let outletData = []
+    let paketData = []
     let selectedData = {}
-    const outletTable = $('#outlet-table').DataTable({
+    const paketTable = $('#paket-table').DataTable({
         processing: true,
         serverSide: true,
         ajax:{
-                url: "/api/outlet",
+                url: "/api/paket",
                 dataSrc: function ( json ) {
-                    outletData = json.data
+                    paketData = json.data
                     return json.data
                 }
             },
         columns: [
             { data: 'DT_RowIndex' },
-            { data: 'nama' },
-            { data: 'alamat' },
-            { data: 'tlp' },
+            {
+                data: function(data, type, row) {
+                    if(type === 'display') {
+                        if(data.outlet !== null) {
+                            return data.outlet.nama
+                        } else {
+                            return '-'
+                        }
+                    } else {
+                        return ''
+                    }
+                }
+            },
+            { data: 'nama_paket' },
+            { data: 'jenis' },
+            { data: 'harga' },
             { data: 'action', orderable: false, searchable: false }
         ]
     })
@@ -29,7 +42,7 @@ $(function() {
         storeDataToServer(data)
     })
 
-    $('#outlet-table').on('click', '.update-btn', function(e) {
+    $('#paket-table').on('click', '.update-btn', function(e) {
         e.preventDefault()
         const id = $(this).data('id')
         searchDataById(id)
@@ -43,7 +56,7 @@ $(function() {
         updateDataToServer(data, id)
     })
 
-    $('#outlet-table').on('click', '.delete-btn', function(e) {
+    $('#paket-table').on('click', '.delete-btn', function(e) {
         e.preventDefault()
         const id = $(this).data('id')
         Swal.fire({
@@ -61,12 +74,31 @@ $(function() {
         })
     })
 
+    const getOutletData = () => {
+        clientRequest('/api/outlet/create', 'GET', '', (status, res) => {
+            if(status) {
+                drawOutletData(res.data)
+            }
+        })
+    }
+
+    const drawOutletData = (data) => {
+        let xml = '<option selected disabled>Choose Outlet...</option>'
+        data.map(item => {
+            xml += `<option value="${item.id}">${item.nama}</option>`
+        })
+        $('#create-data-modal [name="outlet_id"]').html(xml)
+        $('#update-data-modal [name="outlet_id"]').html(xml)
+    }
+
     const storeDataToServer = (data) => {
-        clientRequest('/api/outlet', 'POST', data, (status, res) => {
+        clientRequest('/api/paket', 'POST', data, (status, res) => {
             if(status) {
                 showToast('Success', 'success', 'Create Data Successfully')
-                outletTable.ajax.reload()
+                paketTable.ajax.reload()
                 $('#create-data-modal').modal('toggle')
+                clearErrors()
+                clearForm()
             } else {
                 if(res.status === 422) {
                     displayErrors('#create-data-modal', res.data.errors)
@@ -79,7 +111,7 @@ $(function() {
     }
 
     const searchDataById = (id) => {
-        const selected = outletData.find(x => x.id == id)
+        const selected = paketData.find(x => x.id == id)
         if(selected) {
             selectedData = selected
             for (const key in selected) {
@@ -89,10 +121,10 @@ $(function() {
     }
 
     const updateDataToServer = (data, id) => {
-        clientRequest(`/api/outlet/${id}`, 'POST', data, (status, res) => {
+        clientRequest(`/api/paket/${id}`, 'POST', data, (status, res) => {
             if(status) {
                 showToast('Success', 'success', 'Update Data Successfully')
-                outletTable.ajax.reload()
+                paketTable.ajax.reload()
                 $('#update-data-modal').modal('toggle')
             } else {
                 if(res.status === 422) {
@@ -106,10 +138,10 @@ $(function() {
     }
 
     const deleteDataToServer = (id) => {
-        clientRequest(`/api/outlet/${id}`, 'DELETE', '', (status, res) => {
+        clientRequest(`/api/paket/${id}`, 'DELETE', '', (status, res) => {
             if(status) {
                 showToast('Success', 'success', 'Delete Data Successfully')
-                outletTable.ajax.reload()
+                paketTable.ajax.reload()
             } else {
                 showToast('Failed', 'error', 'Internal Server Error')
             }
@@ -137,4 +169,6 @@ $(function() {
 		$(`${el} textarea.form-control`).val('')
 	}
 
+
+    getOutletData()
 })

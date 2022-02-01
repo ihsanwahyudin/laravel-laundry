@@ -13,4 +13,9 @@ class Paket extends Model
     protected $guarded = [
         'id', 'created_at', 'updated_at'
     ];
+
+    public function outlet()
+    {
+        return $this->belongsTo(Outlet::class, 'outlet_id', 'id');
+    }
 }

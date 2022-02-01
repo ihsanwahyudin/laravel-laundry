@@ -15,7 +15,7 @@ class AuthService
     {
         if(Auth::attempt($payload->only(['email', 'password']), (boolean)$payload->remember)) {
             $payload->session()->regenerate();
-            return redirect()->intended('home');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
