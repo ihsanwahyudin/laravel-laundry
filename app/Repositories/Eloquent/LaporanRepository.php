@@ -21,6 +21,13 @@ class LaporanRepository implements LaporanRepositoryInterface
         }])->latest()->get();
     }
 
+    public function getLaporanTransaksiBetweenDate($startDate, $endDate)
+    {
+        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+            $q->with('paket')->get();
+        }])->whereBetween('created_at', [$startDate, $endDate])->latest()->get();
+    }
+
     public function getLaporanTransaksiPerOutlet()
     {
         return $this->transaksi->select('outlet_id', 'outlet_nama', 'outlet_alamat', 'outlet_telepon', 'outlet_email', 'outlet_website', 'outlet_logo', 'outlet_latitude', 'outlet_longitude', 'outlet_status', 'outlet_created_at', 'outlet_updated_at')->groupBy('outlet_id')->latest()->get();

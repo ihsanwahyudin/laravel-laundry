@@ -48,7 +48,7 @@ $(function() {
                             case "selesai":
                                 return '<span class="badge bg-light-warning">selesai</span>'
                             case "diambil":
-                                return '<span class="badge bg-light-warning">diambil</span>'
+                                return '<span class="badge bg-light-success">diambil</span>'
                         }
                     } else {
                         return ''

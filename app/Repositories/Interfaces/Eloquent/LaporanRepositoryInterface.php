@@ -6,6 +6,8 @@ interface LaporanRepositoryInterface
 {
     public function getLaporanTransaksi();
 
+    public function getLaporanTransaksiBetweenDate($startDate, $endDate);
+
     public function getLaporanTransaksiPerOutlet();
 
     public function getLaporanTransaksiPerKaryawan();
@@ -33,7 +35,7 @@ interface LaporanRepositoryInterface
     public function getLaporanTransaksiPerTahunPerKaryawan();
 
     public function getLaporanTransaksiPerTahunPerMember();
-    
+
     public function getLaporanTransaksiPerTahunPerPaket();
 
 }

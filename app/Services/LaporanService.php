@@ -18,6 +18,13 @@ class LaporanService
         return $this->laporanRepository->getLaporanTransaksi();
     }
 
+    public function getLaporanTransaksiBetweenDate($startDate, $endDate)
+    {
+        // $startDate = date('Y-m-d h:i:s', strtotime($startDate . ' 00:00:00'));
+        // $endDate = date('Y-m-d h:i:s', strtotime($endDate . ' 23:59:59'));
+        return $this->laporanRepository->getLaporanTransaksiBetweenDate($startDate, $endDate);
+    }
+
     public function getLaporanTransaksiPerOutlet()
     {
         return $this->laporanRepository->getLaporanTransaksiPerOutlet();

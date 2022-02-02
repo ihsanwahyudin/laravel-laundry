@@ -21,6 +21,12 @@ class LaporanController extends Controller
         return response()->json($data, Response::HTTP_OK);
     }
 
+    public function getLaporanTransaksiBetweenDate($startDate, $endDate)
+    {
+        $data = $this->laporanService->getLaporanTransaksiBetweenDate($startDate, $endDate);
+        return response()->json($data, Response::HTTP_OK);
+    }
+
     public function getLaporanTransaksiPerOutlet()
     {
         $data = $this->laporanService->getLaporanTransaksiPerOutlet();

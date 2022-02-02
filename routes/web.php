@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
@@ -46,4 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Laporan
     Route::get('/api/laporan/transaksi', [LaporanController::class, 'getLaporanTransaksi']);
+    Route::get('/api/laporan/transaksi/between/{startDate}/{endDate}', [LaporanController::class, 'getLaporanTransaksiBetweenDate']);
+    Route::get('/api/laporan/transaksi/export-pdf', [ExportController::class, 'exportPDF']);
+    Route::get('/api/laporan/transaksi/export-excel', [ExportController::class, 'exportExcel']);
 });
