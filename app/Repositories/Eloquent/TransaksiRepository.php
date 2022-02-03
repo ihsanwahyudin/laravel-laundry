@@ -46,4 +46,9 @@ class TransaksiRepository implements TransaksiRepositoryInterface
     {
         return $this->transaksi->latest()->first();
     }
+
+    public function updateTransaksi(array $payload, $id)
+    {
+        return $this->transaksi->findOrFail($id)->update($payload);
+    }
 }

@@ -2,6 +2,20 @@
 @section('title', 'Data Paket')
 @push('css')
 <link rel="stylesheet" href="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.bootstrap5.min.css') }}">
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+</style>
+{{-- <link href="https://kodhus.com/static/css/kodhus.min.css" rel="stylesheet" type="text/css" />
+<script src="https://kodhus.com/static/js/kodhus.min.js"></script> --}}
 @endpush
 @section('main')
 <div class="page-heading">
@@ -23,7 +37,7 @@
     </div>
 </div>
 <div class="page-content">
-    <form id="store-transaction">
+    <form id="update-transaksi">
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -155,25 +169,105 @@
                 </div>
             </div>
         </section>
+
+        <section class="section row d-none" id="status-section">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Status Transaksi</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="alert-status-transaksi">
+                            <div class="alert alert-primary text-center py-2" role="alert">
+                                <strong>Baru</strong>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label>Ubah Status</label>
+                            <div class="input-group m-0">
+                                <label class="input-group-text" for="selectOutlet">
+                                    <i class="bi bi-ui-checks"></i>
+                                </label>
+                                <select class="form-select" name="status_transaksi" id="selectOutlet">
+                                    <option selected disabled>Change status...</option>
+                                    <option value="baru">Baru</option>
+                                    <option value="proses">Proses</option>
+                                    <option value="selesai">Selesai</option>
+                                    <option value="diambil">Diambil</option>
+                                </select>
+                            </div>
+                            <span class="form-errors"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" id="status-pembayaran-form">
+                    <div class="card-header">
+                        <h3>Status Pembayaran</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="alert-status-pembayaran">
+                            <div class="alert alert-danger text-center py-2" role="alert">
+                                <strong>Belum Lunas</strong>
+                            </div>
+                        </div>
+                        <div id="form-transaksi-lunas">
+                            <div class="mb-2">
+                                <p>Pelanggan ini telah melunasi pembayaran transaksi.</p>
+                            </div>
+                        </div>
+                        <div id="form-transaksi-belum-lunas">
+                            <div class="mb-2">
+                                <label>Total Pembayaran</label>
+                                <div class="form-group m-0 position-relative has-icon-left">
+                                    <input type="text" name="total_pembayaran" class="form-control disable-letter" autocomplete="off" readonly>
+                                    <div class="form-control-icon">
+                                        <strong>Rp</strong>
+                                    </div>
+                                </div>
+                                <span class="form-errors"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label>Sisa Pembayaran</label>
+                                <div class="form-group m-0 position-relative has-icon-left">
+                                    <input type="text" name="sisa_pembayaran" class="form-control disable-letter" autocomplete="off" readonly>
+                                    <div class="form-control-icon">
+                                        <strong>Rp</strong>
+                                    </div>
+                                </div>
+                                <span class="form-errors"></span>
+                            </div>
+                            <div class="mb-2">
+                                Masukan Nominal Pembayaran
+                                <div class="form-group m-0 position-relative has-icon-left">
+                                    <input type="text" name="total_bayar" class="form-control disable-letter" autocomplete="off">
+                                    <div class="form-control-icon">
+                                        <strong>Rp</strong>
+                                    </div>
+                                </div>
+                                <span class="form-errors"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </form>
     {{-- @include('admin.transaksi.floating-section') --}}
 </div>
 @include('admin.daftar-transaksi.modal')
 @endsection
-@push('css')
-<style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
-
-    input[type=number] {
-        -moz-appearance:textfield; /* Firefox */
-    }
-</style>
-@endpush
 @push('script')
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>

@@ -1,11 +1,15 @@
 import { formatNumber } from "../utility.js"
+import { showAlert, showConfirmAlert, showToast } from "../sweetalert.js"
+import clientRequest from "../api.js"
 
 $(function() {
     let transaksiData = []
     let selectedTransaksiData = []
+    let totalPembayaran = 0
+    let sisaPembayaran = 0
     const selectedTransaksiTable = $('#selected-transaksi-table').DataTable()
     const pembayaranTable = $('#pembayaran-table').DataTable()
-    const paketTable = $('#daftar-transaksi-table').DataTable({
+    const daftarTransaksiTable = $('#daftar-transaksi-table').DataTable({
         processing: true,
         serverSide: true,
         ajax:{
@@ -92,9 +96,51 @@ $(function() {
         const id = $(this).data('id')
         searchDataById(id)
         $('#select-data-modal').modal('toggle')
+        $('#status-section').removeClass('d-none')
         displayTransaksiData()
         drawTransaksiTable()
         drawPembayaranTable()
+        renderStatusPembayaran()
+        renderStatusTransaksi()
+        renderInputFormTransaksi()
+    })
+
+    $('#update-transaksi').on('submit', function(e) {
+        e.preventDefault()
+        if(validation()) {
+            showConfirmAlert('Peringatan !', 'warning', `Apakah anda ingin mengubah status transaksi ${selectedTransaksiData.kode_invoice} ini ?`, 'Yes', (result) => {
+                if(result) {
+                    const data = {
+                        transaksi: {
+                            id: selectedTransaksiData.id,
+                            status_transaksi: $('[name="status_transaksi"]').val(),
+                            status_pembayaran: selectedTransaksiData.status_pembayaran,
+                        },
+                        pembayaran: {
+                            transaksi_id: selectedTransaksiData.id,
+                            biaya_tambahan: 0,
+                            diskon: 0,
+                            pajak: 0,
+                            total_pembayaran: 0,
+                            total_bayar: $('[name="total_bayar"]').val(),
+                        }
+                    }
+                    clientRequest('/api/transaksi/update', 'POST', data, (status, res) => {
+                        if(status) {
+                            showToast('success', 'success', 'Berhasil mengubah data transaksi')
+                            clearForm()
+                            daftarTransaksiTable.ajax.reload()
+                        } else {
+                            if(res.status === 422) {
+                                showToast('failed', 'warning', 'Harap periksa kembali data transaksi anda')
+                            } else {
+                                showToast('failed', 'error', 'Terjadi kesalahan, Internal Server Error')
+                            }
+                        }
+                    })
+                }
+            })
+        }
     })
 
     const searchDataById = (id) => {
@@ -155,5 +201,89 @@ $(function() {
         })
 
         $('[name="subtotal_bayar"]').html(`Rp ${formatNumber(subtotalBayar)}`)
+    }
+
+    const renderStatusPembayaran = () => {
+        let alert = ''
+        switch (selectedTransaksiData.status_pembayaran) {
+            case 'lunas':
+                alert = `<div class="alert alert-success text-center py-2" role="alert"><strong>Lunas</strong></div>`
+                break;
+                case 'belum lunas':
+                alert = `<div class="alert alert-danger text-center py-2" role="alert"><strong>Belum Lunas</strong></div>`
+                break;
+        }
+        $('#alert-status-pembayaran').html(alert)
+        totalPembayaran = 0
+        sisaPembayaran = 0
+        if(selectedTransaksiData.status_pembayaran === 'belum lunas') {
+            selectedTransaksiData.pembayaran.map((item, index) => {
+                totalPembayaran += item.total_pembayaran
+                sisaPembayaran += item.total_pembayaran - item.total_bayar
+            })
+        }
+        $('#status-pembayaran-form [name="total_pembayaran"]').val(totalPembayaran)
+        $('#status-pembayaran-form [name="sisa_pembayaran"]').val(sisaPembayaran)
+    }
+
+    const renderStatusTransaksi = () => {
+        let alert = ''
+        switch (selectedTransaksiData.status_transaksi) {
+            case 'baru':
+                alert = `<div class="alert alert-primary text-center py-2" role="alert"><strong>Baru</strong></div>`
+                break;
+            case 'proses':
+                alert = `<div class="alert alert-info text-center py-2" role="alert"><strong>Proses</strong></div>`
+                break;
+            case 'selesai':
+                alert = `<div class="alert alert-warning text-center py-2" role="alert"><strong>Selesai</strong></div>`
+                break;
+            case 'diambil':
+                alert = `<div class="alert alert-success text-center py-2" role="alert"><strong>Diambil</strong></div>`
+                break;
+        }
+        $('#alert-status-transaksi').html(alert)
+    }
+
+    const renderInputFormTransaksi = () => {
+        if(selectedTransaksiData.status_pembayaran === 'lunas') {
+            $('#form-transaksi-belum-lunas').addClass('d-none')
+            $('#form-transaksi-lunas').removeClass('d-none')
+        } else {
+            $('#form-transaksi-belum-lunas').removeClass('d-none')
+            $('#form-transaksi-lunas').addClass('d-none')
+        }
+    }
+
+    const clearForm = () => {
+        $('input.form-control').val('')
+        selectedTransaksiTable.clear().draw()
+        pembayaranTable.clear().draw()
+        $('#status-section').addClass('d-none')
+        $('[name="total_pembayaran"]').text('0')
+        $('[name="subtotal_bayar"]').text('Rp 0')
+        selectedTransaksiData = []
+    }
+
+    const validation = () => {
+        if(selectedTransaksiData.length === 0) {
+            showAlert('Ups...', 'warning', 'Pilih data yang akan diubah')
+            return false
+        } else {
+            if(selectedTransaksiData.status_pembayaran === 'belum lunas') {
+                const totalBayar = $('[name="total_bayar"]').val()
+                if(totalBayar === '') {
+                    showAlert('Ups...', 'warning', 'Total bayar tidak boleh kosong')
+                    return false
+                } else if(parseInt(totalBayar) < sisaPembayaran) {
+                    showAlert('Ups...', 'warning', 'Total bayar tidak boleh kurang dari sisa pembayaran')
+                    return false
+                } else {
+                    return true
+                }
+            } else {
+                return true
+            }
+        }
     }
 })

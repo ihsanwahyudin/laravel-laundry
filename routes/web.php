@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transaksi/baru', [PagesController::class, 'transaksi']);
     Route::get('/transaksi/list', [PagesController::class, 'daftarTransaksi']);
     Route::get('/laporan/transaksi', [PagesController::class, 'laporanTransaksi']);
+    Route::get('/log-aktivitas', [PagesController::class, 'logAktivitas']);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::resource('/api/outlet', OutletController::class);
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/api/paket', PaketController::class);
     Route::get('/api/transaksi', [TransaksiController::class, 'index']);
     Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
+    Route::post('/api/transaksi/update', [TransaksiController::class, 'update']);
 
     // Laporan
     Route::get('/api/laporan/transaksi', [LaporanController::class, 'getLaporanTransaksi']);

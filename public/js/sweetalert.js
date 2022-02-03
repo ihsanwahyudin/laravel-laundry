@@ -18,7 +18,7 @@ const showAlert = (title, icon, message) => {
         icon: icon,
         confirmButtonText: 'Kembali',
         showCancelButton: false,
-        confirmButtonColor: '#1ab39e',
+        confirmButtonColor: '#435ebe',
     })
 }
 
@@ -29,7 +29,7 @@ const showDeleteAlert = (title, icon, message, callback) => {
         text: message,
         confirmButtonText: 'Delete !',
         showCancelButton: true,
-        confirmButtonColor: '#1ab39e',
+        confirmButtonColor: '#435ebe',
         cancelButtonColor: '#797979'
     }).then((result) => {
         callback(result);
@@ -43,7 +43,7 @@ const showConfirmAlert = (title, icon, message, buttonText, callback) => {
         text: message,
         confirmButtonText: buttonText,
         showCancelButton: true,
-        confirmButtonColor: '#1ab39e',
+        confirmButtonColor: '#435ebe',
         cancelButtonColor: '#797979'
     }).then((result) => {
         callback(result);

@@ -13,4 +13,6 @@ interface TransaksiRepositoryInterface
     public function createPembayaran(array $payload);
 
     public function createDetailTransaksi(array $payload);
+
+    public function updateTransaksi(array $payload, $id);
 }

@@ -80,5 +80,14 @@ class TransaksiService
         }
         return $array;
     }
+
+    public function updateTransaksi($payload, $transaksiID)
+    {
+        $array = [
+            'status_transaksi' => $payload['status_transaksi'],
+            'status_pembayaran' => 'lunas',
+        ];
+        return $this->transaksiRepository->updateTransaksi($array, $transaksiID);
+    }
 }
 
