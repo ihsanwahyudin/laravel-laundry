@@ -26,11 +26,15 @@ class MemberRepository implements MemberRepositoryInterface
 
     public function updateDataById(array $payload, int $id)
     {
-        return $this->member->findOrFail($id)->update($payload);
+        $data = $this->member->findOrFail($id);
+        $data->update($payload);
+        return $data;
     }
 
     public function deleteDataById(int $id)
     {
-        return $this->member->findOrFail($id)->delete();
+        $data = $this->member->findOrFail($id);
+        $data->delete();
+        return $data;
     }
 }

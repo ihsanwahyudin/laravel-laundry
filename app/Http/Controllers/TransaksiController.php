@@ -20,8 +20,14 @@ class TransaksiController extends Controller
     public function index()
     {
         $data = $this->transaksiService->getAllData();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->make(true);
+    }
 
-        // return response()->json($data, Response::HTTP_OK);
+    public function getNonCashData()
+    {
+        $data = $this->transaksiService->getNonCashData();
         return DataTables::of($data)
             ->addIndexColumn()
             ->make(true);
@@ -40,7 +46,6 @@ class TransaksiController extends Controller
     {
         $validated = $request->validate([
             'transaksi.id' => ['required', 'exists:tb_transaksi,id'],
-            'transaksi.status_transaksi' => ['required', 'in:baru,proses,selesai,diambil'],
             'transaksi.status_pembayaran' => ['required', 'in:lunas,belum lunas'],
             'pembayaran.biaya_tambahan' => ['required', 'numeric'],
             'pembayaran.diskon' => ['required', 'numeric', 'max:100', 'min:0'],
@@ -49,10 +54,8 @@ class TransaksiController extends Controller
             'pembayaran.total_bayar' => [$request['transaksi']['status_pembayaran'] === 'lunas' ? 'nullable' : 'required' , 'numeric'],
         ]);
 
-        $data['transaksi'] = $this->transaksiService->updateTransaksi($request['transaksi'], $request['transaksi']['id']);
-        if($request['transaksi']['status_transaksi'] === 'belum lunas') {
-            $data['pembayaran'] = $this->transaksiService->storePembayaran($request['pembayaran'], $request['transaksi']['id']);
-        }
+        $data['transaksi'] = $this->transaksiService->updateTransaksi($request->all(), $request['transaksi']['id']);
+        $data['pembayaran'] = $this->transaksiService->updatePembayaran($request['pembayaran'], $request['transaksi']['id']);
         return response()->json($data, Response::HTTP_OK);
     }
 }

@@ -3,12 +3,14 @@
 namespace App\Providers;
 
 use App\Repositories\Eloquent\LaporanRepository;
+use App\Repositories\Eloquent\LogActivityRepository;
 use App\Repositories\Eloquent\MemberRepository;
 use App\Repositories\Eloquent\OutletRepository;
 use App\Repositories\Eloquent\PaketRepository;
 use App\Repositories\Eloquent\TransaksiRepository;
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\Eloquent\LaporanRepositoryInterface;
+use App\Repositories\Interfaces\Eloquent\LogActivityRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\MemberRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\OutletRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\PaketRepositoryInterface;
@@ -31,6 +33,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PaketRepositoryInterface::class, PaketRepository::class);
         $this->app->bind(TransaksiRepositoryInterface::class, TransaksiRepository::class);
         $this->app->bind(LaporanRepositoryInterface::class, LaporanRepository::class);
+        $this->app->bind(LogActivityRepositoryInterface::class, LogActivityRepository::class);
     }
 
     /**

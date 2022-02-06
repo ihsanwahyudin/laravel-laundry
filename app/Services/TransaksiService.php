@@ -20,6 +20,11 @@ class TransaksiService
         return $this->transaksiRepository->getAllTransactionData();
     }
 
+    public function getNonCashData()
+    {
+        return $this->transaksiRepository->getNonCashData();
+    }
+
     private function generateCode()
     {
         // $latest = $this->transaksiRepository->getLatestTransaksiData();
@@ -74,7 +79,8 @@ class TransaksiService
                 'transaksi_id' => $transaksiID,
                 'paket_id' => $payload[$i]['id'],
                 'qty' => $payload[$i]['qty'],
-                'ket' => 'Tidak Ada',
+                'harga' => $payload[$i]['harga'],
+                'keterangan' => $payload[$i]['ket'],
             ];
             array_push($array, $this->transaksiRepository->createDetailTransaksi($paket));
         }
@@ -84,10 +90,21 @@ class TransaksiService
     public function updateTransaksi($payload, $transaksiID)
     {
         $array = [
-            'status_transaksi' => $payload['status_transaksi'],
-            'status_pembayaran' => 'lunas',
+            'status_pembayaran' => $payload['pembayaran']['total_pembayaran'] - $payload['pembayaran']['total_bayar'] <= 0 ? 'lunas' : 'belum lunas',
         ];
         return $this->transaksiRepository->updateTransaksi($array, $transaksiID);
+    }
+
+    public function updatePembayaran($payload, $transaksiID)
+    {
+        $array = [
+            'biaya_tambahan' => $payload['biaya_tambahan'],
+            'diskon' => $payload['diskon'],
+            'total_pembayaran' => $payload['total_pembayaran'],
+            'total_bayar' => $payload['total_bayar'],
+        ];
+
+        return $this->transaksiRepository->updatePembayaran($array, $transaksiID);
     }
 }
 

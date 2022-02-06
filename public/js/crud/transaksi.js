@@ -114,6 +114,13 @@ $(function() {
         calculate()
     })
 
+    $('#transaksi-table').on('change', '[name="ket[]"]', function(e) {
+        const value = $(this).val()
+        const id = $(this).data('id')
+        const index = selectedData.findIndex(x => x.id == id)
+        selectedData[index]['ket'] = value
+    })
+
     $('[name="biaya_tambahan"]').on('keyup', function(e) {
         let value = $(this).val()
         value == '' ? value = 0 : $(this).val(parseInt(value))
@@ -153,35 +160,35 @@ $(function() {
 
     $('#store-transaction').on('submit', function(e) {
         e.preventDefault()
+        console.info(selectedData)
         if(validation()) {
-            const data = {
-                member: selectedMember,
-                detailTransaksi: selectedData,
-                transaksi: {
-                    member_id: selectedMember.id,
-                    tgl_bayar: $('[name="tgl_bayar"]').val(),
-                    batas_waktu: $('[name="batas_waktu"]').val(),
-                    status_transaksi: 'baru',
-                    metode_pembayaran: selectedPaymentMethod,
-                    biaya_tambahan: transaksi.biaya_tambahan,
-                    diskon: transaksi.diskon,
-                    pajak: transaksi.pajak,
-                    total_pembayaran: totalPenjualan,
-                    total_bayar: transaksi.total_bayar,
-                }
-            }
-            clientRequest('/api/transaksi/store', 'POST', data, (status, res) => {
-                if(status) {
-                    showAlert('Transaksi Berhasil !', 'success', '')
-                    clearErrors()
-                    clearForm()
-                } else {
-                    if(res.status === 422) {
-                        displayErrors(res.data.errors)
-                        showToast('failed', 'warning', 'Pastikan data yang anda masukan benar !')
-                    } else {
-                        showToast('failed', 'error', 'Internal Server Error')
-                    }
+            Swal.fire({
+                title: 'Konfirmasi Transaksi',
+                icon: 'warning',
+                html:   `<table width="100%" class="text-start">
+                            <tr>
+                                <td>Nama Pembeli</td>
+                                <td style="margin: 0 5px">:</td>
+                                <td>${selectedMember.nama}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Pembayaran</td>
+                                <td>:</td>
+                                <td>Rp ${formatNumber(totalPenjualan)}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Bayar</td>
+                                <td>:</td>
+                                <td>Rp ${formatNumber(transaksi.total_bayar)}</td>
+                            </tr>
+                        </table>`,
+                confirmButtonText: 'submit',
+                showCancelButton: true,
+                confirmButtonColor: '#435ebe',
+                cancelButtonColor: '#797979'
+            }).then((result) => {
+                if(result.value) {
+                    storeTransactionToServer()
                 }
             })
         }
@@ -212,12 +219,46 @@ $(function() {
         }
     })
 
+    const storeTransactionToServer = () => {
+        const data = {
+            member: selectedMember,
+            detailTransaksi: selectedData,
+            transaksi: {
+                member_id: selectedMember.id,
+                tgl_bayar: $('[name="tgl_bayar"]').val(),
+                batas_waktu: $('[name="batas_waktu"]').val(),
+                status_transaksi: 'baru',
+                metode_pembayaran: selectedPaymentMethod,
+                biaya_tambahan: transaksi.biaya_tambahan,
+                diskon: transaksi.diskon,
+                pajak: transaksi.pajak,
+                total_pembayaran: totalPenjualan,
+                total_bayar: transaksi.total_bayar,
+            }
+        }
+        clientRequest('/api/transaksi/store', 'POST', data, (status, res) => {
+            if(status) {
+                showAlert('Transaksi Berhasil !', 'success', '')
+                clearErrors()
+                clearForm()
+            } else {
+                if(res.status === 422) {
+                    displayErrors(res.data.errors)
+                    showToast('failed', 'warning', 'Pastikan data yang anda masukan benar !')
+                } else {
+                    showToast('failed', 'error', 'Internal Server Error')
+                }
+            }
+        })
+    }
+
     const searchPaketById = (id) => {
         const selected = paketData.find(x => x.id == id)
         if(typeof selected !== 'undefined') {
             const isAvailable = selectedData.find(x => x.id == id)
             if(typeof isAvailable === 'undefined') {
                 selected['qty'] = 1
+                selected['ket'] = ''
                 selectedData.push(selected)
                 addRowTable(selected)
                 calculate()
@@ -259,6 +300,7 @@ $(function() {
             data.jenis,
             formatNumber(data.harga),
             `<input type="number" name="qty[]" class="form-control mx-auto text-center" style="width: 100px" value="${data.qty}" data-id="${data.id}">`,
+            `<input type="text" name="ket[]" class="form-control mx-auto text-center" style="width: 400px" value="${data.ket}" data-id="${data.id}" autocomplete="off">`,
             `<div class="d-flex justify-content-center">
                 <button type="button" class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="${data.id}">
                     <i class="bi bi-trash"></i>
@@ -285,6 +327,7 @@ $(function() {
                 item.jenis,
                 formatNumber(item.harga),
                 `<input type="number" name="qty[]" class="form-control mx-auto text-center" style="width: 100px" value="${item.qty}" data-id="${item.id}">`,
+                `<input type="text" name="ket[]" class="form-control mx-auto text-center" style="width: 400px" value="${data.ket}" data-id="${data.id}" autocomplete="off">`,
                 `<div class="d-flex justify-content-center">
                     <button type="button" class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="${item.id}">
                         <i class="bi bi-trash"></i>
@@ -327,10 +370,10 @@ $(function() {
 
     const validation = () => {
         if(selectedData.length === 0) {
-            showAlert('Opps..', 'warning', 'Tolong pilih barang dulu')
+            showAlert('Opps..', 'warning', 'Tolong pilih paket dulu !')
             return false
         } else if(selectedMember.length === 0) {
-            showAlert('Opps..', 'warning', 'Tolong pilih member dulu')
+            showAlert('Opps..', 'warning', 'Tolong pilih member dulu !')
             return false
         } else {
             const totalBayar = $('[name="total_bayar"]').val()
@@ -343,20 +386,17 @@ $(function() {
                         transaksi.total_bayar = parseInt(totalBayar)
                         return true
                     }
-                    break;
                 case 'dp':
-                    if(parseInt(totalBayar) < 0 || totalBayar === '') {
+                    if(parseInt(totalBayar) <= 0 || totalBayar === '') {
                         showAlert('Opps..', 'warning', 'Tolong masukan nominal harga yang valid')
                         return false
                     } else {
                         transaksi.total_bayar = parseInt(totalBayar)
                         return true
                     }
-                    break;
                 case 'bayar nanti':
                     transaksi.total_bayar = 0
                     return true
-                    break;
             }
         }
     }
@@ -384,6 +424,7 @@ $(function() {
         $('[name="biaya_tambahan"]').val('')
         $('[name="diskon"]').val('')
         $('[name="total_bayar"]').val('')
+        $('[name="total_penjualan"]').text('0')
     }
 
     const displayErrors = (errors) => {

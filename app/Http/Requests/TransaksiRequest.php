@@ -28,7 +28,7 @@ class TransaksiRequest extends FormRequest
             'member.id' => ['required', 'numeric'],
             'detailTransaksi.*.id' => ['required', 'numeric'],
             'detailTransaksi.*.qty' => ['required', 'numeric', 'min:1'],
-            'detailTransaksi.*.keterangan' => ['nullable'],
+            'detailTransaksi.*.ket' => ['nullable'],
             'transaksi.member_id' => ['required', 'numeric'],
             'transaksi.tgl_bayar' => ['required', 'date'],
             'transaksi.batas_waktu' => ['required', 'date'],

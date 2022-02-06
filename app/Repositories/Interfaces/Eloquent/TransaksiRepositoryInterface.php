@@ -15,4 +15,8 @@ interface TransaksiRepositoryInterface
     public function createDetailTransaksi(array $payload);
 
     public function updateTransaksi(array $payload, $id);
+
+    public function updatePembayaran(array $payload, $id);
+
+    public function getNonCashData();
 }

@@ -26,11 +26,15 @@ class PaketRepository implements PaketRepositoryInterface
 
     public function updateDataById(array $payload, int $id)
     {
-        return $this->paket->findOrFail($id)->update($payload);
+        $data = $this->paket->findOrFail($id);
+        $data->update($payload);
+        return $data;
     }
 
     public function deleteDataById(int $id)
     {
-        return $this->paket->findOrFail($id)->delete();
+        $data = $this->paket->findOrFail($id);
+        $data->delete();
+        return $data;
     }
 }

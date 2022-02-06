@@ -15,7 +15,7 @@ class CreatePembayaransTable extends Migration
     {
         Schema::create('tb_pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaksi_id');
+            $table->unsignedBigInteger('transaksi_id')->unique();
             $table->double('biaya_tambahan');
             $table->double('diskon');
             $table->double('pajak');

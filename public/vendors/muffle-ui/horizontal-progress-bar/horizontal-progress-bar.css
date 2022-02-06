@@ -1,0 +1,110 @@
+.horizontal-progressbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.horizontal-progressbar ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-progressbar li {
+    width: 100%;
+    list-style: none;
+    display: inline-block;
+}
+
+.progressbar-label {
+    text-align: center;
+}
+
+.progressbar-item {
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.progressbar-list {
+    color: #7d7d7d;
+}
+.progressbar-list.active {
+    color: #435ebe;
+}
+.progressbar-list .progressbar-item::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 5px solid #7d7d7d;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar-list.active .progressbar-item::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 5px solid #435ebe;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.progressbar-list .progressbar-item::after {
+    width: 100%;
+    height: 5px;
+    content: '';
+    position: absolute;
+    background-color: #7d7d7d;
+    top: 30px;
+    right: calc(50% + 2rem);
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+}
+.progressbar-list.active .progressbar-item::after {
+    width: 100%;
+    height: 5px;
+    content: '';
+    position: absolute;
+    background-color: #435ebe;
+    top: 30px;
+    right: calc(50% + 2rem);
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.horizontal-progressbar ul li:first-child .progressbar-item::after {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+
+.progressbar-icon {
+    position: absolute;
+    left: 50%;
+    top: calc(55% - 1rem);
+    transform: translateX(-50%);
+    z-index: 99;
+    font-size: 1.5rem;
+}

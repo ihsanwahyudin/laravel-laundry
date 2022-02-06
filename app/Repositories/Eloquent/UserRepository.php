@@ -26,11 +26,15 @@ class UserRepository implements UserRepositoryInterface
 
     public function updateDataById(array $payload, int $id)
     {
-        return $this->user->findOrFail($id)->update($payload);
+        $data = $this->user->findOrFail($id);
+        $data->update($payload);
+        return $data;
     }
 
     public function deleteDataById(int $id)
     {
-        return $this->user->findOrFail($id)->delete();
+        $data = $this->user->findOrFail($id);
+        $data->delete();
+        return $data;
     }
 }

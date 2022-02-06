@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-lg-7 d-none d-lg-block">
                     <div id="auth-right">
-                        <img class="w-100 h-100" src="{{ asset('images/bg-laundry.jpg') }}" style="object-fit: cover">
+                        {{-- <img class="w-100 h-100" src="{{ asset('images/bg-laundry.jpg') }}" style="object-fit: cover"> --}}
                         {{-- <img src="{{ asset('images/bg-laundry.jpg') }}" class="img-fluid" alt="..."> --}}
                     </div>
                 </div>

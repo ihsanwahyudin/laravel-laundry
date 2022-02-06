@@ -51,4 +51,16 @@ class TransaksiRepository implements TransaksiRepositoryInterface
     {
         return $this->transaksi->findOrFail($id)->update($payload);
     }
+
+    public function updatePembayaran(array $payload, $id)
+    {
+        return $this->pembayaran->where('transaksi_id', $id)->update($payload);
+    }
+
+    public function getNonCashData()
+    {
+        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+            $q->with('paket')->get();
+        }])->where('metode_pembayaran', '!=', 'cash')->where('status_pembayaran', 'belum lunas')->get();
+    }
 }

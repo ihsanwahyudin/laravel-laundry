@@ -7,10 +7,12 @@ use App\Repositories\Interfaces\Eloquent\MemberRepositoryInterface;
 class MemberService
 {
     private $memberRepository;
+    private $logActivityService;
 
-    public function __construct(MemberRepositoryInterface $memberRepository)
+    public function __construct(MemberRepositoryInterface $memberRepository, LogActivityService $logActivityService)
     {
         $this->memberRepository = $memberRepository;
+        $this->logActivityService = $logActivityService;
     }
 
     public function getAllData()
@@ -20,16 +22,26 @@ class MemberService
 
     public function storeData($payload)
     {
-        return $this->memberRepository->create($payload);
+        $data = $this->memberRepository->create($payload);
+        $this->logActivityService->createLog('tb_member', $data->toArray(), 1);
+        return $data;
     }
 
     public function updateDataById($payload, $id)
     {
-        return $this->memberRepository->updateDataById($payload, $id);
+        $data = $this->memberRepository->updateDataById($payload, $id);
+        $changed = $data->getChanges();
+        if(count($changed) > 0) {
+            $changed['id'] = $data->id;
+            $this->logActivityService->createLog('tb_member', $changed, 3);
+        }
+        return $data;
     }
 
     public function deleteDataById($id)
     {
-        return $this->memberRepository->deleteDataById($id);
+        $data = $this->memberRepository->deleteDataById($id);
+        $this->logActivityService->createLog('tb_outlet', ['id' => $data->id, 'nama' => $data->nama], 4);
+        return $data;
     }
 }

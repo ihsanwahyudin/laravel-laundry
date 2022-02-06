@@ -26,11 +26,15 @@ class OutletRepository implements OutletRepositoryInterface
 
     public function updateDataById(array $payload, int $id)
     {
-        return $this->outlet->findOrFail($id)->update($payload);
+        $data = $this->outlet->findOrFail($id);
+        $data->update($payload);
+        return $data;
     }
 
     public function deleteDataById(int $id)
     {
-        return $this->outlet->findOrFail($id)->delete();
+        $data = $this->outlet->findOrFail($id);
+        $data->delete();
+        return $data;
     }
 }

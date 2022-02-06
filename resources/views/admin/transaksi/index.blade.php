@@ -33,7 +33,7 @@
                     <div class="row col-8">
                         <div class="col-6">
                             <div class="mb-2">
-                                <label>Tanggal Transaksi</label>
+                                <label>Tanggal Bayar</label>
                                 <div class="form-group m-0 position-relative has-icon-left">
                                     <input type="date" name="tgl_bayar" class="form-control" placeholder="Tanggal" autocomplete="off">
                                     <div class="form-control-icon">
@@ -105,6 +105,7 @@
                                 <th>Jenis Paket</th>
                                 <th>Harga</th>
                                 <th class="text-center">Jumlah</th>
+                                <th class="text-center">Keterangan</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -113,7 +114,7 @@
             </div>
         </section>
         <section class="sticky-bottom row justify-content-end">
-            <div class="card border-less col-4 border">
+            <div class="card border-less col-6 border">
                 <div class="card-header">
                     <h3>Masukan Pembayaran</h3>
                 </div>
@@ -134,8 +135,9 @@
                         <span class="form-errors"></span>
                     </div>
                     <div class="mb-2">
+                        <label>Biaya Tambahan</label>
                         <div class="form-group m-0 position-relative has-icon-left">
-                            <input type="text" name="biaya_tambahan" class="form-control disable-letter" placeholder="Biaya Tambahan" autocomplete="off">
+                            <input type="text" name="biaya_tambahan" class="form-control disable-letter" autocomplete="off" value="0">
                             <div class="form-control-icon">
                                 <strong>Rp</strong>
                             </div>
@@ -143,8 +145,9 @@
                         <span class="form-errors"></span>
                     </div>
                     <div class="mb-2">
+                        <label>Diskon</label>
                         <div class="form-group m-0 position-relative has-icon-left">
-                            <input type="text" name="diskon" class="form-control disable-letter" placeholder="Diskon" autocomplete="off">
+                            <input type="text" name="diskon" class="form-control disable-letter" autocomplete="off" value="0">
                             <div class="form-control-icon">
                                 <strong>%</strong>
                             </div>
@@ -152,8 +155,9 @@
                         <span class="form-errors"></span>
                     </div>
                     <div class="mb-2">
+                        <label>Pajak</label>
                         <div class="form-group m-0 position-relative has-icon-left">
-                            <input type="text" name="pajak" class="form-control disable-letter" placeholder="Pajak" autocomplete="off" value="10" readonly>
+                            <input type="text" name="pajak" class="form-control disable-letter" autocomplete="off" value="10" readonly>
                             <div class="form-control-icon">
                                 <strong>%</strong>
                             </div>
@@ -161,8 +165,9 @@
                         <span class="form-errors"></span>
                     </div>
                     <div class="mb-2">
+                        <label>Nominal Uang</label>
                         <div class="form-group m-0 position-relative has-icon-left">
-                            <input type="text" name="total_bayar" class="form-control disable-letter" placeholder="Masukan Nominal Uang" autocomplete="off">
+                            <input type="text" name="total_bayar" class="form-control disable-letter" autocomplete="off">
                             <div class="form-control-icon">
                                 <strong>Rp</strong>
                             </div>

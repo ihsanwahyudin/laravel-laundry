@@ -61,4 +61,9 @@ class PagesController extends Controller
     {
         return view('admin.log-aktivitas.index');
     }
+
+    public function transaksiPembayaran()
+    {
+        return view('admin.transaksi-pembayaran.index');
+    }
 }

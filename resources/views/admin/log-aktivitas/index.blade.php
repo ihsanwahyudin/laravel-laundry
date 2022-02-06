@@ -45,5 +45,71 @@
             </form>
         </div>
     </div>
+    <div id="log-data">
+        
+    </div>
+    {{-- <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h4>20 September 2021</h4>
+            <h4>14 Aktivitas</h4>
+        </div>
+        <div class="card-content pb-4">
+            <div class="recent-message d-flex px-4 py-3">
+                <div class="avatar avatar-lg">
+                    <img src="{{ asset('vendors/mazer/dist/assets/images/faces/4.jpg') }}" />
+                </div>
+                <div class="name ms-4">
+                    <div class="title">
+                        <h5>Hank Schrader</h5>
+                        <span><small>1 hour Ago</small></span>
+                    </div>
+                    <h6 class="text-muted mb-0">Menambah Data baru dengan ID 98923223</h6>
+                </div>
+            </div>
+            <div class="recent-message d-flex px-4 py-3">
+                <div class="avatar avatar-lg">
+                    <img src="{{ asset('vendors/mazer/dist/assets/images/faces/5.jpg') }}" />
+                </div>
+                <div class="name ms-4">
+                    <div class="title">
+                        <h5>Dean Winchester</h5>
+                        <span><small>2 hour Ago</small></span>
+                    </div>
+                    <h6 class="text-muted mb-0">Mengubah Data dengan ID 1231231</h6>
+                </div>
+            </div>
+            <div class="recent-message d-flex px-4 py-3">
+                <div class="avatar avatar-lg">
+                    <img src="{{ asset('vendors/mazer/dist/assets/images/faces/1.jpg') }}" />
+                </div>
+                <div class="name ms-4">
+                    <div class="title">
+                        <h5>John Dodol</h5>
+                        <span><small>5 hour Ago</small></span>
+                    </div>
+                    <h6 class="text-muted mb-0">Menghapus data dengan ID 1231231</h6>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 </div>
 @endsection
+@push('css')
+<style>
+    .recent-message:hover {
+        background-color: #f5f5f5;
+    }
+    .recent-message .name {
+        width: 100%;
+    }
+    .name .title {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+@endpush
+@push('script')
+    <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendors/moment/moment.js') }}"></script>
+    <script type="module" src="{{ asset('js/crud/log-activity.js') }}"></script>
+@endpush
