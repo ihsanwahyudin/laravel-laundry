@@ -38,8 +38,10 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin,kasir,owner'])->group(function () {
         Route::get('/laporan/transaksi', [PagesController::class, 'laporanTransaksi']);
     });
-    Route::middleware(['role:admin'])->group(function () {
+    Route::middleware(['role:admin,owner'])->group(function () {
         Route::get('/dashboard', [PagesController::class, 'dashboard']);
+    });
+    Route::middleware(['role:admin'])->group(function () {
         Route::get('/data/outlet', [PagesController::class, 'outlet']);
         Route::get('/data/karyawan', [PagesController::class, 'karyawan']);
         Route::get('/data/paket', [PagesController::class, 'paket']);
@@ -55,6 +57,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/api/transaksi/non-cash', [TransaksiController::class, 'getNonCashData']);
     Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
     Route::post('/api/transaksi/update', [TransaksiController::class, 'update']);
+    Route::post('/api/transaksi/update/status-transaksi', [TransaksiController::class, 'updateStatusTransaksi']);
+    Route::get('/api/transaksi/cetak-faktur/{noInvoice}', [TransaksiController::class, 'cetakFaktur']);
 
     // Laporan
     Route::get('/api/laporan/transaksi', [LaporanController::class, 'getLaporanTransaksi']);

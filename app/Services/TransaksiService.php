@@ -106,5 +106,13 @@ class TransaksiService
 
         return $this->transaksiRepository->updatePembayaran($array, $transaksiID);
     }
+
+    public function updateStatusTransaksi($payload)
+    {
+        $array = [
+            'status_transaksi' => $payload['transaksi']['status_transaksi']
+        ];
+        return $this->transaksiRepository->updateTransaksi($array, $payload['transaksi']['id']);
+    }
 }
 

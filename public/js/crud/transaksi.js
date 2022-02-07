@@ -241,6 +241,7 @@ $(function() {
                 showAlert('Transaksi Berhasil !', 'success', '')
                 clearErrors()
                 clearForm()
+                window.open('/api/transaksi/cetak-faktur/' + res.data.transaksi.kode_invoice, '_blank')
             } else {
                 if(res.status === 422) {
                     displayErrors(res.data.errors)

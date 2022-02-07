@@ -2,6 +2,7 @@
 
 use App\Models\ListTable;
 use App\Models\TableColumnList;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -69,4 +70,8 @@ Route::get('/changed', function() {
     // ])->toArray();
     // $exceptColumn = ['id', 'created_at', 'updated_at', 'deleted_at'];
     // dd(array_diff(array_keys($table), $exceptColumn));
+});
+
+Route::get('/test-query', function() {
+    return response()->json(User::get());
 });

@@ -8,7 +8,7 @@
                 <div class="mb-5">
                     <div class="horizontal-progressbar">
                         <ul>
-                            <li class="progressbar-list active">
+                            <li class="progressbar-list">
                                 <div class="progressbar-item">
                                     <div class="progressbar-icon">
                                         <i class="bi bi-bag"></i>
@@ -18,7 +18,7 @@
                                     <strong>Baru</strong>
                                 </div>
                             </li>
-                            <li class="progressbar-list active">
+                            <li class="progressbar-list">
                                 <div class="progressbar-item">
                                     <div class="progressbar-icon">
                                         <i class="bi bi-arrow-repeat"></i>
@@ -57,12 +57,12 @@
                             <tr>
                                 <td>Status Transaksi</td>
                                 <td class="px-3">:</td>
-                                <td name="status_transaksi"><span class="badge bg-light-primary">baru</span></td>
+                                <td name="status_transaksi"></td>
                             </tr>
                             <tr>
                                 <td>Status Pembayaran</td>
                                 <td class="px-3">:</td>
-                                <td name="status_pembayaran"><span class="badge bg-light-danger">belum lunas</span> (<a href="/transaksi/INV202110001">lakukan pembayaran</a>)</td>
+                                <td name="status_pembayaran"><span class="badge bg-light-danger">belum lunas</span> (<a href="/transaksi/pembayaran">lakukan pembayaran</a>)</td>
                             </tr>
                             <tr>
                                 <td>Metode Pembayaran</td>
@@ -115,46 +115,42 @@
                                     <td>Rp 32.000</td>
                                 </tr>
                             </tbody>
-                            {{-- <tfoot>
+                            <tfoot id="belum-lunas">
                                 <tr>
-                                    <th colspan="6" class="text-center">Pelanggan Belum Melakukan Pembayaran</th>
+                                    <th colspan="6" class="text-center">Pelanggan Belum Menulasi Pembayaran</th>
                                 </tr>
-                            </tfoot> --}}
-                            <tfoot>
+                            </tfoot>
+                            <tfoot id="lunas">
                                 <tr>
                                     <td colspan="5" class="text-end">Biaya Tambahan</td>
-                                    <td name="total_pembayaran">Rp 10.000</td>
+                                    <td>Rp <span name="biaya_tambahan">0</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-end">Diskon</td>
-                                    <td name="total_pembayaran">10%</td>
+                                    <td><span name="diskon">0</span>%</td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-end">Pajak</td>
-                                    <td name="total_pembayaran">10%</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="5" class="text-end">Biaya Tambahan</td>
-                                    <td name="total_pembayaran">Rp 10.000</td>
+                                    <td><span name="pajak">0</span>%</td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-end">Total Pembayaran</td>
-                                    <td name="total_pembayaran">Rp 42.000</td>
+                                    <td>Rp <span name="total_pembayaran">0</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-end">Total Bayar</td>
-                                    <td name="total_pembayaran">Rp 50.000</td>
+                                    <td>Rp <span name="total_bayar">0</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="5" class="text-end">Kembalian</td>
-                                    <td name="total_pembayaran">Rp 18.000</td>
+                                    <td>Rp <span name="kembalian">0</span></td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
                 <div class="clearfix">
-                    <button class="btn btn-outline-primary float-end">Update</button>
+                    <button type="button" class="btn btn-outline-primary float-end" id="update-status-transaksi">Update</button>
                 </div>
             </div>
         </div>

@@ -70,14 +70,19 @@
                             <th>No</th>
                             <th>Kode Invoice</th>
                             <th>Nama Member</th>
-                            <th>Tanggal Bayar</th>
-                            <th>Batas Waktu</th>
-                            <th>Metode Pembayaran</th>
-                            <th>Status Transaksi</th>
+                            <th>Tanggal Transaksi</th>
                             <th>Status Pembayaran</th>
+                            <th>Pemasukan</th>
                             <th class="text-center">Detail</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th colspan="5" class="text-center">Total Pemasukan</th>
+                            <th>Rp <span id="total-semua-pemasukan">0</span></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
@@ -89,6 +94,7 @@
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('vendors/moment/moment.js') }}"></script>
     <script src="{{ asset('js/formatNumber.js') }}"></script>
     <script type="module" src="{{ asset('js/crud/laporan-transaksi.js') }}"></script>
 @endpush

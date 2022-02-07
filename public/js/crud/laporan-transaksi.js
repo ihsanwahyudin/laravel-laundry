@@ -64,41 +64,14 @@ $(function() {
         for (const key in selectedLaporan) {
             if(typeof selectedLaporan[key] !== 'object') {
                 if(key == 'status_transaksi') {
-                    switch (selectedLaporan[key]) {
-                        case "baru":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-primary">baru</span>`)
-                            break;
-                        case "proses":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-info">proses</span>`)
-                            break;
-                        case "selesai":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-warning">selesai</span>`)
-                            break;
-                        case "diambil":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-success">diambil</span>`)
-                            break;
-                    }
+                    const statusTransaksi = selectedLaporan[key]
+                    $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-${statusTransaksi === 'baru' ? 'primary' : statusTransaksi === 'proses' ? 'info' : statusTransaksi === 'selesai' ? 'warning' : 'success'}">${statusTransaksi}</span>`)
                 } else if(key == 'status_pembayaran') {
-                    switch (selectedLaporan[key]) {
-                        case "lunas":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-success">lunas</span>`)
-                            break;
-                        case "belum lunas":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-danger">belum lunas</span>`)
-                            break;
-                    }
+                    const statusPembayaran = selectedLaporan[key]
+                    $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-${statusPembayaran === 'lunas' ? 'success' : 'danger'}">${statusPembayaran}</span>`)
                 } else if(key == 'metode_pembayaran') {
-                    switch (selectedLaporan[key]) {
-                        case "cash":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-primary">cash</span>`)
-                            break;
-                        case "dp":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-info">dp</span>`)
-                            break;
-                        case "bayar nanti":
-                            $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-warning">bayar nanti</span>`)
-                            break;
-                    }
+                    const metode = selectedLaporan[key]
+                    $(`#detail-transaksi-modal [name="${key}"]`).html(`<span class="badge bg-light-${ metode === 'cash' ? 'primary' : metode === 'dp' ? 'info' : 'warning'}">${metode}</span>`)
                 } else {
                     $(`#detail-transaksi-modal [name="${key}"]`).text(selectedLaporan[key])
                 }
@@ -124,76 +97,33 @@ $(function() {
                             </tr>`
                         })
                         $('#paket-table tbody').html(detailPaket)
-                        $('[name="total_pembayaran"]').text(`Rp ${formatNumber(total)}`)
                         break;
                     case 'pembayaran':
-                        let detailPembayaran = ''
-                        let totalPembayaranBersih = 0
-                        let totalBayar = 0
-                        selectedLaporan[key].map((item, index) => {
-                            totalPembayaranBersih += item.total_pembayaran
-                            totalBayar += item.total_bayar
-                            detailPembayaran += `<tr>
-                                <td>${index + 1}</td>
-                                <td>${item.created_at.substring(0, 10)}</td>
-                                <td>Rp ${formatNumber(item.biaya_tambahan)}</td>
-                                <td>${item.diskon}%</td>
-                                <td>${item.pajak}%</td>
-                                <td>Rp ${formatNumber(item.total_pembayaran)}</td>
-                                <td>Rp ${formatNumber(item.total_bayar)}</td>
-                            </tr>`
-                        })
-                        $('#pembayaran-table tbody').html(detailPembayaran)
-                        $('[name="total_pembayaran_bersih"]').text(`Rp ${formatNumber(totalPembayaranBersih)}`)
-                        $('[name="total_bayar"]').text(`Rp ${formatNumber(totalBayar)}`)
+                        for (const pembayaranKey in selectedLaporan[key]) {
+                            $(`#detail-transaksi-modal [name="${pembayaranKey}"]`).text(formatNumber(selectedLaporan[key][pembayaranKey]))
+                        }
                         break;
                 }
             }
         }
+        $('#cetak-faktur').attr('href', `/api/transaksi/cetak-faktur/${selectedLaporan.kode_invoice}`)
     }
 
     const drawLaporanTable = () => {
         $('#laporan-table').DataTable().destroy()
         $('#laporan-table').DataTable({
+            fixedHeader: {
+                header: true,
+                footer: true
+            },
             data: laporanData,
             columns: [
                 { data: 'id' },
                 { data: 'kode_invoice' },
                 { data: 'member.nama' },
-                { data: 'tgl_bayar' },
-                { data: 'batas_waktu' },
                 {
                     data: function(data, type, row) {
-                        if(type === 'display') {
-                            switch (data.metode_pembayaran) {
-                                case "cash":
-                                    return '<span class="badge bg-light-primary">cash</span>'
-                                case "dp":
-                                    return '<span class="badge bg-light-info">dp</span>'
-                                case "bayar nanti":
-                                    return '<span class="badge bg-light-warning">bayar nanti</span>'
-                            }
-                        } else {
-                            return ''
-                        }
-                    }
-                },
-                {
-                    data: function(data, type, row) {
-                        if(type === 'display') {
-                            switch (data.status_transaksi) {
-                                case "baru":
-                                    return '<span class="badge bg-light-primary">baru</span>'
-                                case "proses":
-                                    return '<span class="badge bg-light-info">proses</span>'
-                                case "selesai":
-                                    return '<span class="badge bg-light-warning">selesai</span>'
-                                case "diambil":
-                                    return '<span class="badge bg-light-success">diambil</span>'
-                            }
-                        } else {
-                            return ''
-                        }
+                        return moment(data.created_at).format('DD MMMM YYYY')
                     }
                 },
                 {
@@ -210,6 +140,49 @@ $(function() {
                         }
                     }
                 },
+                {
+                    data: function(data, type, row) {
+                        if(data.status_pembayaran === 'lunas') {
+                            return `Rp ${formatNumber(data.pembayaran.total_pembayaran)}`
+                        } else {
+                            return `Rp 0`
+                        }
+                    }
+                },
+                // {
+                //     data: function(data, type, row) {
+                //         if(type === 'display') {
+                //             switch (data.metode_pembayaran) {
+                //                 case "cash":
+                //                     return '<span class="badge bg-light-primary">cash</span>'
+                //                 case "dp":
+                //                     return '<span class="badge bg-light-info">dp</span>'
+                //                 case "bayar nanti":
+                //                     return '<span class="badge bg-light-warning">bayar nanti</span>'
+                //             }
+                //         } else {
+                //             return ''
+                //         }
+                //     }
+                // },
+                // {
+                //     data: function(data, type, row) {
+                //         if(type === 'display') {
+                //             switch (data.status_transaksi) {
+                //                 case "baru":
+                //                     return '<span class="badge bg-light-primary">baru</span>'
+                //                 case "proses":
+                //                     return '<span class="badge bg-light-info">proses</span>'
+                //                 case "selesai":
+                //                     return '<span class="badge bg-light-warning">selesai</span>'
+                //                 case "diambil":
+                //                     return '<span class="badge bg-light-success">diambil</span>'
+                //             }
+                //         } else {
+                //             return ''
+                //         }
+                //     }
+                // },
                 {
                     render: function(data, type, row, meta) {
                         if(type === 'display') {
@@ -228,6 +201,14 @@ $(function() {
                 cell.innerHTML = i+1;
             } );
         } ).draw();
+
+        let totalPemasukan = 0
+        laporanData.map(item => {
+            if(item.status_pembayaran === 'lunas') {
+                totalPemasukan += item.pembayaran.total_pembayaran
+            }
+        })
+        $('#total-semua-pemasukan').text(formatNumber(totalPemasukan))
     }
 
     getTransaksiData()

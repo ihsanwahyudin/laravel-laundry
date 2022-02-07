@@ -35,6 +35,14 @@ class CreateUsersTable extends Migration
             'outlet_id' => null,
             'password' => Hash::make('admin')
         ]);
+
+        User::create([
+            'name' => 'owner',
+            'email' => 'owner@owner.com',
+            'role' => 'owner',
+            'outlet_id' => null,
+            'password' => Hash::make('owner')
+        ]);
     }
 
     /**

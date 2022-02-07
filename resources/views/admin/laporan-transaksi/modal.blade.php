@@ -69,50 +69,47 @@
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
-                            <tbody>
-
-                            </tbody>
+                            <tbody></tbody>
                             <tfoot>
                                 <tr>
-                                    <th colspan="5" class="text-center">Total</th>
-                                    <th name="total_pembayaran">Rp 450.000</th>
+                                    <td colspan="5" class="text-end">Biaya Tambahan</td>
+                                    <td>Rp <span name="biaya_tambahan">0</span></td>
                                 </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <h6>Data Pembayaran</h6>
-                    <div class="table-responsive p-2">
-                        <table class="table w-100 text-center" id="pembayaran-table">
-                            <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Tanggal Bayar</th>
-                                    <th>Biaya Tambahan</th>
-                                    <th>Diskon</th>
-                                    <th>Pajak</th>
-                                    <th>Total Pembayaran</th>
-                                    <th>Total Bayar</th>
+                                    <td colspan="5" class="text-end">Diskon</td>
+                                    <td><span name="diskon">0</span>%</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                            <tfoot>
                                 <tr>
-                                    <th colspan="5" class="text-center">Total</th>
-                                    <th name="total_pembayaran_bersih">Rp 450.000</th>
-                                    <th name="total_bayar">Rp 500.000</th>
+                                    <td colspan="5" class="text-end">Pajak</td>
+                                    <td><span name="pajak">0</span>%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="text-end">Total Pembayaran</td>
+                                    <td>Rp <span name="total_pembayaran">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="text-end">Total Bayar</td>
+                                    <td>Rp <span name="total_bayar">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="text-end">Kembalian</td>
+                                    <td>Rp <span name="kembalian">0</span></td>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-outline-primary">Cetak</button>
+                    <a href="/api/transaksi/cetak-faktur" target="_blank" class="btn btn-outline-primary" id="cetak-faktur">Cetak</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@push('css')
+    <style>
+        #paket-table tfoot td, #paket-table tfoot th {
+            border: none !important;
+        }
+    </style>
+@endpush

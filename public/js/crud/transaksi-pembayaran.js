@@ -168,14 +168,15 @@ $(function() {
             transaksi: {
                 id: selectedTransaksiData.id,
                 status_pembayaran: 'lunas',
+
             },
             pembayaran
         }
 
-        console.info(data)
         clientRequest('/api/transaksi/update', 'POST', data, (status, res) => {
             if(status) {
                 showToast('success', 'success', 'Berhasil mengubah data transaksi')
+                window.open('/api/transaksi/cetak-faktur/' + selectedTransaksiData.kode_invoice, '_blank')
                 clearForm()
                 daftarTransaksiTable.ajax.reload()
             } else {

@@ -63,4 +63,11 @@ class TransaksiRepository implements TransaksiRepositoryInterface
             $q->with('paket')->get();
         }])->where('metode_pembayaran', '!=', 'cash')->where('status_pembayaran', 'belum lunas')->get();
     }
+
+    public function findTransaksiByInvoice(string $noInvoice)
+    {
+        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+            $q->with('paket')->get();
+        }])->where('kode_invoice', $noInvoice)->first();
+    }
 }

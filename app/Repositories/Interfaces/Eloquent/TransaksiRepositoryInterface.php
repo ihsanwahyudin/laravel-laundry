@@ -19,4 +19,6 @@ interface TransaksiRepositoryInterface
     public function updatePembayaran(array $payload, $id);
 
     public function getNonCashData();
+
+    public function findTransaksiByInvoice(string $noInvoice);
 }
