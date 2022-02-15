@@ -3,15 +3,21 @@
 namespace App\Exports;
 
 use App\Models\Transaksi;
-use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Maatwebsite\Excel\Concerns\WithColumnWidths;
 
-class TransaksiExport implements FromCollection, WithStyles, WithColumnWidths
+class TransaksiExportByDate implements FromCollection, WithStyles, WithColumnWidths
 {
-    private $totalData;
+    private $totalData, $startDate, $endDate;
+
+    public function __construct($startDate, $endDate)
+    {
+        $this->startDate = $startDate;
+        $this->endDate = $endDate;
+    }
     /**
     * @return \Illuminate\Support\Collection
     */
@@ -20,7 +26,7 @@ class TransaksiExport implements FromCollection, WithStyles, WithColumnWidths
         $header = [['No', 'Kode Invoice', 'Nama Member', 'Tanggal Transaksi', 'Status Pembayaran', 'Pemasukan']];
         $data = Transaksi::with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
-        }])->latest()->get();
+        }])->whereBetween('created_at', [$this->startDate, $this->endDate])->get();
         $this->totalData = $data->count();
         $collection = new Collection($data->toArray());
         $body = [];

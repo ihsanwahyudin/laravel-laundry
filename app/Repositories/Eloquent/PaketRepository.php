@@ -16,7 +16,7 @@ class PaketRepository implements PaketRepositoryInterface
 
     public function allData()
     {
-        return $this->paket->with('outlet')->get();
+        return $this->paket->with('outlet')->withCount('detailTransaksi')->get();
     }
 
     public function create(array $payload)

@@ -16,7 +16,7 @@ class MemberRepository implements MemberRepositoryInterface
 
     public function allData()
     {
-        return $this->member->all();
+        return $this->member->withCount('transaksi')->get();
     }
 
     public function create(array $payload)

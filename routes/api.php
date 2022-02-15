@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogActivityController;
 use App\Models\ListTable;
 use App\Models\TableColumnList;
 use App\Models\User;
@@ -72,6 +73,4 @@ Route::get('/changed', function() {
     // dd(array_diff(array_keys($table), $exceptColumn));
 });
 
-Route::get('/test-query', function() {
-    return response()->json(User::get());
-});
+Route::get('/test', [LogActivityController::class, 'test']);

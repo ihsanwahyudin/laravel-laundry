@@ -26,16 +26,16 @@ class MemberController extends Controller
         $member = $this->memberService->getAllData();
         return DataTables::of($member)
             ->addIndexColumn()
-            ->addColumn('action', function ($member) {
-                $buttons = '<div class="d-flex justify-content-center gap-2">';
-                $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$member->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
-                $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$member->id.'"><i class="bi bi-trash"></i></button>';
-                $buttons .= '</div>';
+            // ->addColumn('action', function ($member) {
+            //     $buttons = '<div class="d-flex justify-content-center gap-2">';
+            //     $buttons .=
+            //         '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$member->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
+            //     $buttons .=
+            //         '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$member->id.'"><i class="bi bi-trash"></i></button>';
+            //     $buttons .= '</div>';
 
-                return $buttons;
-            })
+            //     return $buttons;
+            // })
             ->make(true);
     }
 

@@ -18,4 +18,9 @@ class Paket extends Model
     {
         return $this->belongsTo(Outlet::class, 'outlet_id', 'id');
     }
+
+    public function detailTransaksi()
+    {
+        return $this->hasMany(DetailTransaksi::class, 'paket_id', 'id');
+    }
 }

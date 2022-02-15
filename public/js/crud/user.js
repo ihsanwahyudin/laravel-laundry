@@ -111,6 +111,8 @@ $(function() {
     const storeDataToServer = (data) => {
         clientRequest('/api/user', 'POST', data, (status, res) => {
             if(status) {
+                clearErrors()
+                clearForm()
                 showToast('Success', 'success', 'Create Data Successfully')
                 userTable.ajax.reload()
                 $('#create-data-modal').modal('toggle')
@@ -144,12 +146,13 @@ $(function() {
             },
             data
         }).then(res => {
+            clearErrors()
             showToast('Success', 'success', 'Update Data Successfully')
-                userTable.ajax.reload()
-                $('#update-data-modal').modal('toggle')
+            userTable.ajax.reload()
+            $('#update-data-modal').modal('toggle')
         }).catch(err => {
             if(err.response.status === 422) {
-                displayErrors('#update-data-modal', res.data.errors)
+                displayErrors('#update-data-modal', err.response.data.errors)
                 showToast('Failed', 'warning', 'Please Check your data before submit')
             } else {
                 showToast('Failed', 'error', 'Internal Server Error')

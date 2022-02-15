@@ -13,4 +13,9 @@ class Pembayaran extends Model
     protected $guarded = [
         'id', 'created_at', 'updated_at'
     ];
+
+    public function transaksi()
+    {
+        return $this->belongsTo(Transaksi::class, 'transaksi_id');
+    }
 }

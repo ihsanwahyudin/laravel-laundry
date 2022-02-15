@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Outlet;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -17,8 +19,10 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+            'role' => $this->faker->randomElement(['admin', 'kasir']),
+            'outlet_id' => $this->faker->randomElement(Outlet::pluck('id')->toArray()),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => Hash::make('fake'),
             'remember_token' => Str::random(10),
         ];
     }

@@ -65,6 +65,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/api/laporan/transaksi/between/{startDate}/{endDate}', [LaporanController::class, 'getLaporanTransaksiBetweenDate']);
     Route::get('/api/laporan/transaksi/export-pdf', [ExportController::class, 'exportPDF']);
     Route::get('/api/laporan/transaksi/export-excel', [ExportController::class, 'exportExcel']);
+    Route::get('/api/laporan/transaksi/export-pdf/{startDate}/{endDate}', [ExportController::class, 'exportPDFFilterByDate']);
+    Route::get('/api/laporan/transaksi/export-excel/{startDate}/{endDate}', [ExportController::class, 'exportExcelFilterByDate']);
+    // Dashboard
+    Route::get('/api/laporan/income/current-month', [LaporanController::class, 'getIncomeCurrentMonth']);
+    Route::get('/api/laporan/transaction-amount', [LaporanController::class, 'getTransactionAmount']);
+    Route::get('/api/laporan/number-of-member', [LaporanController::class, 'getNumberOfMember']);
+    Route::get('/api/laporan/recently-transaction', [LaporanController::class, 'getRecentlyTransaction']);
+    Route::get('/api/laporan/income-per-day/current-month', [LaporanController::class, 'getIncomePerDayCurrentMonth']);
+    Route::get('/api/laporan/recently-activity', [LaporanController::class, 'getRecentlyActivity']);
+    Route::get('/api/laporan/latest-transaction/{limit}', [LaporanController::class, 'getLatestTransaction']);
+    Route::get('/api/laporan/amount-of-transaction/per-status-transaction', [LaporanController::class, 'getAmountOfTransactionPerStatusTransaction']);
+    Route::get('/api/laporan/amount-of-transaction/per-day-per-status-transaction', [LaporanController::class, 'getAmountOfTransactionPerDayPerStatusTransaction']);
+    Route::get('/api/laporan/number-of-member/per-gender', [LaporanController::class, 'getNumberOfMemberPerGender']);
 
     Route::get('/api/log-activity/all', [LogActivityController::class, 'getAllActivities']);
+    Route::post('/api/log-activity/filter', [LogActivityController::class, 'filterActivities']);
 });

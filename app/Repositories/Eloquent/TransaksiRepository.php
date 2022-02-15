@@ -27,6 +27,13 @@ class TransaksiRepository implements TransaksiRepositoryInterface
         }])->get();
     }
 
+    public function filterTransactionDataByDate($startDate, $endDate)
+    {
+        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+            $q->with('paket')->get();
+        }])->whereBetween('created_at', [$startDate, $endDate])->get();
+    }
+
     public function createTransaksi(array $payload)
     {
         return $this->transaksi->create($payload);

@@ -17,8 +17,23 @@ class LogActivityController extends Controller
 
     public function getAllActivities()
     {
-        $data['logs'] = $this->logActivityService->getAllLogs();
-        $data['date'] = $this->logActivityService->getDateLogs();
+        $data = $this->logActivityService->getAllLogs();
         return response()->json($data, Response::HTTP_OK);
+    }
+
+    public function filterActivities(Request $request)
+    {
+        $validated = $request->validate([
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+        ]);
+
+        $data = $this->logActivityService->filterLogs($validated);
+        return response()->json($data, Response::HTTP_OK);
+    }
+
+    public function test()
+    {
+        return $this->logActivityService->getAllLogs();
     }
 }

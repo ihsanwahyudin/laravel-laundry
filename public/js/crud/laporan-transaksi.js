@@ -8,9 +8,16 @@ $(function() {
 
     $('#export-txt').click(function() {
         let dataText = ''
+        // dataText += '[\tNo Invoice\t] [\tNama Member\t] [\tTanggal Transaksi\t] [\tStatus Pembayaran\t] [\tPemasukan\t]'
+        // laporanData.map((item, index) => {
+        //     dataText += `${index + 1}.\tNo Invoice\t\t: ${item.kode_invoice}\n\tNama Member\t\t: ${item.member.nama}\n\tTanggal Bayar\t\t: ${item.tgl_bayar}\n\tBatas Waktu\t\t: ${item.batas_waktu}\n\tMetode Pembayaran\t: ${item.metode_pembayaran}\n\tStatus Transaksi\t: ${item.status_transaksi}\n\tStatus Pembayaran\t: ${item.status_pembayaran}\n\n`
+        // })
+        let totalPemasukan = 0
         laporanData.map((item, index) => {
-            dataText += `${index + 1}.\tNo Invoice\t\t: ${item.kode_invoice}\n\tNama Member\t\t: ${item.member.nama}\n\tTanggal Bayar\t\t: ${item.tgl_bayar}\n\tBatas Waktu\t\t: ${item.batas_waktu}\n\tMetode Pembayaran\t: ${item.metode_pembayaran}\n\tStatus Transaksi\t: ${item.status_transaksi}\n\tStatus Pembayaran\t: ${item.status_pembayaran}\n\n`
+            totalPemasukan += item.status_pembayaran === 'lunas' ? item.pembayaran.total_pembayaran : 0
+            dataText += `[${item.kode_invoice}, ${moment(item.created_at).format('DD/MM/YYYY')}]: ${item.member.nama}, Rp ${item.status_pembayaran === 'lunas' ? formatNumber(item.pembayaran.total_pembayaran) : '0'} \t(${item.status_pembayaran})\n`
         })
+        dataText += `[Total Pemasukan]: Rp ${formatNumber(totalPemasukan)}`
         download(dataText, 'laporan-transaksi.txt', 'text/plain')
     })
 
@@ -53,6 +60,8 @@ $(function() {
         clientRequest(`/api/laporan/transaksi/between/${startDate}/${endDate}`, 'GET', '', (status, res) => {
             if(status) {
                 laporanData = res.data
+                $('#export-pdf').attr('href', `/api/laporan/transaksi/export-pdf/${startDate}/${endDate}`)
+                $('#export-excel').attr('href', `/api/laporan/transaksi/export-excel/${startDate}/${endDate}`)
                 drawLaporanTable()
             } else {
                 console.info(res)

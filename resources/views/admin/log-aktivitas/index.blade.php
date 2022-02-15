@@ -46,7 +46,7 @@
         </div>
     </div>
     <div id="log-data">
-        
+
     </div>
     {{-- <div class="card">
         <div class="card-header d-flex justify-content-between">
@@ -109,7 +109,6 @@
 </style>
 @endpush
 @push('script')
-    <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/moment/moment.js') }}"></script>
     <script type="module" src="{{ asset('js/crud/log-activity.js') }}"></script>
 @endpush

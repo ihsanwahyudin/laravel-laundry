@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Exports\TransaksiExport;
+use App\Exports\TransaksiExportByDate;
 use App\Repositories\Interfaces\Eloquent\TransaksiRepositoryInterface;
 use Dompdf\Dompdf;
 use Maatwebsite\Excel\Facades\Excel;
@@ -21,9 +22,26 @@ class ExportService
         return Excel::download(new TransaksiExport, 'laporan-transaksi.xlsx');
     }
 
+    public function exportExcelByDate($startDate, $endDate)
+    {
+        return Excel::download(new TransaksiExportByDate($startDate, $endDate), 'laporan-transaksi.xlsx');
+    }
+
     public function exportPDF()
     {
         $data = $this->transaksiRepository->getAllTransactionData();
+        $xml = $this->xml($data);
+        $dompdf = new Dompdf();
+        $dompdf->getOptions()->set('chroot', asset('images'));
+        $dompdf->getOptions()->getChroot();
+        $dompdf->loadHtml($xml);
+        $dompdf->render();
+        return $dompdf->stream("document.pdf", array("Attachment" => false));
+    }
+
+    public function exportPDFByDate($startDate, $endDate)
+    {
+        $data = $this->transaksiRepository->filterTransactionDataByDate($startDate, $endDate);
         $xml = $this->xml($data);
         $dompdf = new Dompdf();
         $dompdf->getOptions()->set('chroot', asset('images'));
@@ -62,7 +80,8 @@ class ExportService
         $pajak = $data['pembayaran']['pajak'];
         $totalPembayaran = number_format($data['pembayaran']['total_pembayaran'], 0, ',', '.');
         $totalBayar = number_format($data['pembayaran']['total_bayar'], 0, ',', '.');
-        $kembalian = number_format($data['pembayaran']['total_pembayaran'] - $data['pembayaran']['total_bayar'], 0, ',', '.');
+        $kembalian = number_format(abs((int)$data['pembayaran']['total_pembayaran'] - (int)$data['pembayaran']['total_bayar']), 0, ',', '.');
+        // dd($kembalian);
 
         $tbody = '';
         foreach($data['detailTransaksi'] as $key => $item) {
@@ -101,7 +120,7 @@ class ExportService
                         </tr>
                         <tr>
                             <td colspan="5" align="right">Kembalian</td>
-                            <td align="left">Rp '.abs($kembalian).'</td>
+                            <td align="left">Rp '.$kembalian.'</td>
                         </tr>';
         } else {
             $tfoot .= '<tr>
@@ -130,8 +149,9 @@ class ExportService
                         padding-bottom: 0;
                     }
                     thead {
-                        background: #202020;
-                        color: #FFFFFF;
+                        /* background: #202020; */
+                        border: 1px solid #202020;
+                        color: #202020;
                         text-align: left;
                     }
                     tfoot tr td {
@@ -203,7 +223,7 @@ class ExportService
                     </tr>
                 </table>
                 <br/>
-                <div style="width: 100%; background: #202020; padding-top: .5rem; padding-bottom: .5rem; text-align: center; color: white">
+                <div style="width: 100%; border: 1px solid #202020; padding-top: .5rem; padding-bottom: .5rem; text-align: center;">
                     <small style="display: block">Tanggal Bayar - Tanggal Selesai</small>
                     <small><strong class="mp-0">$tglBayar sd $batasWaktu</strong></small>
                 </div>
@@ -239,18 +259,18 @@ class ExportService
         $thead = '<thead>';
         $thead .= '<tr>
             <th>No</th>
-            <th>Kode Invoice</th>
-            <th>Nama Member</th>
-            <th>Tanggal Transaksi</th>
-            <th>Status Pembayaran</th>
-            <th>Pemasukan</th>
+            <th align="left">Kode Invoice</th>
+            <th align="left">Nama Member</th>
+            <th align="left">Tanggal Transaksi</th>
+            <th align="left">Status Pembayaran</th>
+            <th align="left">Pemasukan</th>
         </tr>';
         $thead .= '</thead>';
 
         $tbody = `<tbody>`;
         $totalPemasukan = 0;
         foreach($data as $key => $item) {
-            $totalPemasukan += $item->pembayaran->total_pembayaran;
+            $totalPemasukan += $item->status_pembayaran === 'lunas' ? $item->pembayaran->total_pembayaran : 0;
             $tbody .= '<tr>
                 <td align="center">'.($key + 1).'</td>
                 <td>'.$item->kode_invoice.'</td>
@@ -279,8 +299,9 @@ class ExportService
                         font-size: x-small;
                     }
                     thead {
-                        background: #202020;
-                        color: #FFFFFF;
+                        /* background: #202020; */
+                        border: 1px solid #202020;
+                        color: #202020;
                         text-align: left;
                     }
                     tfoot tr td {

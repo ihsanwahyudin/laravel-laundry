@@ -1,5 +1,5 @@
 import clientRequest from "../api.js"
-import { showConfirmAlert, showToast } from "../sweetalert.js"
+import { showAlert, showConfirmAlert, showToast } from "../sweetalert.js"
 
 $(function() {
     let outletData = []
@@ -19,7 +19,20 @@ $(function() {
             { data: 'nama' },
             { data: 'alamat' },
             { data: 'tlp' },
-            { data: 'action', orderable: false, searchable: false }
+            {
+                render: function(data, type, row, meta) {
+                    if(type === 'display') {
+                        let actionXML = `<div class="d-flex justify-content-center gap-2">`
+                            actionXML += `<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>`
+                            actionXML += `<button class="d-flex align-items-center btn btn-outline-${row.paket_count <= 0 ? 'danger' : 'secondary'} rounded-pill fs-6 p-2 ${row.paket_count <= 0 ? 'delete-btn' : 'cant-delete'}" data-id="${row.id}"><i class="bi bi-trash"></i></button>`
+                        actionXML += `</div>`
+                        return actionXML
+                    } else {
+                        return ''
+                    }
+                },
+                orderable: false,
+            }
         ]
     })
 
@@ -59,6 +72,11 @@ $(function() {
                 deleteDataToServer(id)
             }
         })
+    })
+
+    $('#outlet-table').on('click', '.cant-delete', function(e) {
+        e.preventDefault()
+        showAlert('Peringatan', 'warning', 'Cant delete this data, because it has related data')
     })
 
     const storeDataToServer = (data) => {

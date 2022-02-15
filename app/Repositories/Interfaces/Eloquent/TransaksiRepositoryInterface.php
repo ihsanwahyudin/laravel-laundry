@@ -6,6 +6,8 @@ interface TransaksiRepositoryInterface
 {
     public function getAllTransactionData();
 
+    public function filterTransactionDataByDate($startDate, $endDate);
+
     public function createTransaksi(array $payload);
 
     public function getLatestTransaksiData();

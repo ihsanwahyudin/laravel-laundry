@@ -38,4 +38,25 @@ interface LaporanRepositoryInterface
 
     public function getLaporanTransaksiPerTahunPerPaket();
 
+    public function getIncomeCurrentMonth();
+
+    public function countTransactionData();
+
+    public function countMemberData();
+
+    public function getRecentlyTransaction();
+
+    public function getIncomePerDayCurrentMonth();
+
+    public function getMasterDataLogs();
+
+    public function getTransaksiLogs();
+
+    public function getLatestTransaction(int $latest);
+
+    public function getAmountOfTransactionPerStatusTransaction();
+
+    public function getAmountOfTransactionPerDayPerStatusTransaction();
+
+    public function getNumberOfMemberPerGender();
 }

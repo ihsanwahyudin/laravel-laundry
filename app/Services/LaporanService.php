@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Repositories\Interfaces\Eloquent\LaporanRepositoryInterface;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
 
 class LaporanService
 {
@@ -93,5 +95,67 @@ class LaporanService
     public function getLaporanTransaksiPerTahunPerPaket()
     {
         return $this->laporanRepository->getLaporanTransaksiPerTahunPerPaket();
+    }
+
+    public function getIncomeCurrentMonth()
+    {
+        return $this->laporanRepository->getIncomeCurrentMonth();
+    }
+
+    public function getTransactionAmount()
+    {
+        return $this->laporanRepository->countTransactionData();
+    }
+
+    public function getNumberOfMember()
+    {
+        return $this->laporanRepository->countMemberData();
+    }
+
+    public function getRecentlyTransaction()
+    {
+        return $this->laporanRepository->getRecentlyTransaction();
+    }
+
+    public function getIncomePerDayCurrentMonth()
+    {
+        return $this->laporanRepository->getIncomePerDayCurrentMonth();
+    }
+
+    public function getRecentlyActivity()
+    {
+        $masterData = $this->laporanRepository->getMasterDataLogs()->toArray();
+        $transaksiData = $this->laporanRepository->getTransaksiLogs()->toArray();
+
+        $data = new Collection(array_merge($masterData, $transaksiData));
+        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+            return Carbon::parse($date['created_at'])->format('d-M-Y');
+        });
+        return $data;
+    }
+
+    public function getLatestTransaction($limit)
+    {
+        return $this->laporanRepository->getLatestTransaction($limit);
+    }
+
+    public function getAmountOfTransactionPerStatusTransaction()
+    {
+        return $this->laporanRepository->getAmountOfTransactionPerStatusTransaction();
+    }
+
+    public function getAmountOfTransactionPerDayPerStatusTransaction()
+    {
+        $data = $this->laporanRepository->getAmountOfTransactionPerDayPerStatusTransaction();
+        $result = new Collection($data);
+        $result = $result->groupBy(function($data) {
+            return $data['status_transaksi'];
+        });
+        return $result;
+    }
+
+    public function getNumberOfMemberPerGender()
+    {
+        return $this->laporanRepository->getNumberOfMemberPerGender();
     }
 }

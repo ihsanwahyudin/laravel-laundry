@@ -1,5 +1,6 @@
 import clientRequest from "../api.js"
-import { showConfirmAlert, showToast } from "../sweetalert.js"
+import { showConfirmAlert, showToast, showAlert } from "../sweetalert.js"
+import { formatNumber } from "../utility.js"
 
 $(function() {
     let paketData = []
@@ -31,8 +32,30 @@ $(function() {
             },
             { data: 'nama_paket' },
             { data: 'jenis' },
-            { data: 'harga' },
-            { data: 'action', orderable: false, searchable: false }
+            {
+                data: function(data, type, row) {
+                    if(type === 'display') {
+                        return formatNumber(data.harga)
+                    } else {
+                        return data.harga
+                    }
+                },
+                orderable: true,
+            },
+            {
+                render: function(data, type, row, meta) {
+                    if(type === 'display') {
+                        let actionXML = `<div class="d-flex justify-content-center gap-2">`
+                            actionXML += `<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>`
+                            actionXML += `<button class="d-flex align-items-center btn btn-outline-${row.detail_transaksi_count <= 0 ? 'danger' : 'secondary'} rounded-pill fs-6 p-2 ${row.detail_transaksi_count <= 0 ? 'delete-btn' : 'cant-delete'}" data-id="${row.id}"><i class="bi bi-trash"></i></button>`
+                        actionXML += `</div>`
+                        return actionXML
+                    } else {
+                        return ''
+                    }
+                },
+                orderable: false,
+            }
         ]
     })
 
@@ -72,6 +95,11 @@ $(function() {
                 deleteDataToServer(id)
             }
         })
+    })
+
+    $('#paket-table').on('click', '.cant-delete', function(e) {
+        e.preventDefault()
+        showAlert('Peringatan', 'warning', 'Cant delete this data, because it has related data')
     })
 
     const getOutletData = () => {
@@ -115,6 +143,7 @@ $(function() {
         if(selected) {
             selectedData = selected
             for (const key in selected) {
+                console.info(selected[key])
                 $(`#update-data-modal [name="${key}"]`).val(selected[key])
             }
         }
@@ -168,7 +197,6 @@ $(function() {
 		$(`${el} input.form-control`).val('')
 		$(`${el} textarea.form-control`).val('')
 	}
-
 
     getOutletData()
 })

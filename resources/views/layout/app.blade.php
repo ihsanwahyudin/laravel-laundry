@@ -28,6 +28,7 @@
         </div>
     </div>
 
+    <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/fontawesome/all.min.js') }}"></script>
 	<script src="{{ asset('vendors/mazer/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 	<script src="{{ asset('vendors/mazer/dist/assets/js/bootstrap.bundle.min.js') }}"></script>

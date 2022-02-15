@@ -16,7 +16,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function allData()
     {
-        return $this->user->with('outlet')->get();
+        return $this->user->with('outlet')->where('role', '!=', 'owner')->get();
     }
 
     public function create(array $payload)

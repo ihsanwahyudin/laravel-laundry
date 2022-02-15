@@ -59,8 +59,8 @@
         <div class="card-body">
             <h3>Data Laporan</h3>
             <div class="d-flex justify-content-end">
-                <a href="/api/laporan/transaksi/export-pdf" target="_blank" class="btn btn-outline-primary rounded-pill me-2">PDF</a>
-                <a href="/api/laporan/transaksi/export-excel" target="_blank" class="btn btn-outline-primary rounded-pill me-2">Excel</a>
+                <a href="/api/laporan/transaksi/export-pdf" target="_blank" class="btn btn-outline-primary rounded-pill me-2" id="export-pdf">PDF</a>
+                <a href="/api/laporan/transaksi/export-excel" target="_blank" class="btn btn-outline-primary rounded-pill me-2" id="export-excel">Excel</a>
                 <button class="btn btn-outline-primary rounded-pill me-2" id="export-txt">Text</button>
             </div>
             <div class="table-responsive p-2">
@@ -91,7 +91,6 @@
 @include('admin.laporan-transaksi.modal')
 @endsection
 @push('script')
-    <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('vendors/moment/moment.js') }}"></script>

@@ -25,17 +25,34 @@
                         <form action="/authenticate" method="POST">
                             @csrf
                             <div class="form-group position-relative has-icon-left mb-4">
-                                <input type="text" name="email" class="form-control form-control-xl" placeholder="Username" />
+                                <input type="text" name="email" class="form-control form-control-xl @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" autocomplete="email" autofocus>
                                 <div class="form-control-icon">
                                     <i class="bi bi-person"></i>
                                 </div>
+                                @error('email')
+                                    <span class="position-absolute invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group position-relative has-icon-left mb-4">
-                                <input type="password" name="password" class="form-control form-control-xl" placeholder="Password" />
+                                <input type="password" name="password" class="form-control form-control-xl @error('password') is-invalid @enderror" placeholder="Password" />
                                 <div class="form-control-icon">
                                     <i class="bi bi-shield-lock"></i>
                                 </div>
+                                @error('password')
+                                    <span class="position-absolute invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
+                            {{-- @error('email')
+                                <div class="mt-2">
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                            @enderror --}}
                             <div class="form-check form-check-lg d-flex align-items-end">
                                 <input class="form-check-input me-2" type="checkbox" name="remember" value="true" id="flexCheckDefault" />
                                 <label class="form-check-label text-gray-600" for="flexCheckDefault">

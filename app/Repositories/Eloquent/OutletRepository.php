@@ -16,7 +16,7 @@ class OutletRepository implements OutletRepositoryInterface
 
     public function allData()
     {
-        return $this->outlet->all();
+        return $this->outlet->withCount('paket')->get();
     }
 
     public function create(array $payload)

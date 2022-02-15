@@ -115,7 +115,7 @@
                                 <option selected disabled>Choose Packages..</option>
                                 <option value="kiloan">Kiloan</option>
                                 <option value="selimut">Selimut</option>
-                                <option value="bad_cover">Bad Cover</option>
+                                <option value="bed_cover">Bed Cover</option>
                                 <option value="kaos">Kaos</option>
                                 <option value="lain">Lain</option>
                             </select>

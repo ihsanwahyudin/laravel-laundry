@@ -2,16 +2,23 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\LogActivity;
+use App\Models\Member;
+use App\Models\Pembayaran;
 use App\Models\Transaksi;
 use App\Repositories\Interfaces\Eloquent\LaporanRepositoryInterface;
+use Carbon\Carbon;
 
 class LaporanRepository implements LaporanRepositoryInterface
 {
-    private $transaksi;
+    private $transaksi, $pembayaran, $member, $logActivity;
 
-    public function __construct(Transaksi $transaksi)
+    public function __construct(Transaksi $transaksi, Pembayaran $pembayaran, Member $member, LogActivity $logActivity)
     {
         $this->transaksi = $transaksi;
+        $this->pembayaran = $pembayaran;
+        $this->member = $member;
+        $this->logActivity = $logActivity;
     }
 
     public function getLaporanTransaksi()
@@ -123,5 +130,69 @@ class LaporanRepository implements LaporanRepositoryInterface
         return $this->transaksi->selectRaw('MONTH(transaksi_tanggal) as bulan, YEAR(transaksi_tanggal) as tahun, karyawan_id, karyawan_nama, karyawan_alamat, karyawan_telepon, karyawan_email, karyawan_website, karyawan_logo, karyawan_latitude, karyawan_longitude, karyawan_status, karyawan_created_at, karyawan_updated_at, outlet_id, outlet_nama, outlet_alamat, outlet_telepon, outlet_email, outlet_website, outlet_logo, outlet_latitude, outlet_longitude, outlet_status, outlet_created_at, outlet_updated_at, COUNT(transaksi_id) as jumlah')->groupBy('bulan', 'tahun', 'karyawan_id', 'outlet_id')->latest()->get();
     }
 
+    public function getIncomeCurrentMonth()
+    {
+        $data = $this->transaksi->with('pembayaran')->where('status_pembayaran', 'lunas')->get();
+        $total = $data->sum(function ($data) {
+            return $data->pembayaran->total_pembayaran;
+        });
+        return $total;
+    }
 
+    public function countTransactionData()
+    {
+        return $this->transaksi->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->count();
+    }
+
+    public function countMemberData()
+    {
+        return $this->member->count();
+    }
+
+    public function getRecentlyTransaction()
+    {
+        return $this->transaksi->with('member')->latest()->limit(3)->get();
+    }
+
+    public function getIncomePerDayCurrentMonth()
+    {
+        return $this->pembayaran->join('tb_transaksi', 'tb_transaksi.id', '=', 'tb_pembayaran.transaksi_id')
+            ->where('tb_transaksi.status_pembayaran', 'lunas')
+            ->whereBetween('tb_pembayaran.created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
+            ->selectRaw('CONCAT(YEAR(tb_pembayaran.created_at), "-", MONTH(tb_pembayaran.created_at), "-", DAY(tb_pembayaran.created_at)) as tanggal, SUM(tb_pembayaran.total_pembayaran) as pemasukan')
+            ->groupBy('tanggal')
+            ->get();
+    }
+
+    public function getMasterDataLogs()
+    {
+        return $this->logActivity->with(['referenceTable', 'user', 'detailLogActivity' => function($q) {
+            $q->with('tableColumnList')->get();
+        }])->latest()->limit(3)->get();
+    }
+
+    public function getTransaksiLogs()
+    {
+        return $this->transaksi->with('user')->latest()->limit(3)->get();
+    }
+
+    public function getLatestTransaction(int $limit)
+    {
+        return $this->transaksi->with(['user', 'member'])->latest()->limit($limit)->get();
+    }
+
+    public function getAmountOfTransactionPerStatusTransaction()
+    {
+        return $this->transaksi->selectRaw('status_transaksi, COUNT(id) as jumlah')->groupBy('status_transaksi')->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->get();
+    }
+
+    public function getAmountOfTransactionPerDayPerStatusTransaction()
+    {
+        return $this->transaksi->selectRaw('CONCAT(YEAR(updated_at), "-", MONTH(updated_at), "-", DAY(updated_at)) as tanggal, status_transaksi, COUNT(id) as jumlah')->groupBy('tanggal', 'status_transaksi')->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->get();
+    }
+
+    public function getNumberOfMemberPerGender()
+    {
+        return $this->member->selectRaw('jenis_kelamin, COUNT(id) as jumlah')->groupBy('jenis_kelamin')->get();
+    }
 }

@@ -160,7 +160,6 @@ $(function() {
 
     $('#store-transaction').on('submit', function(e) {
         e.preventDefault()
-        console.info(selectedData)
         if(validation()) {
             Swal.fire({
                 title: 'Konfirmasi Transaksi',
@@ -328,7 +327,7 @@ $(function() {
                 item.jenis,
                 formatNumber(item.harga),
                 `<input type="number" name="qty[]" class="form-control mx-auto text-center" style="width: 100px" value="${item.qty}" data-id="${item.id}">`,
-                `<input type="text" name="ket[]" class="form-control mx-auto text-center" style="width: 400px" value="${data.ket}" data-id="${data.id}" autocomplete="off">`,
+                `<input type="text" name="ket[]" class="form-control mx-auto text-center" style="width: 400px" value="${item.ket}" data-id="${item.id}" autocomplete="off">`,
                 `<div class="d-flex justify-content-center">
                     <button type="button" class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="${item.id}">
                         <i class="bi bi-trash"></i>

@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Repositories\Interfaces\Eloquent\LogActivityRepositoryInterface;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 
 class LogActivityService
@@ -47,9 +49,9 @@ class LogActivityService
         $this->logActivityRepository->create($payload);
     }
 
-    public function getAllLogs()
+    public function getMasterDataLogs()
     {
-        return $this->logActivityRepository->getAllLogs();
+        return $this->logActivityRepository->getMasterDataLogs();
     }
 
     public function findTableIdByTableName($tableName)
@@ -60,5 +62,29 @@ class LogActivityService
     public function getDateLogs()
     {
         return $this->logActivityRepository->getDateLogs();
+    }
+
+    public function getAllLogs()
+    {
+        $masterData = $this->logActivityRepository->getMasterDataLogs()->toArray();
+        $transaksiData = $this->logActivityRepository->getTransaksiLogs()->toArray();
+
+        $data = new Collection(array_merge($masterData, $transaksiData));
+        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+            return Carbon::parse($date['created_at'])->format('d-M-Y');
+        });
+        return $data;
+    }
+
+    public function filterLogs($payload)
+    {
+        $masterData = $this->logActivityRepository->filterLogsMasterData($payload['start_date'], $payload['end_date'])->toArray();
+        $transaksiData = $this->logActivityRepository->filterLogsTransaksi($payload['start_date'], $payload['end_date'])->toArray();
+
+        $data = new Collection(array_merge($masterData, $transaksiData));
+        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+            return Carbon::parse($date['created_at'])->format('d-M-Y');
+        });
+        return $data;
     }
 }

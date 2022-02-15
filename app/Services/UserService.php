@@ -35,6 +35,7 @@ class UserService
         $changed = $data->getChanges();
         if(count($changed) > 0) {
             $changed['id'] = $data->id;
+            $changed['name'] = $data->name;
             $this->logActivityService->createLog('tb_user', $changed, 3);
         }
         return $data;

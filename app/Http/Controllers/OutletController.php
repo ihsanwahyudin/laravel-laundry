@@ -26,16 +26,16 @@ class OutletController extends Controller
         $outlet = $this->outletService->getAllData();
         return DataTables::of($outlet)
             ->addIndexColumn()
-            ->addColumn('action', function ($outlet) {
-                $buttons = '<div class="d-flex justify-content-center gap-2">';
-                $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$outlet->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
-                $buttons .=
-                    '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$outlet->id.'"><i class="bi bi-trash"></i></button>';
-                $buttons .= '</div>';
+            // ->addColumn('action', function ($outlet) {
+            //     $buttons = '<div class="d-flex justify-content-center gap-2">';
+            //     $buttons .=
+            //         '<button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="'.$outlet->id.'" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button>';
+            //     $buttons .=
+            //         '<button class="d-flex align-items-center btn btn-outline-danger rounded-pill fs-6 p-2 delete-btn" data-id="'.$outlet->id.'"><i class="bi bi-trash"></i></button>';
+            //     $buttons .= '</div>';
 
-                return $buttons;
-            })
+            //     return $buttons;
+            // })
             ->make(true);
     }
 

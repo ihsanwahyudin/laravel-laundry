@@ -56,7 +56,6 @@
 @include('admin.outlet.modal')
 @endsection
 @push('script')
-    <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
     <script type="module" src="{{ asset('js/crud/outlet.js') }}"></script>
