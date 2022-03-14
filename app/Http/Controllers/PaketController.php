@@ -24,6 +24,7 @@ class PaketController extends Controller
     public function index()
     {
         $paket = $this->paketService->getAllData();
+        // return response()->json($paket);
         return DataTables::of($paket)
             ->addIndexColumn()
             // ->addColumn('action', function ($paket) {

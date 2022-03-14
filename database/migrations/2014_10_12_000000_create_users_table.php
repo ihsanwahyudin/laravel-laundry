@@ -27,22 +27,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->foreign('outlet_id')->references('id')->on('tb_outlet');
         });
-
-        User::create([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
-            'role' => 'admin',
-            'outlet_id' => null,
-            'password' => Hash::make('admin')
-        ]);
-
-        User::create([
-            'name' => 'owner',
-            'email' => 'owner@owner.com',
-            'role' => 'owner',
-            'outlet_id' => null,
-            'password' => Hash::make('owner')
-        ]);
     }
 
     /**

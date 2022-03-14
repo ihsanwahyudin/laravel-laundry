@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('main')
 <div class="page-heading">
-    <h3>Profile Statistics</h3>
+    <h3>Laundry Statistics</h3>
 </div>
 <div class="page-content">
     <section class="row">

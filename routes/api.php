@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\LogActivityController;
+use App\Http\Controllers\OutletController;
+use App\Http\Controllers\PaketController;
+use App\Http\Controllers\TestController;
 use App\Models\ListTable;
 use App\Models\TableColumnList;
 use App\Models\User;
@@ -73,4 +76,4 @@ Route::get('/changed', function() {
     // dd(array_diff(array_keys($table), $exceptColumn));
 });
 
-Route::get('/test', [LogActivityController::class, 'test']);
+Route::get('/test', [TestController::class, 'test']);

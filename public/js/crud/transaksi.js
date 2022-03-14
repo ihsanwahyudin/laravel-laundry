@@ -237,7 +237,29 @@ $(function() {
         }
         clientRequest('/api/transaksi/store', 'POST', data, (status, res) => {
             if(status) {
-                showAlert('Transaksi Berhasil !', 'success', '')
+                const text = `Faktur Pembayaran\n` +
+                `No Invoice\t\t\t: ${res.data.transaksi.kode_invoice}\n` +
+                `Pelanggan\t\t\t: ${data.member.nama}\n` +
+                `No Telp\t\t\t\t: ${data.member.tlp}\n` +
+                `Metode Pembayaran\t: ${res.data.transaksi.metode_pembayaran}\n` +
+                `Status Pembayaran\t\t: ${res.data.transaksi.status_pembayaran}\n` +
+                `*Detail Lengkap*\n` +
+                `http://127.0.0.1:8000/api/transaksi/cetak-faktur/${res.data.transaksi.kode_invoice}` +
+                `\n\n*Terima Kasih Telah Menggunakan Jasa Cucian di Toko Kami*`
+                Swal.fire({
+                    title: 'Transaksi Berhasil !',
+                    html: `
+                    <div class="m-2">
+                        <p class="text-center">Send to</p>
+                        <a target="_blank" href="https://wa.me/6281357517855?text=${encodeURI(text)}">
+                            <i class="bi bi-whatsapp fs-1"></i>
+                        </a>
+                    </div>`,
+                    icon: 'success',
+                    confirmButtonText: 'Kembali',
+                    showCancelButton: false,
+                    confirmButtonColor: '#435ebe',
+                })
                 clearErrors()
                 clearForm()
                 window.open('/api/transaksi/cetak-faktur/' + res.data.transaksi.kode_invoice, '_blank')

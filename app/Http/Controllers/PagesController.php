@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\LogActivityService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
+    private $logActivityService;
+
+    public function __construct(LogActivityService $logActivityService)
+    {
+        $this->logActivityService = $logActivityService;
+    }
+
     public function login()
     {
         return view('auth.login');
@@ -14,7 +22,8 @@ class PagesController extends Controller
 
     public function home()
     {
-        return view('admin.home.index');
+        $data['logs'] = $this->logActivityService->getLogsByUserId(Auth::user()->id);
+        return view('admin.home.index', $data);
     }
 
     public function dashboard()
@@ -65,5 +74,20 @@ class PagesController extends Controller
     public function transaksiPembayaran()
     {
         return view('admin.transaksi-pembayaran.index');
+    }
+
+    public function forgotPassword()
+    {
+        return view('auth.forgot-password');
+    }
+
+    public function resetPassword(Request $request, $token)
+    {
+        return view('auth.reset-password', ['token' => $token, 'email' => $request->email]);
+    }
+
+    public function barangInventaris()
+    {
+        return view('admin.barang-inventaris.index');
     }
 }

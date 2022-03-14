@@ -72,7 +72,7 @@ class OutletController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

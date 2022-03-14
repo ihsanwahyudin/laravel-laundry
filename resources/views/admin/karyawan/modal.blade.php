@@ -91,7 +91,7 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Data Baru</h4>
+                <h4 class="modal-title">Edit Data</h4>
                 <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
                     aria-label="Close">
                     <i data-feather="x"></i>

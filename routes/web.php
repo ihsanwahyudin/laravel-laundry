@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BarangInventarisController;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LogActivityController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +28,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['guest'])->group(function() {
     Route::get('/login', [PagesController::class, 'login'])->name('login');
     Route::post('/authenticate', [AuthController::class, 'authenticate']);
+    Route::get('/forgot-password', [PagesController::class, 'forgotPassword'])->name('password.request');
+    Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
+    Route::get('/reset-password/{token}', [PagesController::class, 'resetPassword'])->name('password.reset');
+    Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -46,6 +53,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/data/karyawan', [PagesController::class, 'karyawan']);
         Route::get('/data/paket', [PagesController::class, 'paket']);
         Route::get('/log-aktivitas', [PagesController::class, 'logAktivitas']);
+        Route::get('/data/barang-inventaris', [PagesController::class, 'barangInventaris']);
     });
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -53,6 +61,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/api/member', MemberController::class);
     Route::resource('/api/user', UserController::class);
     Route::resource('/api/paket', PaketController::class);
+    Route::resource('/api/barang-inventaris', BarangInventarisController::class);
     Route::get('/api/transaksi', [TransaksiController::class, 'index']);
     Route::get('/api/transaksi/non-cash', [TransaksiController::class, 'getNonCashData']);
     Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
@@ -81,4 +90,17 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/api/log-activity/all', [LogActivityController::class, 'getAllActivities']);
     Route::post('/api/log-activity/filter', [LogActivityController::class, 'filterActivities']);
+
+    Route::get('/member/export-excel', [ExportController::class, 'exportMemberExcel']);
+    Route::post('/member/import-excel', [ImportController::class, 'importMemberExcel']);
+    Route::get('/outlet/export-excel', [ExportController::class, 'exportOutletExcel']);
+    Route::post('/outlet/import-excel', [ImportController::class, 'importOutletExcel']);
+    Route::get('/paket/export-excel', [ExportController::class, 'exportPaketExcel']);
+    Route::post('/paket/import-excel', [ImportController::class, 'importPaketExcel']);
+    Route::get('/barang-inventaris/export-excel', [ExportController::class, 'exportBarangInventarisExcel']);
+    Route::post('/barang-inventaris/import-excel', [ImportController::class, 'importBarangInventarisExcel']);
 });
+
+
+Route::get('/test', [TestController::class, 'test2']);
+Route::post('/test/simpan', [TestController::class, 'simpan'])->name('test.simpan');

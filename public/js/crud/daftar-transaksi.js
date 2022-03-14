@@ -14,6 +14,22 @@ $(function() {
         displayDetailTransaksiData()
     })
 
+    $('#daftar-transaksi-table').on('click', '.checkbox-item', function(e) {
+        const id = $(this).data('id')
+        if(this.checked) {
+            const isAvailable = selectedTransaksi.find(transaksi => transaksi.id === id)
+            if(isAvailable) {
+                const selected = dataTransaksi.find(transaksi => transaksi.id == id)
+                selectedTransaksi.push(selected)
+            }
+        } else {
+            const index = selectedTransaksi.findIndex(transaksi => transaksi.id === id)
+            if(index > -1) {
+                selectedTransaksi.splice(index, 1)
+            }
+        }
+    })
+
     $('#update-status-transaksi').on('click', function(e) {
         e.preventDefault()
         if(validation() && selectedTransaksi.status_transaksi !== 'diambil') {
@@ -243,7 +259,17 @@ $(function() {
                 {
                     render: function(data, type, row, meta) {
                         if(type === 'display') {
-                            return `<div class="d-flex justify-content-center"><button class="d-flex align-items-center btn btn-outline-success rounded-pill fs-6 p-2 update-btn" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-pencil-square"></i></button></div>`
+                            return `<div class="d-flex justify-content-center"><button class="d-flex align-items-center btn btn-outline-primary rounded-pill fs-6 p-2 update-btn" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#update-data-modal"><i class="bi bi-exclamation-circle"></i></button></div>`
+                        } else {
+                            return ''
+                        }
+                    },
+                    orderable: false,
+                },
+                {
+                    render: function(data, type, row, meta) {
+                        if(type === 'display') {
+                            return `<div class="d-flex justify-content-center"><input type="checkbox" class="form-check-input checkbox-item" data-id="${row.id}"></div>`
                         } else {
                             return ''
                         }

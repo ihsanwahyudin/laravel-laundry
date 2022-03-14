@@ -34,4 +34,29 @@ class ExportController extends Controller
     {
         return $this->exportService->exportExcelByDate($startDate, $endDate);
     }
+
+    public function exportExcelExample()
+    {
+        return $this->exportService->exportExcelExample();
+    }
+
+    public function exportMemberExcel()
+    {
+        return $this->exportService->exportMemberExcel();
+    }
+
+    public function exportOutletExcel()
+    {
+        return $this->exportService->exportOutletExcel();
+    }
+
+    public function exportPaketExcel()
+    {
+        return $this->exportService->exportPaketExcel();
+    }
+
+    public function exportBarangInventarisExcel()
+    {
+        return $this->exportService->exportBarangInventarisExcel();
+    }
 }

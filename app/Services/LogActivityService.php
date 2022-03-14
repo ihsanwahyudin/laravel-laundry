@@ -87,4 +87,16 @@ class LogActivityService
         });
         return $data;
     }
+
+    public function getLogsByUserId($userID)
+    {
+        $masterData = $this->logActivityRepository->getMasterDataLogsByUserID($userID)->toArray();
+        $transaksiData = $this->logActivityRepository->getTransaksiLogsByUserID($userID)->toArray();
+
+        $data = new Collection(array_merge($masterData, $transaksiData));
+        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+            return Carbon::parse($date['created_at'])->format('d-M-Y');
+        });
+        return $data;
+    }
 }

@@ -36,7 +36,7 @@
                                 </svg>
                             </label>
                             <select class="form-select" name="jenis_kelamin" id="inputGroupSelect01">
-                                <option selected disabled>Choose gender...</option>
+                                <option selected disabled value="">Choose gender...</option>
                                 <option value="L">Laki - laki</option>
                                 <option value="P">Perempuan</option>
                             </select>
@@ -129,6 +129,32 @@
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade text-left modal-borderless" id="import-data-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Import Data</h4>
+                <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
+                    aria-label="Close">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/member/import-excel" method="POST" enctype="multipart/form-data">
+                    @csrf
+                        <div class="mb-2">
+                            <div class="form-group m-0">
+                                <input type="file" name="file" class="form-control @error('file') is-invalid @enderror" placeholder="Nama" autocomplete="off">
+                            </div>
+                            <span class="form-errors"></span>
+                        </div>
+                    <button type="submit" class="btn btn-primary">Import Excel</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

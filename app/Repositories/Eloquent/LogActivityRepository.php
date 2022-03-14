@@ -64,4 +64,16 @@ class LogActivityRepository implements LogActivityRepositoryInterface
     {
         return $this->transaksi->with('user')->whereBetween('created_at', [$startDate, $endDate])->latest()->get();
     }
+
+    public function getMasterDataLogsByUserID(int $id)
+    {
+        return $this->logActivity->with(['referenceTable', 'user', 'detailLogActivity' => function($q) {
+            $q->with('tableColumnList')->get();
+        }])->where('user_id', $id)->latest()->get();
+    }
+
+    public function getTransaksiLogsByUserID(int $id)
+    {
+        return $this->transaksi->with('user')->where('user_id', $id)->latest()->get();
+    }
 }

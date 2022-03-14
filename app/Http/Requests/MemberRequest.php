@@ -26,7 +26,7 @@ class MemberRequest extends FormRequest
     {
         return [
             'nama' => ['required'],
-            'tlp' => ['required', 'numeric', 'digits_between:5,20'],
+            'tlp' => ['required'],
             'jenis_kelamin' => ['required', 'in:L,P'],
             'alamat' => ['required']
         ];

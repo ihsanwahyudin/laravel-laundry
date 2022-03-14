@@ -1,0 +1,4602 @@
+[
+  {
+    "achievement":"Tales of Monstrous Madness",
+    "category":"Wonders of the World",
+    "description":"Collect the entire \"Toki Alley Tales\" series.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Trying to Tame Me?\"",
+    "category":"Wonders of the World",
+    "description":"Use the Omni-Ubiquity Net item to capture 1 wild animal.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Natural Born Hunter",
+    "category":"Wonders of the World",
+    "description":"Use the Omni-Ubiquity Net item to capture 30 wild animals.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Zoo Tycoon",
+    "category":"Wonders of the World",
+    "description":"Use the Omni-Ubiquity Net item to capture 100 wild animals.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"Overlooking View",
+    "category":"Wonders of the World",
+    "description":"Reach the very top of Qingyun Peak.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Remains of the Gale",
+    "category":"Wonders of the World",
+    "description":"Reach the top of the tower in Stormterror's Lair.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Seeds of Stories, Brought By the Wind...\"",
+    "category":"Wonders of the World",
+    "description":"Reach the nameless island northeast of Mondstadt.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Unswerving",
+    "category":"Wonders of the World",
+    "description":"Open the chest in the middle of the heart-shaped rock formation.",
+    "requirements":"Requires two players (Co-Op) to stand in the heart for the chest to spawn.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Initiating Warp Drive!",
+    "category":"Wonders of the World",
+    "description":"Pass through the time tunnel in the skies of Cape Oath.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Beloved of the Anemo Archon",
+    "category":"Wonders of the World",
+    "description":"Take a seat in the hands of the God Statue in Mondstadt.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Best Sword in the Cemetery",
+    "category":"Wonders of the World",
+    "description":"Unlock the Tri-Seal of the Sword Cemetery.",
+    "requirements":"Complete Break the Sword Cemetery Seal.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hidden Palace of Guizang Formula",
+    "category":"Wonders of the World",
+    "description":"Follow in the footsteps of immortals, and unlock the Domain's door.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Cecilia Garden",
+    "category":"Wonders of the World",
+    "description":"Return the Seelie to their rightful places and unlock the entrance to a Domain in Wolvendom.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hidden Palace of Zhou Formula",
+    "category":"Wonders of the World",
+    "description":"Follow the Seelie and light the torches to unlock the entrance to a domain in Wuwang Hill.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"If you put your heart into it...\"",
+    "category":"Wonders of the World",
+    "description":"Cook 1 suspicious-tasting dish.",
+    "requirements":"Fail the cooking mini-game and produce a Suspicious-quality dish.\nFailing the mini-game but receiving a character's special dish instead of a Suspicious-quality dish will still count. Suspicious dishes produced by Hu Tao's talent do not count.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"...Anyone can be a gourmet.\"",
+    "category":"Wonders of the World",
+    "description":"Cook 10 suspicious-tasting dishes.",
+    "requirements":"Fail the cooking mini-game and produce a Suspicious-quality dish 10 times.\nFailing the mini-game but receiving a character's special dish instead of a Suspicious-quality dish will still count. Suspicious dishes produced by Hu Tao's talent do not count.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Boared to Death",
+    "category":"Wonders of the World",
+    "description":"Be defeated by a wild boar.",
+    "requirements":"This is easily achieved by letting a character fall to their death and then revive them with low-HP food. This allows them to be more easily defeated by a boar.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Golden Gliding License",
+    "category":"Wonders of the World",
+    "description":"Glide a long, long distance in one go.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"It's the Same As Having Wings",
+    "category":"Wonders of the World",
+    "description":"Glide continuously for over 80s.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Quick As Lightning",
+    "category":"Wonders of the World",
+    "description":"Sprint continuously (or use an alternative sprint) for over 15s.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Friends the World Over",
+    "category":"Wonders of the World",
+    "description":"Meet all sorts of people during your adventure.",
+    "requirements":"Achieve a total of 10,000 dialogue option interactions when speaking with NPCs.\nObjects that can be interacted with count as NPCs. It's unknown if the object needs to have \"dialogue\" or not. These do not need to be unique dialogue choices.",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Megastar in Mondstadt",
+    "category":"Wonders of the World",
+    "description":"Reach Reputation Lv. 8 in Mondstadt.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"Legend in Liyue",
+    "category":"Wonders of the World",
+    "description":"Reach Reputation Lv. 8 in Liyue.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"Illustrious in Inazuma",
+    "category":"Wonders of the World",
+    "description":"Reach Reputation Lv. 10 in Inazuma.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"QUEST CLEAR",
+    "category":"Wonders of the World",
+    "description":"Complete 10 Bounties.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"QUEST CLEAR",
+    "category":"Wonders of the World",
+    "description":"Complete 20 Bounties.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"QUEST CLEAR",
+    "category":"Wonders of the World",
+    "description":"Complete 30 Bounties.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"Hero-in-Training",
+    "category":"Wonders of the World",
+    "description":"Complete 10 Requests.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hero-in-Training",
+    "category":"Wonders of the World",
+    "description":"Complete 20 Requests.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Hero-in-Training",
+    "category":"Wonders of the World",
+    "description":"Complete 30 Requests.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"QUEST FAILED",
+    "category":"Wonders of the World",
+    "description":"Lost track of a Bounty target.",
+    "requirements":"Run out of time during a Bounty.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Bleak Midwinter",
+    "category":"Wonders of the World",
+    "description":"Succumb to Sheer Cold...",
+    "requirements":"Get any party member knocked out from Sheer Cold.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Priest, Princess, and Scribe",
+    "category":"Wonders of the World",
+    "description":"Claim the treasure of the Entombed City.",
+    "requirements":"Complete Dragonspine's Last Trio.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Prodigal Son's Return",
+    "category":"Wonders of the World",
+    "description":"Follow the path of one of the members of the long-lost investigation team to where they embarked on their journey home.",
+    "requirements":"Open the chest that appears after completing Ragged Records.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Snow-Stored History",
+    "category":"Wonders of the World",
+    "description":"Discover the fate of a long-lost investigation team that once explored Dragonspine.",
+    "requirements":"Complete A Land Entombed.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Glacial Steel",
+    "category":"Wonders of the World",
+    "description":"Obtain an ancient weapon made of Starsilver.",
+    "requirements":"Complete Dragonspine's Glacial Secret.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Futile Endeavor",
+    "category":"Wonders of the World",
+    "description":"Discover the remains of many ruin machines.",
+    "requirements":"Complete Cryptic Message in Dragonspine.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Untellable Tale",
+    "category":"Wonders of the World",
+    "description":"Make an unexpected friend in an unexpected location.",
+    "requirements":"Open the chest that appears after completing The Foxes' Affection.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Towering Achievement",
+    "category":"Wonders of the World",
+    "description":"Reach the summit of Dragonspine.",
+    "requirements":"Collect the Crimson Agate at the summit of Dragonspine.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Winter Wonderland",
+    "category":"Wonders of the World",
+    "description":"Discover a Cryo Crystalfly beneath a snow pile.",
+    "requirements":"The Northern coast between Wyrmrest Valley and Snow-Covered Path and Southern coast below the right waypoint of Starglow Cavern appears to have some.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Hunter Becomes the Hunted",
+    "category":"Wonders of the World",
+    "description":"Be defeated by The Great Snowboar King.",
+    "requirements":"Get any party member knocked out by The Great Snowboar King.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Chill Out!",
+    "category":"Wonders of the World",
+    "description":"Defeat The Great Snowboar King while the latter is in berserker mode.",
+    "requirements":"Berserker mode is when his eyes glow red and have eye trails.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Glutton for Goulash",
+    "category":"Wonders of the World",
+    "description":"Learn to make Goulash.",
+    "requirements":"Obtained from Ah, Fresh Meat!.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Wrath of the Gods",
+    "category":"Wonders of the World",
+    "description":"Get struck by lightning.",
+    "requirements":"Roughly two seconds before lightning strikes, the location is indicated by a blue glow and arcs of electricity rising from the ground.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sky High",
+    "category":"Wonders of the World",
+    "description":"Climb the Skyfrost Nail after it has been restored.",
+    "requirements":"Collect the Crimson Agate at the top of the Skyfrost Nail after completing In the Mountains.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Transmutation Nuclide",
+    "category":"Wonders of the World",
+    "description":"Use the Parametric Transformer to complete one material transmutation.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"...You could hear Paimon all along, couldn't you?",
+    "category":"Wonders of the World",
+    "description":"Even Paimon gets tired sometimes.",
+    "requirements":"Adjust the dialogue volume in the audio settings until Paimon repeats herself four times.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Yo-Ho-Ho, and a Bottle of Dandelion Wine",
+    "category":"Wonders of the World",
+    "description":"Climb aboard your Waverider.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Mighty and Illuminated Wave Rider",
+    "category":"Wonders of the World",
+    "description":"Continuously sail your Waverider for a certain period of time.",
+    "requirements":"The achievement will actually only trigger upon leaving the Waverider and not pop up directly once the required time has been spent.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Nice Boat!",
+    "category":"Wonders of the World",
+    "description":"Switch Waveriders with another player.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"...And Her Name Is the Mary Celeste",
+    "category":"Wonders of the World",
+    "description":"Suffer the destruction of your Waverider...",
+    "requirements":"Will not unlock if destroyed by a whirlpool.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Déjà Vu!",
+    "category":"Wonders of the World",
+    "description":"Continuously sail your Waverider at high speeds for a certain period of time.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Yamada Go's Wooden Mallet",
+    "category":"Wonders of the World",
+    "description":"See through the illusions of the Tanuki several times.",
+    "requirements":"Find 15 disguised Bake-Danukis.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Kujirai Art, Temari Jutsu\"",
+    "category":"Wonders of the World",
+    "description":"Play a game of Temari with Kujirai",
+    "requirements":"After completing Temaria Game, unlock Temari in Co-op Mode by successfully completing three of Kid Kujirai's Temari challenges in one of his locations.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Temari for Life",
+    "category":"Wonders of the World",
+    "description":"Have another player join a game of Temari that you are hosting.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Paimon's Lucky Day!",
+    "category":"Wonders of the World",
+    "description":"Draw a \"Great Fortune\" fortune slip at the Grand Narukami Shrine.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Just My Luck...",
+    "category":"Wonders of the World",
+    "description":"Draw a \"Great Curse\" fortune slip at the Grand Narukami Shrine.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Underground... Overrated?",
+    "category":"Wonders of the World",
+    "description":"Sometimes, the real treasure is the things you learn along the way.",
+    "requirements":"Earned during The Farmer's Treasure.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"SHUUMATSU GAIDEN",
+    "category":"Wonders of the World",
+    "description":"Get caught up in the fight between the Shuumatsuban and the Fatui...",
+    "requirements":"Complete Gendou Ringo's Strange Fortune Slips.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Iwakura Out",
+    "category":"Wonders of the World",
+    "description":"Witness the end of the Iwakura Clan.",
+    "requirements":"Complete Iwakura Art's Downfall.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Who Let the Dogs Out",
+    "category":"Wonders of the World",
+    "description":"Set Toratarou free.",
+    "requirements":"Toratarou can be found caged in the southeast corner of Jinren Island, and freed with a Metal Key.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"You Can't Help Your Feelings",
+    "category":"Wonders of the World",
+    "description":"Help Hiromi resolve his angst.",
+    "requirements":"Complete Hiromi's Watch.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"They Shall Not Grow Old",
+    "category":"Wonders of the World",
+    "description":"Pay your respects to the deceased.",
+    "requirements":"Complete Pay Your Respects.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Oh, the Humanity!",
+    "category":"Wonders of the World",
+    "description":"Witness the fate of the Samurai.",
+    "requirements":"Complete the second part of \"Fate of a Fighter.\"",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Hollow Soul",
+    "category":"Wonders of the World",
+    "description":"Find Washizu's lost possessions.",
+    "requirements":"Complete Sinister Instruction.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rise and Shrine",
+    "category":"Wonders of the World",
+    "description":"Find all the shrines on Yashiori Island.",
+    "requirements":"Interact with all of the five Shrines of Yashiori Island around Yashiori Island (not counting the Outsider Shrine).",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"...And I Would Walk 3,000 More",
+    "category":"Wonders of the World",
+    "description":"Find Chouji on Tatarasuna and Narukami Island.",
+    "requirements":"Complete Chouji's Travels.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Doctor's Odyssey",
+    "category":"Wonders of the World",
+    "description":"Find out what happened to Yasumoto.",
+    "requirements":"Complete Yasumoto's Last Notes.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Knock Knock",
+    "category":"Wonders of the World",
+    "description":"Disable the containment dome surrounding the Mikage Furnace.",
+    "requirements":"Earned during Tatara Tales (Quest).",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Kannazuka Battle Plan",
+    "category":"Wonders of the World",
+    "description":"Defeat the revived Electro Hypostasis.",
+    "requirements":"Earned during Sakura Arborism.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Why We Fight",
+    "category":"Wonders of the World",
+    "description":"Help Masanori return to his senses.",
+    "requirements":"Complete Dreams of Sword Art.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Oowazamono",
+    "category":"Wonders of the World",
+    "description":"Defeat Masanori with ease.",
+    "requirements":"Defeat Masanori within 30 seconds.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Second Blooming",
+    "category":"Wonders of the World",
+    "description":"Obtain Hanayama Kaoru's gift.",
+    "requirements":"Complete Hanayama Kaoru's Flowery Plan.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Thank You, Come Again",
+    "category":"Wonders of the World",
+    "description":"Obtain the grand prize from Takashi's chests.",
+    "requirements":"Obtain the Hamayumi diagram from Takashi's chests.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Shocking... Positively Shocking",
+    "category":"Wonders of the World",
+    "description":"Get struck down by Balethunder...",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Jackpot",
+    "category":"Wonders of the World",
+    "description":"Use the Kamuijima Cannon to reveal a treasure trove.",
+    "requirements":"Fire the southern-most cannon in the Kannazuka region towards the Shakkei Pavilion domain, with an elevation of 2 notches.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Blade of Tatara",
+    "category":"Wonders of the World",
+    "description":"Obtain the diagram of a certain weapon from the past.",
+    "requirements":"Obtain the Katsuragikiri Nagamasa diagram from The Arsenal.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rest in Peace",
+    "category":"Wonders of the World",
+    "description":"End the wrath of 10 deceased samurai.",
+    "requirements":"Complete Put Them To Rest.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"That's What They Call a Getaway!\"",
+    "category":"Wonders of the World",
+    "description":"Allow a struggling fish to get off the hook.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Oh, so That's How You Fish...\"",
+    "category":"Wonders of the World",
+    "description":"Scare the fish away when casting your rod.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"As You Wish",
+    "category":"Wonders of the World",
+    "description":"Have your fortune told 5 times by Granny Komaki while obtaining an ideal result.",
+    "requirements":"Complete all objectives in Komaki's Spiritherb Fortune.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Mermaid's Tale",
+    "category":"Wonders of the World",
+    "description":"Help Kumi with her problem.",
+    "requirements":"Complete Solitary Sea-Beast.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Distant Sea Shepherd's Treasure",
+    "category":"Wonders of the World",
+    "description":"Gain the most valued treasure of a great pirate from the ramblings of drunkards.",
+    "requirements":"Obtain Rinzou's Signet.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Long John Silver",
+    "category":"Wonders of the World",
+    "description":"Find all of Rinzou's buried treasure.",
+    "requirements":"Check all marked spots during Rinzou's Treasure.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Today, This Seal — Tomorrow, Watatsumi Island!",
+    "category":"Wonders of the World",
+    "description":"Break the seal over the Electro Archon's shrine.",
+    "requirements":"Activate the four Electro Elemental Monuments around the rundown shrine on the eastmost islet of Watatsumi Island, in the order shown when interacting with the nearby Mysterious Pillar.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Palace in a Pool",
+    "category":"Wonders of the World",
+    "description":"Unlock \"Palace in a Pool\"",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Stranding of the Beagle",
+    "category":"Wonders of the World",
+    "description":"Explore Watatsumi Island, following in the footsteps of an unknown researcher.",
+    "requirements":"Find all five Researcher's Notes on Watatsumi Island.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"I am a cat named Neko.\"",
+    "category":"Wonders of the World",
+    "description":"Meet Neko, the \"Provisional Head Priestess of the Asase Shrine.\"",
+    "requirements":"Earned during Seirai Stormchasers: Part I.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Cat in the Clouds",
+    "category":"Wonders of the World",
+    "description":"Witness a \"good thing\" come lately together with Neko, the \"Provisional Head Priestess of the Asase Shrine.\"",
+    "requirements":"Complete Neko Is a Cat: A \"Good Turn\" Comes Late.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Cat's Gift",
+    "category":"Wonders of the World",
+    "description":"Feed the kittens in Seirai Island and gain their affection.",
+    "requirements":"Complete The Cat's Affection.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"It Has to Be Treasure",
+    "category":"Wonders of the World",
+    "description":"\"I already told you, it's just a picture!\"",
+    "requirements":"Complete Relics of Seirai.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"On the Other Side of Homesickness",
+    "category":"Wonders of the World",
+    "description":"Help Oda Tarou take four pictures of Seirai Island.",
+    "requirements":"Complete Reminiscence of Seirai.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"This and That...",
+    "category":"Wonders of the World",
+    "description":"... Try connecting them?",
+    "requirements":"Complete both Light-Up Tile Puzzles in \"Seiraimaru\"",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Davy Jones' Locker",
+    "category":"Wonders of the World",
+    "description":"Unlock all the mechanisms onboard the \"Seiraimaru.\"",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sea of Puzzles",
+    "category":"Wonders of the World",
+    "description":"Unlock one series of mechanisms on Seirai Island",
+    "requirements":"Complete all 4 Light-Up Tile Puzzles around Seirai Island, does not count those inside \"Seiraimaru\"",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Great Amakumo Peak",
+    "category":"Wonders of the World",
+    "description":"Unlock the mechanism beneath Amakumo Peak",
+    "requirements":"Navigate the underground ruins underneath Amakumo Peak and reach the room with the Electroculus",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Traverse the Fog Door",
+    "category":"Wonders of the World",
+    "description":"Get used to Tsurumi Island's odd weather.",
+    "requirements":"Earned during A Particularly Particular Author.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Nihil Sub Caligine Novum",
+    "category":"Wonders of the World",
+    "description":"Seems like you're back to square one...",
+    "requirements":"Earned during Octave of the Maushiro.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"White's Illusion",
+    "category":"Wonders of the World",
+    "description":"Encounter the illusions of the ancient past",
+    "requirements":"Talk to any ghost on Tsurumi Island.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Lovely Sights, Further Than the Eye Can See\"",
+    "category":"Wonders of the World",
+    "description":"Bid farewell to your boatman.",
+    "requirements":"Complete \"Boatman\"'s Task.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Tale of Two Cities",
+    "category":"Wonders of the World",
+    "description":"Even Tsurumi Island seems to be built atop the wreckage of ancient ruins.",
+    "requirements":"Complete Opening Old Memories.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"My Life as an Adventurer\"",
+    "category":"Wonders of the World",
+    "description":"Help Roald to complete his adventure diary.",
+    "requirements":"Complete The Saga of Mr. Forgetful.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Light Up the Fog",
+    "category":"Wonders of the World",
+    "description":"Light up all the Stormstones on the Autake Plains.",
+    "requirements":"Complete Lighting Chise's Path.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"P—Paimon ate it...\"",
+    "category":"Wonders of the World",
+    "description":"Have the Maushiro that you got go missing.",
+    "requirements":"Complete A Particularly Particular Author.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Guessing Game",
+    "category":"Wonders of the World",
+    "description":"From an even more distant past to the present day...",
+    "requirements":"Earned during Tsurumi's Mountain Murals.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Thunderbird's Lineage",
+    "category":"Wonders of the World",
+    "description":"Complete all the statue challenges.",
+    "requirements":"Complete 10 puzzles originating from Mysterious Carvings on Tsurumi Island.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Seven Letters",
+    "category":"Wonders of the World",
+    "description":"Try to decipher the Ishine Script.",
+    "requirements":"Complete Ishine Script Deciphering.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Moshiri Kara",
+    "category":"Wonders of the World",
+    "description":"Unlock Moshiri Kara",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Across the Misty River",
+    "category":"Wonders of the World",
+    "description":"You finally reach the far side of the Sea of Fog...",
+    "requirements":"Earned during The Sun-Wheel and Mt. Kanna.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Not Flyin' Away This Time!\"",
+    "category":"Wonders of the World",
+    "description":"Use the Omni-Ubiquity Net item to capture 1 Crystalfly.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Net Closes In",
+    "category":"Wonders of the World",
+    "description":"Use the Omni-Ubiquity Net item to capture 1 Finch.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"N-Thousand Leagues Under the Sea",
+    "category":"Wonders of the World",
+    "description":"Enter Enkanomiya.",
+    "requirements":"Complete The Still Water's Flow.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Flowing Sunfire, Also Known as Marishi",
+    "category":"Wonders of the World",
+    "description":"Unlock the secret at the Sunfire Gate.",
+    "requirements":"Earned during The Entrance to Tokoyo.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Of Sun and Moon",
+    "category":"Wonders of the World",
+    "description":"Switch between Whitenight and Evernight once.",
+    "requirements":"Earned during The Subterranean Trials of Drake and Serpent.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Extensive And Meticulous\"",
+    "category":"Wonders of the World",
+    "description":"Receive the Jibashiri's acknowledgment.",
+    "requirements":"Complete Yachimatahiko's Trial.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"The Eel in Winter Sought\"",
+    "category":"Wonders of the World",
+    "description":"Receive the Jibashiri's acknowledgment.",
+    "requirements":"Complete Yachimatahime's Trial.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Unmatched Throughout Tokoyo\"",
+    "category":"Wonders of the World",
+    "description":"Receive the Jibashiri's acknowledgment.",
+    "requirements":"Complete Kunado's Trial.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Maybe Get Yourself a More Social Hobby...\"",
+    "category":"Wonders of the World",
+    "description":"Complete Date's labyrinth challenge.",
+    "requirements":"Earned during Date's Challenge.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"If Tokoyo Ookami Knew of This...\"",
+    "category":"Wonders of the World",
+    "description":"Return all the library books, and...",
+    "requirements":"Complete Collection of Dragons and Snakes.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"What Difference Does This Make?\"",
+    "category":"Wonders of the World",
+    "description":"Sit at every single special spot.",
+    "requirements":"Complete Reading Kabayama's Lanterns.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Children of God Shall Dance",
+    "category":"Wonders of the World",
+    "description":"Speak to all the Phaethon afterimages.",
+    "requirements":"Complete Sunchildren Hide and Seek.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Light and Dark, Dusk and Dawn",
+    "category":"Wonders of the World",
+    "description":"Head to the top of the Dainichi Mikoshi.",
+    "requirements":"Earned during Hyperion's Dirge.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Step Right Up!",
+    "category":"Wonders of the World",
+    "description":"Complete the archery challenge.",
+    "requirements":"Complete Akashi's Archery Challenge.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Ill-Starred Legacy of Iwakura",
+    "category":"Wonders of the World",
+    "description":"Return the blade of the Iwakura Master.",
+    "requirements":"Complete the final optional objective of Iwakura Art's Downfall.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"One Key for Each Lock",
+    "category":"Wonders of the World",
+    "description":"Find all the Key Sigils.",
+    "requirements":"Collect all 59 Key Sigils found in Enkanomiya.",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Juggernaut",
+    "category":"Wonders of the World",
+    "description":"Crush all of a Geo Hypostasis' Rock Pillars of Revival before it can be revived.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"The PRISM Program",
+    "category":"Wonders of the World",
+    "description":"Break all of an Electro Hypostasis' Revival Prisms before it can be revived.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"That's one big Crystalfly\"",
+    "category":"Wonders of the World",
+    "description":"Absorb all of an Anemo Hypostasis' Wind Crystals before it can be revived.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"...Not indicative of final product\"",
+    "category":"Wonders of the World",
+    "description":"Defeat an Anemo Hypostasis that has undergone 4 types of Elemental Conversions.",
+    "requirements":"Combine an Anemo Hypostasis' tornadoes with four elements and defeat it.",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"The Bigger They Are...",
+    "category":"Wonders of the World",
+    "description":"Paralyze a Ruin Guard by attacking its weak point.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Through Pass",
+    "category":"Wonders of the World",
+    "description":"Knock a Pyro Slime out of the hands of a Hilichurl Grenadier.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Dolorous Stroke",
+    "category":"Wonders of the World",
+    "description":"Defeat an opponent by Shattering the ice they are trapped in.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hilichurl Champion",
+    "category":"Wonders of the World",
+    "description":"Defeat a Stonehide Lawachurl before its Infused Form can expire.",
+    "requirements":"Defeat a Stonehide Lawachurl while its Geo Armor is still active. Also unlocks if a team mate clears the condition during Co-Op Mode.",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Bon Appétit",
+    "category":"Wonders of the World",
+    "description":"Have 4 party members in the Full state at the same time.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Purveyor of Punishment",
+    "category":"Wonders of the World",
+    "description":"Deal over 5,000 CRIT DMG.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Purveyor of Punishment",
+    "category":"Wonders of the World",
+    "description":"Deal over 20,000 CRIT DMG.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Purveyor of Punishment",
+    "category":"Wonders of the World",
+    "description":"Deal over 50,000 CRIT DMG.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"20"
+  },
+  {
+    "achievement":"Fantastic Four",
+    "category":"Wonders of the World",
+    "description":"Complete a Domain using 4 characters of the same Elemental Type.",
+    "requirements":"Obtainable in Single-player mode only.\nStory Domain/Trial characters will not count.",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"Take That, You Overblown Mist Flower!\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Cryo Regisvine without destroying its corolla weak point.",
+    "requirements":"Also unlocks if a team mate clears the condition during Co-Op Mode.",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"That Was Blooming Hot\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Pyro Regisvine without destroying its corolla weak point.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"Outlander Vs. Outlander",
+    "category":"Wonders of the World",
+    "description":"Defeat Childe without any party member being marked and then hit by his follow-up attack.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"Penalty",
+    "category":"Wonders of the World",
+    "description":"There are places where one cannot simply dig Pyro Slimes out of the ground...",
+    "requirements":"Make a Pyro Hilichurl Grenadier dig out a Pyro Slime in the water (must be shallow water so it does not drown).",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Force Field Erosion",
+    "category":"Wonders of the World",
+    "description":"Destroy the Electro Hypostasis' barrier.",
+    "requirements":"Use Elemental Reactions to destroy the barrier created by the Electro Hypostasis.",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"...Lizard-Spock\"",
+    "category":"Wonders of the World",
+    "description":"Have one character get hit by all three parts of the rock-paper-scissors attack consecutively.",
+    "requirements":"You must survive the attack. Also unlocks if a team mate clears the condition during Co-Op Mode.",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"A House Ill-Founded",
+    "category":"Wonders of the World",
+    "description":"Cause the same Geo Hypostasis to fall three times by destroying the Basalt Column that it is on.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"None Stand Secure",
+    "category":"Wonders of the World",
+    "description":"Force the Geo Hypostasis into its revival state without destroying any Basalt Columns.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Back With The Wind",
+    "category":"Wonders of the World",
+    "description":"Absorb at least 10 Elemental Orbs created by the Anemo Hypostasis in a single battle.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Core Meltdown",
+    "category":"Wonders of the World",
+    "description":"Destroy the Blazing Seed created by a Pyro Regisvine.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Knockout",
+    "category":"Wonders of the World",
+    "description":"Destroy a Cryo Regisvine's corolla weak point while it is performing its rotary spray attack.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"...Till Debt Do Us Part\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Fatui Agent while they are in their stealth mode.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Melting... Away...\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Cryo Cicin Mage while all her Cryo Cicins are currently active.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"And You Call Yourself One of the Four Winds",
+    "category":"Wonders of the World",
+    "description":"Defeat an Anemoboxer Vanguard after having triggered all of their Elemental Absorptions.",
+    "requirements":"Combine a Fatui Skirmisher - Anemoboxer Vanguard's shield with four elements and defeat it.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Touch and Go",
+    "category":"Wonders of the World",
+    "description":"Use a shield to counter a Geovishap's charging attack.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Deflection!",
+    "category":"Wonders of the World",
+    "description":"Use a shield to counter a Primo Geovishap's Primordial Shower attack.",
+    "requirements":"The shield cannot be Geo or a matching type to Primo Geovishap's element.",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"You Can Have Those Back!",
+    "category":"Wonders of the World",
+    "description":"Use a shield of a matching type (or a Geo shield) to counter a Primo Geovishap's Primordial Shower attack and deal immense DMG.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sternest of Souls",
+    "category":"Wonders of the World",
+    "description":"Defeat Azhdaha in all its forms.",
+    "requirements":"Defeat Azhdaha in all 4 of its elemental combinations: Electro/Hydro, Cryo/Pyro, Cryo/Hydro, and Electro/Pyro.",
+    "type":"Boss",
+    "reward":"20"
+  },
+  {
+    "achievement":"\"...A Single Night's Work\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Cryo Hypostasis that is in a weakened state.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Knee-Deep Snow...\"",
+    "category":"Wonders of the World",
+    "description":"Defeat a Cryo Hypostasis that has revived three times.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"If I Run Fast Enough...",
+    "category":"Wonders of the World",
+    "description":"Defeat a Maguu Kenki without being hit by its phantom's attacks.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"In This Solemn Matter Let No One Interfere!",
+    "category":"Wonders of the World",
+    "description":"Defeat a Maguu Kenki without triggering its \"Oushi no Omote\" parry.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fine, I'll Do It Myself",
+    "category":"Wonders of the World",
+    "description":"Defeat a Primo Geovishap without reflecting its Primordial Shower.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Burned Yourself, Did You?",
+    "category":"Wonders of the World",
+    "description":"Defeat a Pyro Hypostasis that has reignited twice.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Smells like Animal Spirit!",
+    "category":"Wonders of the World",
+    "description":"Defeat a Pyro Hypostasis after being hit by its mimetic 3-hit combo.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Core Breakthrough",
+    "category":"Wonders of the World",
+    "description":"Defeat a Perpetual Mechanical Array after paralyzing all 4 types of its Ruin Sentinels.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"Could All Uninvolved Machinery Please Leave Immediately?",
+    "category":"Wonders of the World",
+    "description":"Defeat the Perpetual Mechanical Array without defeating any of its Ruin Sentinels.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"Fight Fire With Fire",
+    "category":"Wonders of the World",
+    "description":"Defeat a Kairagi: Fiery Might while their weapon is infused with Pyro.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ride the Lightning",
+    "category":"Wonders of the World",
+    "description":"Defeat a Kairagi: Dancing Thunder while their weapon is infused with Electro.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"I Hear Thunder...",
+    "category":"Wonders of the World",
+    "description":"Be struck by the lightning called down by a Crackling Axe Mitachurl...",
+    "requirements":"Be struck by a Crackling Axe Mitrachurl's thunder attack. This attack pattern is possible when a Crackling Axe Mitachurl is in a thunderstorm with the wet status. This can also be obtained easily in the Domain of Mastery: Thundering Valley I (Violet Court).",
+    "type":"Exploration",
+    "reward":"10"
+  },
+  {
+    "achievement":"Dry Clean",
+    "category":"Wonders of the World",
+    "description":"Defeat the Hydro Hypostasis without destroying a single one of its Water Droplets (except when it is restoring HP.)",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Bio-Oceanic Weapon",
+    "category":"Wonders of the World",
+    "description":"Be hit by a certain animal created by the Hydro Hypostasis...",
+    "requirements":"Get hit by Hydro Hypostasis' \"Dolphin Dive\" attack.",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Love and Non-Communication",
+    "category":"Wonders of the World",
+    "description":"Defeat a Thunder Manifestation without ever being locked onto.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Thunder Fall",
+    "category":"Wonders of the World",
+    "description":"Defeat a Thunder Manifestation while it is in flight.",
+    "requirements":"Defeat Thunder Manifestation while it is performing its \"Dive Bomb\" attack.",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Icy Rivers, Crimson Witch",
+    "category":"Wonders of the World",
+    "description":"Defeat Signora without destroying either her Hearts of Flame or Eyes of Frost.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"10"
+  },
+  {
+    "achievement":"Inugami's End",
+    "category":"Wonders of the World",
+    "description":"Destroy two Rifthound Skulls within a short time.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hard Landing",
+    "category":"Wonders of the World",
+    "description":"Bring a climbing Bathysmal Vishap down.",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Impeccable Judgment",
+    "category":"Wonders of the World",
+    "description":"Only shoot down your real opponent...",
+    "requirements":"—",
+    "type":"Boss",
+    "reward":"5"
+  },
+  {
+    "achievement":"Beware of Angry Dog",
+    "category":"Wonders of the World",
+    "description":"Defeat a roaring Rifthound.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Basically Harmless",
+    "category":"Wonders of the World",
+    "description":"Defeat a Specter that has not accumulated any Fury.",
+    "requirements":"—",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"The End of the Beginning",
+    "category":"Wonders of the World",
+    "description":"Complete the Mondstadt Archon Quests.",
+    "requirements":"Complete Ending Note.",
+    "type":"Quest",
+    "reward":"20"
+  },
+  {
+    "achievement":"The Outlander Who Caught the Wind",
+    "category":"Wonders of the World",
+    "description":"Complete \"The Outlander Who Caught the Wind.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"For a Tomorrow Without Tears",
+    "category":"Wonders of the World",
+    "description":"Complete \"For a Tomorrow Without Tears.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Song of the Dragon and Freedom",
+    "category":"Wonders of the World",
+    "description":"Complete \"Song of the Dragon and Freedom.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Let the Wind Lead",
+    "category":"Wonders of the World",
+    "description":"Obtain the power of Anemo.",
+    "requirements":"Complete Bird's Eye View.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"...Or a New Storm?",
+    "category":"Wonders of the World",
+    "description":"Banish the dragon attacking Mondstadt.",
+    "requirements":"Complete Dragon Storm.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Knighthood Excellence",
+    "category":"Wonders of the World",
+    "description":"Become an Honorary Knight of Favonius.",
+    "requirements":"Complete Shadow Over Mondstadt.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Knights and their Knotty Issues",
+    "category":"Wonders of the World",
+    "description":"Fail to borrow the Holy Relic... but learn of the Knights' dilemma.",
+    "requirements":"Complete Wild Escape.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Winds Change Their Course",
+    "category":"Wonders of the World",
+    "description":"Be rescued by Dvalin.",
+    "requirements":"Complete A Long Shot.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Of the Land Amidst Monoliths",
+    "category":"Wonders of the World",
+    "description":"Complete \"Of the Land Amidst Monoliths.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Farewell, Archaic Lord",
+    "category":"Wonders of the World",
+    "description":"Complete \"Farewell, Archaic Lord.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Outlandish Behavior",
+    "category":"Wonders of the World",
+    "description":"Be rescued by an outsider at the \"tourist spot that locals don't go to.\"",
+    "requirements":"Complete Rite of Descension.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Silly-Billy Churlish Ghoul",
+    "category":"Wonders of the World",
+    "description":"Agree to play with Dusky Ming.",
+    "requirements":"Complete Wangshu.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"That Smells Divine",
+    "category":"Wonders of the World",
+    "description":"Figure out which perfume Rex Lapis is fond of.",
+    "requirements":"Complete Three Poignant Perfumes.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"It's Bigger on the Inside",
+    "category":"Wonders of the World",
+    "description":"Clean Madame Ping's teapot.",
+    "requirements":"Complete The Realm Within.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ticked, Tacked, and Towed",
+    "category":"Wonders of the World",
+    "description":"Commission others to finish your work, unfettered by such things as Mora.",
+    "requirements":"Complete Downtown.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Respecting Cultural Heritage",
+    "category":"Wonders of the World",
+    "description":"You failed to find the Cocogoat... but manage to repair a mechanism.",
+    "requirements":"Earned during Guizhong.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Long Goodbye",
+    "category":"Wonders of the World",
+    "description":"Prepare everything necessary for the Rite of Parting.",
+    "requirements":"Complete Guizhong.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Icing on the Slime",
+    "category":"Wonders of the World",
+    "description":"Create a box of lovely, jubbly Sugar-Frosted Slimes.",
+    "requirements":"Earned during Equilibrium.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sky's the Limit",
+    "category":"Wonders of the World",
+    "description":"Reach Liyue's \"mansion in the sky\".",
+    "requirements":"Earned during Equilibrium.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lily Loves Music",
+    "category":"Wonders of the World",
+    "description":"Sing a song of Mondstadt to the Glaze Lilies...",
+    "requirements":"Earned during Solitary Fragrance.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"I'll Let You Off... This Time",
+    "category":"Wonders of the World",
+    "description":"Defeat Childe.",
+    "requirements":"Complete Heart of Glaze.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Derailed",
+    "category":"Wonders of the World",
+    "description":"Defeat the Overlord of the Vortex.",
+    "requirements":"Complete Turning Point.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Final Farewell",
+    "category":"Wonders of the World",
+    "description":"Take part in the Rite of Parting.",
+    "requirements":"Complete The Fond Farewell.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"A New Star Approaches",
+    "category":"Wonders of the World",
+    "description":"Complete \"A New Star Approaches.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Pirates! Argh!",
+    "category":"Wonders of the World",
+    "description":"Play a game of pirates with Little Lulu, Little Fei, and Little Meng.",
+    "requirements":"Complete all 3 variations of Pirate Invasion, in Liyue Harbor!",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Nourishing Friendship",
+    "category":"Wonders of the World",
+    "description":"Complete \"Fishing Jiangxue\" and \"Yanxiao's Dilemma.\"",
+    "requirements":"—",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Love Is All Around",
+    "category":"Wonders of the World",
+    "description":"In \"Good Sign,\" help Zhihua find 5 signs that romance is coming his way.",
+    "requirements":"See that Granny Shan has good business, leave the pigeons alone, leave the dogs alone, leave the cat and fish alone, and leave the leaves alone.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"For the Love of Godwin",
+    "category":"Wonders of the World",
+    "description":"Finish \"Whispers in the Wind\" 5 times.",
+    "requirements":"—",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Level Up",
+    "category":"Wonders of the World",
+    "description":"Help Huai'an repair Wangshu Inn's broken bridge.",
+    "requirements":"Complete the 2nd part of Stairway to Wangshu.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Beginner's Luck",
+    "category":"Wonders of the World",
+    "description":"Select the highest-value jade on your first try.",
+    "requirements":"Can be earned during Diamond in the Rough...",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Taking Responsibility for Your Actions",
+    "category":"Wonders of the World",
+    "description":"Apologize to Timmie.",
+    "requirements":"Complete Sorry, Timmie!",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Making Do",
+    "category":"Wonders of the World",
+    "description":"Only bring materials for a training dummy to Herman.",
+    "requirements":"Destroy the dummy in The Limitations of an Adventurer.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Dear Daddy...\"",
+    "category":"Wonders of the World",
+    "description":"Hear Timmie's story.",
+    "requirements":"Complete A Boy's Letter.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Marvelous Medicine",
+    "category":"Wonders of the World",
+    "description":"Cure Anna's illness.",
+    "requirements":"Complete Recuperating From a Severe Illness.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"In the Name of Favonius",
+    "category":"Wonders of the World",
+    "description":"Witness Jilliana's tale.",
+    "requirements":"Complete Vile's version of A Surprise Gift.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Scholarly Pretensions",
+    "category":"Wonders of the World",
+    "description":"Complete \"The Lost Relic\" and \"A Little Raid.\"",
+    "requirements":"—",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Poet Vs. Paycheck",
+    "category":"Wonders of the World",
+    "description":"Complete So-called Wor. and receive Linling's poetry anthology.",
+    "requirements":"Complete So-Called Work.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"All's Well That Ends Well",
+    "category":"Wonders of the World",
+    "description":"Complete the quest \"For Old Time's Sake.\"",
+    "requirements":"—",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"This Novel Is Amazing!",
+    "category":"Wonders of the World",
+    "description":"Steal a peek at Chang the Ninth's draft manuscript.",
+    "requirements":"Take a peek at the book in A Novel Plan.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Open to Interpretation",
+    "category":"Wonders of the World",
+    "description":"Ruin 4 signs of an imminent romance.",
+    "requirements":"In Good Sign, attack the pigeons, scare away the dogs, collect the fish, and burn or blow away the leaves.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Get Your Own Emergency Food!",
+    "category":"Wonders of the World",
+    "description":"Consume the food during \"Food Delivery.\"",
+    "requirements":"—",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hidden in Plain Sight",
+    "category":"Wonders of the World",
+    "description":"Help Sango and Ryuuji solve the case.",
+    "requirements":"Complete Bantan Sango Case File: Case-Closing Time.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Is There But One Truth...?",
+    "category":"Wonders of the World",
+    "description":"Witness Ryuuji's tale.",
+    "requirements":"Complete Bantan Sango Case File: Cleanup Work.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Liyue Ichiban",
+    "category":"Wonders of the World",
+    "description":"Heal Tang Wen with some delicious dishes.",
+    "requirements":"Complete Absolutely Unique Delicacy.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Boom Shaka-Laka, More Boom-Shaka-Laka",
+    "category":"Wonders of the World",
+    "description":"Consult Xiangling regarding special cooking methods.",
+    "requirements":"Find Xiangling during The Gourmet Supremos: Breakthrough Thinking.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Meal For Two",
+    "category":"Wonders of the World",
+    "description":"Help both Xudong and Kamei Munehisa make a dish once.",
+    "requirements":"Let Xudong and Kamei Munehisa finish their dishes first once each in The Gourmet Supremos: Cook-Off. This does not require choosing both of their versions.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Question of Diet",
+    "category":"Wonders of the World",
+    "description":"Help Parvaneh proofread all the recipes.",
+    "requirements":"Answer all three questions correctly in The Gourmet Supremos: Foodie Quiz.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Samurice",
+    "category":"Wonders of the World",
+    "description":"Help Kamei Munehisa collect ingredients from the camps on either side.",
+    "requirements":"Clear both of the camps in The Gourmet Supremos: Extreme Cookery.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Sorry for the Trouble!\"",
+    "category":"Wonders of the World",
+    "description":"Receive the complaint that Konda Densuke lodges in \"Post-Sale Service\".",
+    "requirements":"Collect all 10 mushrooms during Post-Sale Service.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Samurai Gourmet",
+    "category":"Wonders of the World",
+    "description":"Witness Kamei Munehisa's induction into the Gourmet Supremos.",
+    "requirements":"Complete The Gourmet Supremos: The Importance of Eating Well.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hello...! Anyone in here...?",
+    "category":"Wonders of the World",
+    "description":"Discover a secret passageway in Ritou.",
+    "requirements":"Start The Ritou Road by going through the passageway.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Editorial Opinion",
+    "category":"Wonders of the World",
+    "description":"Help Shigeru and Junkichi return to the right artist path.",
+    "requirements":"Complete This Novel... Seems Familiar? and This Novel Seems... Problematic?",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"You Should Start A Doushin Dojo",
+    "category":"Wonders of the World",
+    "description":"Help Asakura train 5 times.",
+    "requirements":"Complete An Art to Be Honed and/or Ceaseless Training 5 times.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Guess Who?",
+    "category":"Wonders of the World",
+    "description":"Find out who Zhenyu really is.",
+    "requirements":"Earned during Yae Publishing House's Invitation.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Well, At Least It Ended",
+    "category":"Wonders of the World",
+    "description":"Hear Junkichi out as he puts his story together.",
+    "requirements":"Complete Storytelling Method.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Her and Her Cat",
+    "category":"Wonders of the World",
+    "description":"Follow Neko up Mt. Yougou to find \"Hibiki\"'s trail.",
+    "requirements":"Complete The Narukami Trail.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Nothing to Lose But Time",
+    "category":"Wonders of the World",
+    "description":"Unlock the secrets of two sundials.",
+    "requirements":"Complete Time and Wind.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Interview with a Bygone God",
+    "category":"Wonders of the World",
+    "description":"Hear the story of a bygone deity.",
+    "requirements":"Complete Treasure Lost, Treasure Found.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Crouching Dragon, Hidden Chi",
+    "category":"Wonders of the World",
+    "description":"Learn about the tale of the Chi.",
+    "requirements":"Complete The Chi of Yore.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Scourge of the Battlefield",
+    "category":"Wonders of the World",
+    "description":"Fetch a good price for a treasure found in an ancient ruin...",
+    "requirements":"Complete Nine Pillars of Peace.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Shadow Over Luhua Pool",
+    "category":"Wonders of the World",
+    "description":"Help Vermeer get the scenery of his dreams.",
+    "requirements":"Talk to Vermeer after completing Luhua Landscape. He's at the ruins at the Teleport Waypoint directly north of the domain.",
+    "type":"Exploration",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ready Player Zero",
+    "category":"Wonders of the World",
+    "description":"Play a simple game with Childish Jiang.",
+    "requirements":"Complete A Little Game.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Trees Should Blend Their Roots and Shade, For That Is Where the Home is Made",
+    "category":"Wonders of the World",
+    "description":"Witness the story of Yuan Hong's household.",
+    "requirements":"Complete The Tree who Stands Alone.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Gears of Destiny",
+    "category":"Wonders of the World",
+    "description":"Complete the quest \"Bough Keeper: Dainsleif.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Bandit, the Lunatic, and the Pitch-Black Enigma",
+    "category":"Wonders of the World",
+    "description":"Uncover the Grand Thief's fate.",
+    "requirements":"Earned during Involuntary Sacrifice.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Where Fate Comes to a Crossroads",
+    "category":"Wonders of the World",
+    "description":"Escape the eerie ruins.",
+    "requirements":"Complete Involuntary Sacrifice.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sneering at the Power of the Gods",
+    "category":"Wonders of the World",
+    "description":"Learn of the \"Loom of Fate\"...",
+    "requirements":"Complete A Herald Without Adherents.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Silence, You Raving Lunatic",
+    "category":"Wonders of the World",
+    "description":"Defeat the Abyss Herald.",
+    "requirements":"Earned during A Soul Set Apart.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"We Will Be Reunited",
+    "category":"Wonders of the World",
+    "description":"Complete \"We Will Be Reunited.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Gathering Storm",
+    "category":"Wonders of the World",
+    "description":"Earn the chance to go to Inazuma on board the Alcor.",
+    "requirements":"Earned during A Path Through the Storm.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ready, Fight!",
+    "category":"Wonders of the World",
+    "description":"Earn your first victory in The Crux Clash.",
+    "requirements":"Earned during The Crux Clash.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Autumn Winds, Scarlet Leaves",
+    "category":"Wonders of the World",
+    "description":"Complete \"Autumn Winds, Scarlet Leaves.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Through the Storm",
+    "category":"Wonders of the World",
+    "description":"Reach the Outsider Settlement.",
+    "requirements":"Complete Setting Sail.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hiiragi Sanjuuro",
+    "category":"Wonders of the World",
+    "description":"Escort the goods successfully and leave Ritou.",
+    "requirements":"Complete Ritou Escape Plan.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Aspirations of All",
+    "category":"Wonders of the World",
+    "description":"Come into contact with the Statue of the Omnipresent God, the symbol of Eternity.",
+    "requirements":"Earned during Three Wishes",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Princess Behind the Curtain",
+    "category":"Wonders of the World",
+    "description":"Officially make acquaintance of the young lady of the Kamisato Clan.",
+    "requirements":"Complete Three Wishes.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Omamori, Justice, Number One",
+    "category":"Wonders of the World",
+    "description":"Complete the \"three small wishes.\"",
+    "requirements":"Earned during A Flower Blooms in a Prison.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Jailhouse Fiesta",
+    "category":"Wonders of the World",
+    "description":"Rescue Masakatsu successfully.",
+    "requirements":"Earned during A Flower Blooms in a Prison.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"To Brave the Lightning's Glow",
+    "category":"Wonders of the World",
+    "description":"Become the target of the Vision Hunt Decree.",
+    "requirements":"Complete Amidst Stormy Judgment.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Revolutionary Outlander",
+    "category":"Wonders of the World",
+    "description":"Successfully join the resistance.",
+    "requirements":"Complete In the Name of the Resistance.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Immovable God and the Eternal Euthymia",
+    "category":"Wonders of the World",
+    "description":"Complete \"The Immovable God and the Eternal Euthymia.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Stillness, the Sublimation of Shadow",
+    "category":"Wonders of the World",
+    "description":"Complete \"Stillness, the Sublimation of Shadow.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"SWORDFISH II",
+    "category":"Wonders of the World",
+    "description":"Obtain the trust of the Swordfish II squad.",
+    "requirements":"Earned during Sword, Fish, Resistance.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Though Their Wishes Be Like Morning Dew...",
+    "category":"Wonders of the World",
+    "description":"Find the person behind the distributions of the Delusions.",
+    "requirements":"Complete Delusion.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fantabulous Firework Fiesta",
+    "category":"Wonders of the World",
+    "description":"Set off fireworks to distract the guards.",
+    "requirements":"Earned during Proof of Guilt.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Duel Before the Throne",
+    "category":"Wonders of the World",
+    "description":"Emerge victorious in the duel before the throne.",
+    "requirements":"Earned during Duel Before the Throne.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Their Wishes",
+    "category":"Wonders of the World",
+    "description":"Bring all the wishes upon the statue of the Omniprescent God to fruition.",
+    "requirements":"Complete The Omnipresent God.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Omnipresence Over Mortals",
+    "category":"Wonders of the World",
+    "description":"Complete \"Omnipresence Over Mortals.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"All is Well\"",
+    "category":"Wonders of the World",
+    "description":"Help Wang Ping'an renovate Pervases' temple.",
+    "requirements":"Complete Hereafter: Return to the Mountains.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Prelude to the Journey",
+    "category":"Wonders of the World",
+    "description":"A young man is about to embark on a long journey...",
+    "requirements":"Complete The Little Pirate Goes Out to Sea.",
+    "type":"Commission",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rise of the Jade Chamber",
+    "category":"Wonders of the World",
+    "description":"Complete the reconstruction of the Jade Chamber.",
+    "requirements":"Earned during Where the Heart Finds Rest.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"Majesty of the Deep",
+    "category":"Wonders of the World",
+    "description":"Defeat Beisht, Avenger of the Vortex.",
+    "requirements":"Earned during Where the Heart Finds Rest.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Former Dream",
+    "category":"Wonders of the World",
+    "description":"Witness the truth of the village's history.",
+    "requirements":"Earned during Bygones Times Like Dust Passing.",
+    "type":"Quest",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Crane Returns on the Wind",
+    "category":"Wonders of the World",
+    "description":"Complete \"The Crane Returns on the Wind.\"",
+    "requirements":"—",
+    "type":"Quest",
+    "reward":"10"
+  },
+  {
+    "achievement":"Fantastic Voyage: Prologue",
+    "category":"Memories of the Heart",
+    "description":"Complete \"Fantastic Voyage\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Archaic Lord of Lightning and Blitz",
+    "category":"Memories of the Heart",
+    "description":"Witness the awesome meteorological power of Bennett's phenomenally bad luck.",
+    "requirements":"Complete Ad Astra...",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Power of Luck",
+    "category":"Memories of the Heart",
+    "description":"Activate the mechanisms and obtain the treasure without making any mistakes.",
+    "requirements":"Successfully complete the mechanism puzzle in Expansive Eya.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Evil Is Banished",
+    "category":"Memories of the Heart",
+    "description":"Complete \"Signs of Evil\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Behold, Mine Evil-Espying Eye!",
+    "category":"Memories of the Heart",
+    "description":"Correctly interpret all clues.",
+    "requirements":"Completely interpret all clues in On The Evil Spirits' Trail.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Red Hot Chili Popsicles",
+    "category":"Memories of the Heart",
+    "description":"Make a popsicle using the wrong recipe and provoke Chongyun's Pure-Yang spirit.",
+    "requirements":"Make popsicles out of Jueyun Chili and Slime Condensate in A Curious Mix.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Line That May Be Crossed",
+    "category":"Memories of the Heart",
+    "description":"Complete \"Wellspring of Healing\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"An Idol's Last Line of Defense",
+    "category":"Memories of the Heart",
+    "description":"Successfully persuade Albert and Barbara's other fans to leave.",
+    "requirements":"Complete Albert is Amenable To Reason and persuade Barbara's fans to leave in The Cat's Tail's Specialty.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Mondstadt's Spiciest Surprise",
+    "category":"Memories of the Heart",
+    "description":"Sample Barbara's Chilibrew.",
+    "requirements":"Complete Home-Made Chilibrew.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Maid of Strength and Virtue",
+    "category":"Memories of the Heart",
+    "description":"Complete '\"Chivalric Training\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"\"...For I Am Duty Bound\"",
+    "category":"Memories of the Heart",
+    "description":"Help Noelle discover the source of her strength.",
+    "requirements":"Complete Strength Training.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A World Known Only Unto Roses",
+    "category":"Memories of the Heart",
+    "description":"Read Noelle's study notes.",
+    "requirements":"Read Noelle's study notes after completing The Almighty Maid and Her Impossible Task.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Stress Relief",
+    "category":"Memories of the Heart",
+    "description":"Complete \"Knightly Exam Prep\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Invulnerable Maid-Knight",
+    "category":"Memories of the Heart",
+    "description":"Listen to \"A Knight's Journey Through Liyue\" with Noelle.",
+    "requirements":"Complete A Knight's Journey Through Liyue.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Mondstadt's Note-Taker General",
+    "category":"Memories of the Heart",
+    "description":"Read Noelle's study notes.",
+    "requirements":"Read Noelle's study notes at the end of Imperfect Examination.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Diona Special, Stirred, Not Shaken",
+    "category":"Memories of the Heart",
+    "description":"Complete \"The Cat and the Cocktail\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"But There's a Catch...",
+    "category":"Memories of the Heart",
+    "description":"Help Diona find a special base drink.",
+    "requirements":"Complete The Shadow Over Dadaupa.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Kitten Queen",
+    "category":"Memories of the Heart",
+    "description":"Bring all the cats back to The Cat's Tail.",
+    "requirements":"Complete When the Cats Come Home.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Everyone's Happy",
+    "category":"Memories of the Heart",
+    "description":"Complete \"A Housekeeper's Daily Chores\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Housekeeper Extraordinaire",
+    "category":"Memories of the Heart",
+    "description":"Complete the big cleanup within the time limit",
+    "requirements":"Complete Small-Scale Changes.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"From the Sea Never Returning",
+    "category":"Memories of the Heart",
+    "description":"Learn of Inu Shoushou's story together with Thoma",
+    "requirements":"Complete Those Who Can Never Return.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Taller by Half",
+    "category":"Memories of the Heart",
+    "description":"Complete \"Yoohoo Art: Seichou no Jutsu\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Mujina-Class Ninja",
+    "category":"Memories of the Heart",
+    "description":"Obtain Sayu's highest rating during agility training",
+    "requirements":"Complete the challenge in Twinjutsu within 30 seconds.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Dish Effect: Mobility Decreased",
+    "category":"Memories of the Heart",
+    "description":"You were unable to prevent Sayu's reckless consumption...",
+    "requirements":"Complete Hard Work Pays Off.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"General of Watatsumi",
+    "category":"Memories of the Heart",
+    "description":"Complete \"The Canine General's Special Operations\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Changing Times",
+    "category":"Memories of the Heart",
+    "description":"Draw all fortune slips at the Grand Narukami Shrine.",
+    "requirements":"Select all fortune slips in Praying for Fortune.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"To Tell or Not to Tell, That Is the Question",
+    "category":"Memories of the Heart",
+    "description":"Discover Ms. Hina's true identity at the Yae Publishing House.",
+    "requirements":"Complete (Temporary) Secret-Keeper.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Honorary Crux Member",
+    "category":"Memories of the Heart",
+    "description":"Complete \"When the Crux Shines Bright\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Wine Unburdens",
+    "category":"Memories of the Heart",
+    "description":"Take part in the Qingce banquet with Beidou.",
+    "requirements":"Complete Honorary Villager.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Guyun Buyer's Club",
+    "category":"Memories of the Heart",
+    "description":"Find out the truth behind the deal Beidou's making.",
+    "requirements":"Complete A Strange Transaction.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Megrez's Companion Star",
+    "category":"Memories of the Heart",
+    "description":"Complete \"The Jade Chamber's Returning Guest\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"You've Got to Have Reserves",
+    "category":"Memories of the Heart",
+    "description":"Fish? The more the merrier, of course!",
+    "requirements":"Collect four extra Plump Fish at the end of Open Resources, Thrifty Expenditure.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Overprotectiveness",
+    "category":"Memories of the Heart",
+    "description":"A single stone births a thousand ripples. It seems like Ningguang's day off is not to be.",
+    "requirements":"Complete Confrontation.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Lingering Song",
+    "category":"Memories of the Heart",
+    "description":"Complete \"A Song That Knows Grace\" and unlock all endings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"May This Moment Be Made to Last",
+    "category":"Memories of the Heart",
+    "description":"Take a commemorative photo with Yun Jin.",
+    "requirements":"Complete Commemorative Photo.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Strict Master Trains a Talented Pupil",
+    "category":"Memories of the Heart",
+    "description":"Complete the practice session without hitting a single blue scarecrow.",
+    "requirements":"Complete Meticulous Performance without hitting a single blue scarecrow.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Wind and The Star Traveler",
+    "category":"Mortal Travails: Series I",
+    "description":"Blow seeds off a Dandelion using Anemo.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Of Mountains High",
+    "category":"Mortal Travails: Series I",
+    "description":"Obtain the power of Geo.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Voice of Flowing Water",
+    "category":"Mortal Travails: Series I",
+    "description":"Collect the entire \"Heart of Clear Springs\" series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Divine Halberd Mocks the Heavens",
+    "category":"Mortal Travails: Series I",
+    "description":"Collect the entire \"Legend of the Shattered Halberd\" series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Drunkard and the Wolf",
+    "category":"Mortal Travails: Series I",
+    "description":"Collect the entire \"A Drunkard's Tale\" series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Spring, White Horse and Moonlight",
+    "category":"Mortal Travails: Series I",
+    "description":"Collect the entire \"Moonlit Bamboo Forest\" series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Unlimited Power!",
+    "category":"Mortal Travails: Series II",
+    "description":"Obtain the power of Electro.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Land of Dandelions",
+    "category":"Mortal Travails: Series II",
+    "description":"Collect the entire The Fox in the Dandelion Sea series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"True Friendship Takes Sacrifices",
+    "category":"Mortal Travails: Series II",
+    "description":"Collect the entire The Boar Princess series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Eternal Youth",
+    "category":"Mortal Travails: Series II",
+    "description":"Collect the entire Vera's Melancholy series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hilichurlian Studies Expert",
+    "category":"Mortal Travails: Series II",
+    "description":"Collect the entire Hilichurl Cultural Customs series.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Star Chef",
+    "category":"The Art of Adventure",
+    "description":"Master 10 Recipes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Star Chef",
+    "category":"The Art of Adventure",
+    "description":"Master 20 Recipes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Star Chef",
+    "category":"The Art of Adventure",
+    "description":"Master 40 Recipes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Survival Expert",
+    "category":"The Art of Adventure",
+    "description":"Grasp how 10 different dishes are made.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Survival Expert",
+    "category":"The Art of Adventure",
+    "description":"Grasp how 20 different dishes are made.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Survival Expert",
+    "category":"The Art of Adventure",
+    "description":"Grasp how 40 different dishes are made.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Taking Shape",
+    "category":"The Art of Adventure",
+    "description":"Forge a 4-star weapon.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Onward and Upward",
+    "category":"The Hero's Journey",
+    "description":"Ascend a character to Phase 2 for the first time.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Onward and Upward",
+    "category":"The Hero's Journey",
+    "description":"Ascend a character to Phase 4 for the first time.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Onward and Upward",
+    "category":"The Hero's Journey",
+    "description":"Ascend a character to Phase 6 for the first time.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Re-Armed, Re-Forged",
+    "category":"The Hero's Journey",
+    "description":"Ascend a weapon to Phase 2.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Re-Armed, Re-Forged",
+    "category":"The Hero's Journey",
+    "description":"Ascend a weapon to Phase 4.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Re-Armed, Re-Forged",
+    "category":"The Hero's Journey",
+    "description":"Ascend a weapon to Phase 6.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Hitherto Unknown",
+    "category":"The Hero's Journey",
+    "description":"Reach Friendship 10 with 4 characters.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hitherto Unknown",
+    "category":"The Hero's Journey",
+    "description":"Reach Friendship 10 with 8 characters.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Hitherto Unknown",
+    "category":"The Hero's Journey",
+    "description":"Reach Friendship 10 with 16 characters.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Bounty of the Earth",
+    "category":"The Hero's Journey",
+    "description":"Collect 200 rewards from blossoms of wealth or blossoms of revelation.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Bounty of the Earth",
+    "category":"The Hero's Journey",
+    "description":"Collect 400 rewards from blossoms of wealth or blossoms of revelation.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Bounty of the Earth",
+    "category":"The Hero's Journey",
+    "description":"Collect 800 rewards from blossoms of wealth or blossoms of revelation.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Hero's Gift",
+    "category":"The Hero's Journey",
+    "description":"Obtain a 4-star artifact.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Echoing Song",
+    "category":"The Hero's Journey",
+    "description":"Enhance a 4-star artifact to its highest level.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Legendary Treasure",
+    "category":"The Hero's Journey",
+    "description":"Obtain a 5-star artifact.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sacred Canto",
+    "category":"The Hero's Journey",
+    "description":"Enhance a 5-star artifact to its highest level.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Continental Explorer: Mondstadt",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Light up the entire Mondstadt map (excluding the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Brush of a Thousand Winds",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Unlock all Teleport Waypoints in Mondstadt (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Let the Wind Lead",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Upgrade the Statues of The Seven in Mondstadt to their maximum level (excludes those in the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Sanctuary Pilgrim: Mondstadt",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Unlock all the Shrines of Depths in Mondstadt.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Guiding Wind",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Follow 10 Seelie in Mondstadt to their Seelie Courts (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Guiding Wind",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Follow 20 Seelie in Mondstadt to their Seelie Courts (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Guiding Wind",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Follow 40 Seelie in Mondstadt to their Seelie Courts (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Wind-Chasing Treasure Hunter",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Open 100 chests in Mondstadt (excluding the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Wind-Chasing Treasure Hunter",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Open 200 chests in Mondstadt (excluding the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Wind-Chasing Treasure Hunter",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Open 400 chests in Mondstadt (excluding the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Wind-Chasing Adventurer",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Complete 5 Open World mechanism-activated Time Trial Challenges in Mondstadt (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Wind-Chasing Adventurer",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Complete 10 Open World mechanism-activated Time Trial Challenges in Mondstadt (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Wind-Chasing Adventurer",
+    "category":"Mondstadt: The City of Wind and Song",
+    "description":"Complete 15 Open World mechanism-activated Time Trial Challenges in Mondstadt (excludes the Dragonspine area).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Continental Explorer: Liyue",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Light up the entire Liyue map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Surveyor of Stone",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Unlock all Teleport Waypoints in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Unmovable Mountain",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Upgrade the Statues of The Seven in Liyue to their maximum level.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Sanctuary Pilgrim: Liyue",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Unlock all the Shrines of Depths in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lithic Guide",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Follow 20 Seelie in Liyue to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lithic Guide",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Follow 40 Seelie in Liyue to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lithic Guide",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Follow 60 Seelie in Liyue to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Rock-Steady Treasure Hunter",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Open 200 chests in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rock-Steady Treasure Hunter",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Open 400 chests in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Rock-Steady Treasure Hunter",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Open 800 chests in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Rock-Steady Adventurer",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Complete 10 Open World mechanism-activated Time Trial Challenges in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rock-Steady Adventurer",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Complete 20 Open World mechanism-activated Time Trial Challenges in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Rock-Steady Adventurer",
+    "category":"Liyue: The Harbor of Stone and Contracts",
+    "description":"Complete 40 Open World mechanism-activated Time Trial Challenges in Liyue.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Cool It!",
+    "category":"Elemental Specialist",
+    "description":"Keep an opponent Frozen for over 10s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Cool It!",
+    "category":"Elemental Specialist",
+    "description":"Keep an opponent Frozen for over 10s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Cool It!",
+    "category":"Elemental Specialist",
+    "description":"Keep an opponent Frozen for over 10s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Go With The Wind!",
+    "category":"Elemental Specialist",
+    "description":"Trigger Cryo, Hydro, Pyro and Electro Swirl Reactions at least once each within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Go With The Wind!",
+    "category":"Elemental Specialist",
+    "description":"Trigger Cryo, Hydro, Pyro and Electro Swirl Reactions at least once each within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Go With The Wind!",
+    "category":"Elemental Specialist",
+    "description":"Trigger Cryo, Hydro, Pyro and Electro Swirl Reactions at least once each within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Season's Greetings",
+    "category":"Elemental Specialist",
+    "description":"Freeze 4 opponents within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Season's Greetings",
+    "category":"Elemental Specialist",
+    "description":"Freeze 4 opponents within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Season's Greetings",
+    "category":"Elemental Specialist",
+    "description":"Freeze 4 opponents within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Performance May Decline in Low Temperatures",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Superconduct within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Performance May Decline in Low Temperatures",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Superconduct within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Performance May Decline in Low Temperatures",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Superconduct within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"The Art of War",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Overloaded within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Art of War",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Overloaded within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"The Art of War",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Overloaded within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Melt You Down Like Ice Cream",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Melt within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Melt You Down Like Ice Cream",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Melt within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Melt You Down Like Ice Cream",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Melt within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"A Little Less Shocking Than Love at First Sight",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Electro-Charged within 2s (×1).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Little Less Shocking Than Love at First Sight",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Electro-Charged within 2s (×5).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"A Little Less Shocking Than Love at First Sight",
+    "category":"Elemental Specialist",
+    "description":"Defeat 4 opponents with Electro-Charged within 2s (×10).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Nothing Special, Just Practice",
+    "category":"Marksmanship",
+    "description":"Hit a falcon mid-flight with your bow.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Master Sniper",
+    "category":"Marksmanship",
+    "description":"Strike an opponent's weak point from afar with an Aimed Shot.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Der Freischütz",
+    "category":"Marksmanship",
+    "description":"Strike an opponent's weak point from extremely far away with an Aimed Shot.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Full Metal What Now?",
+    "category":"Challenger: Series I",
+    "description":"Shatter the Geo Crystal Shield of a Large Geo Slime.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Are Plasma Globes Still in Fashion?",
+    "category":"Challenger: Series I",
+    "description":"Break an Electro Cicin Mage's shield.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Rhythm Tengoku",
+    "category":"Challenger: Series I",
+    "description":"Stop an Abyss Mage from regenerating its shield.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Blazing Dadaupa",
+    "category":"Challenger: Series I",
+    "description":"Set a Wooden Shieldwall Mitachurl's shield on fire.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hydro Hunter",
+    "category":"Challenger: Series II",
+    "description":"Defeat every type of Hydro Mimic that an Oceanid can summon.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Dip, Duck, Dive, Dodge, Defeat",
+    "category":"Challenger: Series II",
+    "description":"Defeat an Oceanid without being hit by water bombs left behind by certain Hydro Mimics.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"...Well, That Was Strange",
+    "category":"Challenger: Series II",
+    "description":"Defeat the Unusual Hilichurl 1 time(s).",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"...Well, That Was Strange",
+    "category":"Challenger: Series II",
+    "description":"Defeat the Unusual Hilichurl 20 time(s).",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"...Well, That Was Strange",
+    "category":"Challenger: Series II",
+    "description":"Defeat the Unusual Hilichurl 50 time(s).",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Extreme Gardening",
+    "category":"Challenger: Series II",
+    "description":"Paralyze a Cryo Regisvine by attacking its corolla.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Gardener Extraordinaire",
+    "category":"Challenger: Series II",
+    "description":"Paralyze a Pyro Regisvine by attacking its corolla.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Geronimo!",
+    "category":"Challenger: Series II",
+    "description":"Hit an opponent with a Plunging Attack after plunging for more than 5 seconds.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Vicious Circle",
+    "category":"Challenger: Series II",
+    "description":"Unleash 5 Elemental Bursts within 15 seconds.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Shield Me From the World",
+    "category":"Challenger: Series II",
+    "description":"Have a single character be protected by 3 different types of shield at once.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Turnover",
+    "category":"Challenger: Series III",
+    "description":"Knock a Cryo Slime out of the hands of a Cryo Hilichurl Grenadier.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Tear Down This Wall!",
+    "category":"Challenger: Series III",
+    "description":"Destroy an Ice Shieldwall Mitachurl's shield.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"No Ice for Me, Thanks",
+    "category":"Challenger: Series III",
+    "description":"Defeat a Cryo Samachurl before it is able to create an ice pillar.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"...The Harder They Fall",
+    "category":"Challenger: Series III",
+    "description":"Destroy a Cryo Samachurl's ice pillar.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Chilly-Churl",
+    "category":"Challenger: Series III",
+    "description":"Defeat a Frostarm Lawachurl before its Infused Form can expire.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"\"Rosebud...\"",
+    "category":"Challenger: Series III",
+    "description":"Break a Cryo Cicin Mage's shield.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Assassin of Kings",
+    "category":"Challenger: Series III",
+    "description":"Defeat the true ruler of Dragonspine?",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"David and Goliath",
+    "category":"Challenger: Series III",
+    "description":"Paralyze a Ruin Grader by attacking its weak point.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"...Geovishap, Solarvishap, Lunarvishap...",
+    "category":"Challenger: Series IV",
+    "description":"Defeat the Geovishap in all of its elemental forms.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Geo Elemental Reaction?",
+    "category":"Challenger: Series IV",
+    "description":"Defeat the Primo Geovishap in all of its elemental forms.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Puppet Show-Off",
+    "category":"Challenger: Series IV",
+    "description":"Defeat the Maguu Kenki while he is taunting you.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Totaled Totem",
+    "category":"Challenger: Series IV",
+    "description":"Defeat an Electro Samachurl with no lightning totem on the field.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Did My Hand Fall From My Wrist?",
+    "category":"Challenger: Series IV",
+    "description":"Defeat a Thunderhelm Lawachurl while in an enhanced state.",
+    "requirements":"Also unlocks if a team mate clears the condition during Co-Op Mode.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"It's Quiet... Too Quiet...",
+    "category":"Challenger: Series IV",
+    "description":"Defeat the Pyro Hypostasis after it enters its extinguished state only once",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Battle of Narukami Island",
+    "category":"Challenger: Series IV",
+    "description":"Defeat the Perpetual Mechanical Array in its weakened state.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Finishing Touch",
+    "category":"Challenger: Series IV",
+    "description":"Defeat Azhdaha without ever having gained a shield.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"I'll Skip the Spa, Thanks",
+    "category":"Challenger: Series IV",
+    "description":"Defeat a Mirror Maiden without being trapped by its Water Prison.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Down We Go",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Clear Floor 4 of the Spiral Abyss.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Down We Go",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Clear Floor 8 of the Spiral Abyss.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Down We Go",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Clear Floor 12 of the Spiral Abyss.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Down to Dodge",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Complete Spiral Abyss 2-3 without taking any DMG.",
+    "requirements":"Using talents that reduce your characters' own HP does not count as taking damage.",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Down to Dodge",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Complete Spiral Abyss 5-3 without taking any DMG.",
+    "requirements":"Using talents that reduce your characters' own HP does not count as taking damage.",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Down to Dodge",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Complete Spiral Abyss 8-3 without taking any DMG.",
+    "requirements":"Using talents that reduce your characters' own HP does not count as taking damage.",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"My Precious",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Complete Spiral Abyss 2–2 with an undamaged Ley Line Monolith.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Abyssal Crusader",
+    "category":"Domains and Spiral Abyss: Series I",
+    "description":"Obtain all Abyssal Stars in the Spiral Abyss.",
+    "requirements":"Requires only the 72 Abyssal Stars from the Abyss Corridor; it does not include stars from the Abyssal Moon Spire.",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"...Odomu?",
+    "category":"Olah!: Series I",
+    "description":"Successfully conduct cultural exchange with the hilichurls in \"Language Exchange.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Yo dala?",
+    "category":"Olah!: Series I",
+    "description":"Successfully conduct cultural exchange with the hilichurls in \"Poetry Exchange.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Perfectionist",
+    "category":"Snezhnaya Does Not Believe in Tears: Series I",
+    "description":"Complete all of Tsarevich's commissions flawlessly in \"Reliable Helper.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Telling It How It Is",
+    "category":"Snezhnaya Does Not Believe in Tears: Series I",
+    "description":"Gather intelligence concerning Snezhnaya in \"Tales of Winter.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Geo Archon Anecdotes",
+    "category":"Stone Harbor's Nostalgia: Series I",
+    "description":"Collect all the stories about Rex Lapis in the \"Geo Travel Diary.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Friends, Travelers, Lend Me Your Ears...",
+    "category":"Stone Harbor's Nostalgia: Series I",
+    "description":"Finish listening to the tale of the Ring of Raining Blades in \"Cliffhanger.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Once Upon a Time...",
+    "category":"Stone Harbor's Nostalgia: Series I",
+    "description":"Finish listening to the tale of The Wrath of Haishan in \"Cliffhanger.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"You Came, You Saw, We Co-Oped",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Complete Domains together with other players 5 times.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"You Came, You Saw, We Co-Oped",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Complete Domains together with other players 20 times.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"You Came, You Saw, We Co-Oped",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Complete Domains together with other players 100 times.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"I Came, I Saw, I Conquered",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Collect 5 regional specialties in another player's world.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"I Came, I Saw, I Conquered",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Collect 20 regional specialties in another player's world.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"I Came, I Saw, I Conquered",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Collect 50 regional specialties in another player's world.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"That's One Big Crystalfly",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat an Anemo Hypostasis in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"...And Still Smiling!",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat an Electro Hypostasis in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"You Have to Hit the Pillars",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat a Geo Hypostasis in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Just Me and You, the Sky So Blue, and Almost Getting Killed by a Cryo Regisvine",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat a Cryo Regisvine in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"This Is Fine",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat a Pyro Regisvine in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"A Fish Called Rhodeia",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat an Oceanid in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Wolf Pact",
+    "category":"Meetings in Outrealm: Series I",
+    "description":"Defeat the king of Wolvendom in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"A Delusion's Abilities Don't Decide a Battle's Outcome",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat Childe in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Moving Mountains",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat a Primo Geovishap in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Blast from the Past",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat Azhdaha in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Put on Ice",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat a Cryo Hypostasis in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"No Strings Attached, Anymore",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat a Maguu Kenki in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Operation Bonfire",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat a Pyro Hypostasis in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"The Not-So-Perpetual Mechanical Array",
+    "category":"Meetings in Outrealm: Series II",
+    "description":"Defeat a Perpetual Mechanical Array in Co-op Mode.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Continental Explorer: Dragonspine",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Light up the Dragonspine map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Peak Hopper",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Unlock all Teleport Waypoints in Dragonspine.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Seelie in the Snow",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Follow 5 Warming Seelie in Dragonspine to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Seelie in the Snow",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Follow 10 Warming Seelie in Dragonspine to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Seelie in the Snow",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Follow 20 Warming Seelie in Dragonspine to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Mountain of Treasure",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Open 40 chests in Dragonspine.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Mountain of Treasure",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Open 80 chests in Dragonspine.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Mountain of Treasure",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Open 160 chests in Dragonspine.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Scarlet Sprouts",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Raise the Frostbearing Tree to Lv. 4.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Scarlet Sprouts",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Raise the Frostbearing Tree to Lv. 8.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Scarlet Sprouts",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Raise the Frostbearing Tree to Lv. 12.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Skyfrost Nail",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Raise the strange column.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Dragonspear",
+    "category":"Visitors on the Icy Mountain",
+    "description":"Make a weapon from a dragon's remains.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"High Adeptal Energy Readings Ahead",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach 20,000 Adeptal Energy in 1 realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"High Adeptal Energy Readings Ahead",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach 20,000 Adeptal Energy in 2 realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"High Adeptal Energy Readings Ahead",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach 20,000 Adeptal Energy in 3 realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Friend of the Realm",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach Trust Rank 4 with the teapot spirit.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Friend of the Realm",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach Trust Rank 7 with the teapot spirit.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Friend of the Realm",
+    "category":"A Realm Beyond: Series I",
+    "description":"Reach Trust Rank 10 with the teapot spirit.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"T-T-T-Timberhochwandi",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 100 pieces of wood.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"T-T-T-Timberhochwandi",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 600 pieces of wood.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"T-T-T-Timberhochwandi",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 2,000 pieces of wood.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"If I Were a Rich Man",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 2,000 realm currency.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"If I Were a Rich Man",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 10,000 realm currency.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"If I Were a Rich Man",
+    "category":"A Realm Beyond: Series I",
+    "description":"Obtain 50,000 realm currency.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Not Just a Small Bench",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 120 furnishings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Not Just a Small Bench",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 300 furnishings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Not Just a Small Bench",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 600 furnishings.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Color It In",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 50 dyes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Color It In",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 200 dyes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Color It In",
+    "category":"A Realm Beyond: Series I",
+    "description":"Create 600 dyes.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Precision Modeling",
+    "category":"A Realm Beyond: Series I",
+    "description":"Learn 60 furnishing blueprints.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Precision Modeling",
+    "category":"A Realm Beyond: Series I",
+    "description":"Learn 120 furnishing blueprints.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Precision Modeling",
+    "category":"A Realm Beyond: Series I",
+    "description":"Learn 180 furnishing blueprints.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"My... Territory",
+    "category":"A Realm Beyond: Series I",
+    "description":"Place 50 furnishings in a single realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"My... Territory",
+    "category":"A Realm Beyond: Series I",
+    "description":"Place 150 furnishings in a single realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"My... Territory",
+    "category":"A Realm Beyond: Series I",
+    "description":"Place 300 furnishings in a single realm layout.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Realm Sans Frontiéres",
+    "category":"A Realm Beyond: Series I",
+    "description":"Use the Serenitea Pot to enter your realm.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Honored Guest of the Realm",
+    "category":"A Realm Beyond: Series II",
+    "description":"Invite a companion to stay in your Serenitea Pot.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fireside Chats",
+    "category":"A Realm Beyond: Series II",
+    "description":"Unlock 10 interactions with your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fireside Chats",
+    "category":"A Realm Beyond: Series II",
+    "description":"Unlock 20 interactions with your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Fireside Chats",
+    "category":"A Realm Beyond: Series II",
+    "description":"Unlock 30 interactions with your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Gifts All Around",
+    "category":"A Realm Beyond: Series II",
+    "description":"Receive 5 gifts from your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Gifts All Around",
+    "category":"A Realm Beyond: Series II",
+    "description":"Receive 10 gifts from your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Gifts All Around",
+    "category":"A Realm Beyond: Series II",
+    "description":"Receive 20 gifts from your companions.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Continental Explorer: Land of Surging Thunder (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Light up the Narukami Island, Kannazuka, and Yashiori Island areas of the Inazuma map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Thunderbolting Across the Land (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Unlock all Teleport Waypoints in the Narukami Island, Kannazuka, and Yashiori Island areas of Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sanctuary Pilgrim: Inazuma Tenryou (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Unlock all Shrines of Depths in the Narukami Island, Kannazuka, and Yashiori Island areas of Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Eternal Thunder",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Upgrade the Statues of The Seven in Inazuma to their maximum level.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Divine Roots",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Reach the Max Level of Sacred Sakura's Favor.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Naku Weed Whacker (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 10 Electro Seelie on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Naku Weed Whacker (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 20 Electro Seelie on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Naku Weed Whacker (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 40 Electro Seelie on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lights Will Guide You Home (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 4 Seelie to their Seelie Courts on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lights Will Guide You Home (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 8 Seelie to their Seelie Courts on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lights Will Guide You Home (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Follow 16 Seelie to their Seelie Courts on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Open 100 Chests on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Open 200 Chests on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Open 300 Chests on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Complete 6 Open World mechanism-activated Time Trial Challenges on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Complete 12 Open World mechanism-activated Time Trial Challenges on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (I)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Complete 24 Open World mechanism-activated Time Trial Challenges on Narukami Island, Kannazuka, and Yashiori Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Spring Cleaning",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Complete the Sacred Sakura Cleansing Ritual.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Tatara Tales",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Resolve the Crisis at the Mikage Furnace.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Echo of Fury",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series I",
+    "description":"Complete \"Orobashi's Legacy.\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Continental Explorer: Land of Surging Thunder (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Light up the Watatsumi Island Seirai Island areas of the Inazuma map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Thunderbolting Across the Land (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Unlock all Teleport Waypoints in the Watatsumi Island and Seirai Island areas of Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sanctuary Pilgrim: Inazuma Tenryou (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Unlock all Shrines of Depths in the Watatsumi Island and Seirai Island areas of the map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Naku Weed Whacker (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Follow 4 Electro Seelie on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Naku Weed Whacker (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Follow 8 Electro Seelie on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Naku Weed Whacker (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Follow 16 Electro Seelie on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lights Will Guide You Home (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Follow 6 Seelie to their Seelie Courts on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Open 40 Chests on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Open 80 Chests on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lightning-Riding Treasure Hunter (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Open 160 Chests on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Complete 6 Open World mechanism-activated Time Trial Challenges on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Complete 12 Open World mechanism-activated Time Trial Challenges on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lightning-Riding Adventurer (II)",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Complete 24 Open World mechanism-activated Time Trial Challenges on Watatsumi Island and Seirai Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Seirai Stormchasers",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Complete \"Seirai Stormchasers\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"The Same Moonlight",
+    "category":"Inazuma: The Islands of Thunder and Eternity - Series II",
+    "description":"Complete \"The Moon-Bathed Deep\"",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Continental Explorer: Tsurumi Island",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Light up the Tsurumi Island map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fog's Edge",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Unlock all Teleport Waypoints in Tsurumi Island.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Sanctuary Pilgrim: Tsurumi Island",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Unlock all Shrines of Depths on Tsurumi Island.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Flashes in the Night",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Follow 6 Electro Seelie on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Foggy Guidance",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Follow 6 Seelie on Tsurumi Island to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lost Treasure Hunter",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Open 30 Chests on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lost Treasure Hunter",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Open 60 Chests on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lost Treasure Hunter",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Open 120 Chests on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Lost Adventurer",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Complete 4 Open World mechanism-activated Time Trial Challenges on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Lost Adventurer",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Complete 8 Open World mechanism-activated Time Trial Challenges on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Lost Adventurer",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Complete 12 Open World mechanism-activated Time Trial Challenges on Tsurumi Island in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Thunder is Forever",
+    "category":"The Chronicles of the Sea of Fog",
+    "description":"Complete a certain author's reference-gathering commission.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Amateurs Hammer Nails Into Hooks",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch your first fish.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"Do you need a fishtank to go with that?\"",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch your first Ornamental Fish.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"You Mirror'd Moon, Broken",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch a fish that only comes out at night for the first time.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ding Ding Ding!",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch 100 fish successfully.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Ding Ding Ding!",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch 500 fish successfully.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Ding Ding Ding!",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch 2000 fish successfully.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"\"Call Me Ishmael.\"",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch one fish in another player's world.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Fishy Motive",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Buy a fishing rod from the Fishing Association.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Into the Waters",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Successfully make 20 Bait.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"A Right Proper Angler",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Unlock 20 fish Archive entries.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Intermission",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch a scattered page of a book while fishing in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Stabilizer",
+    "category":"Teyvat Fishing Guide: Series I",
+    "description":"Catch fish successfully 10 times while always staying inside the Ideal Tension Zone.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"\"...You Do Not Know the Night...\"",
+    "category":"The Light of Day",
+    "description":"Light up the Enkanomiya map.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"The Highest Authority in the Land",
+    "category":"The Light of Day",
+    "description":"Unlock all Teleport Waypoints in Enkanomiya.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Phosphoros' Guidance",
+    "category":"The Light of Day",
+    "description":"Follow 6 Seelie on Enkanomiya to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Phosphoros' Guidance",
+    "category":"The Light of Day",
+    "description":"Follow 15 Seelie on Enkanomiya to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Phosphoros' Guidance",
+    "category":"The Light of Day",
+    "description":"Follow 30 Seelie on Enkanomiya to their Seelie Courts.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Hesperus' Boons",
+    "category":"The Light of Day",
+    "description":"Open 40 Chests on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Hesperus' Boons",
+    "category":"The Light of Day",
+    "description":"Open 80 Chests on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Hesperus' Boons",
+    "category":"The Light of Day",
+    "description":"Open 160 Chests on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Kairos' Constancy",
+    "category":"The Light of Day",
+    "description":"Complete 3 Open World mechanism-activated Time Trial Challenges on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"5"
+  },
+  {
+    "achievement":"Kairos' Constancy",
+    "category":"The Light of Day",
+    "description":"Complete 6 Open World mechanism-activated Time Trial Challenges on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  },
+  {
+    "achievement":"Kairos' Constancy",
+    "category":"The Light of Day",
+    "description":"Complete 12 Open World mechanism-activated Time Trial Challenges on Enkanomiya in Inazuma.",
+    "requirements":"—",
+    "type":"",
+    "reward":"20"
+  },
+  {
+    "achievement":"Fire Rat's Robe, Dragon-Head Pearl, Sacred Offering Bowl, and...",
+    "category":"The Light of Day",
+    "description":"Obtain the coral branch that Tsukuyo requested.",
+    "requirements":"—",
+    "type":"",
+    "reward":"10"
+  }
+]

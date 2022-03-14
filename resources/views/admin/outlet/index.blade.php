@@ -30,11 +30,18 @@
                 <h3>Data Outlet</h3>
             </div>
             <div class="card-body">
-                <div class="d-flex mb-3">
-                    {{-- <button type="button" class="btn btn-primary ">Buat Data</button> --}}
+                <div class="d-flex mb-3 justify-content-between">
                     <button type="button" class="btn btn-primary rounded-pill block" data-bs-toggle="modal" data-bs-target="#create-data-modal">
                         Buat Data
                     </button>
+                    <span>
+                        <a href="/outlet/export-excel" class="btn btn-primary rounded-pill">
+                            Export
+                        </a>
+                        <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#import-data-modal">
+                            Import
+                        </button>
+                    </span>
                 </div>
                 <table class="table" id="outlet-table">
                     <thead>
@@ -59,4 +66,18 @@
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('vendors/mazer/dist/assets/vendors/jquery-datatables/custom.jquery.dataTables.bootstrap5.min.js') }}"></script>
     <script type="module" src="{{ asset('js/crud/outlet.js') }}"></script>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+        toast: true,
+        title: "Success",
+        text: '{{ session('success') }}',
+        icon: 'success',
+        position: 'top-right',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+    })
+        </script>
+    @endif
 @endpush

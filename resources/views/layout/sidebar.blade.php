@@ -24,12 +24,14 @@
                     </a>
                 </li>
 
+                @if (Auth()->user()->role == 'admin' || Auth()->user()->role == 'owner')
                 <li class="sidebar-item {{ request()->is('dashboard') ? ' active' : '' }}">
                     <a href="/dashboard" class="sidebar-link">
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
+                @endif
 
                 @if (Auth()->user()->role == 'admin' || Auth()->user()->role == 'kasir')
                 <li class="sidebar-title">Data</li>
@@ -40,6 +42,13 @@
                     <a href="/data/outlet" class="sidebar-link">
                         <i class="bi bi-shop"></i>
                         <span>Outlet</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item {{ request()->is('data/barang-inventaris') ? ' active' : '' }}">
+                    <a href="/data/barang-inventaris" class="sidebar-link">
+                        <i class="bi bi-inboxes"></i>
+                        <span>Barang Inventaris</span>
                     </a>
                 </li>
                 @endif
@@ -120,6 +129,15 @@
                 @endif
 
                 <li class="sidebar-title">Utilitas</li>
+
+                <li class="sidebar-item {{ request()->is('test') ? ' active' : '' }}">
+                    <a href="/test" class="sidebar-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+                        </svg>
+                        <span>Simulasi Data</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item">
                     <form action="{{ route('logout') }}" method="post">

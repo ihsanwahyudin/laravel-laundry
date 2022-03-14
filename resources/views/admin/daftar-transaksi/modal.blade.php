@@ -149,9 +149,6 @@
                         </table>
                     </div>
                 </div>
-                <div class="clearfix">
-                    <button type="button" class="btn btn-outline-primary float-end" id="update-status-transaksi">Update</button>
-                </div>
             </div>
         </div>
     </div>

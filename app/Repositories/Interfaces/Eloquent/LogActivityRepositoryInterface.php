@@ -19,4 +19,8 @@ interface LogActivityRepositoryInterface
     public function filterLogsMasterData(string $startDate, string $endDate);
 
     public function filterLogsTransaksi(string $startDate, string $endDate);
+
+    public function getMasterDataLogsByUserID(int $id);
+
+    public function getTransaksiLogsByUserID(int $id);
 }

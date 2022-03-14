@@ -2,10 +2,18 @@
 
 namespace App\Services;
 
+use App\Exports\BarangInventarisExport;
+use App\Exports\ExampleExport;
+use App\Exports\MemberExport;
+use App\Exports\OutletExport;
+use App\Exports\PaketExport;
 use App\Exports\TransaksiExport;
 use App\Exports\TransaksiExportByDate;
 use App\Repositories\Interfaces\Eloquent\TransaksiRepositoryInterface;
 use Dompdf\Dompdf;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\View;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ExportService
@@ -25,6 +33,44 @@ class ExportService
     public function exportExcelByDate($startDate, $endDate)
     {
         return Excel::download(new TransaksiExportByDate($startDate, $endDate), 'laporan-transaksi.xlsx');
+    }
+
+    public function exportExcelExample()
+    {
+        $path = public_path('json/genshin-achievement.json');
+
+        if (!File::exists($path)) {
+            abort(404);
+        }
+
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        // dd(json_decode($file));
+
+        // $response = Response::make($file, 200);
+        // $response->header("Content-Type", $type);
+
+        return Excel::download(new ExampleExport(json_decode($file)), 'genshin-achievement.xlsx');;
+    }
+
+    public function exportMemberExcel()
+    {
+        return Excel::download(new MemberExport,'member '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportOutletExcel()
+    {
+        return Excel::download(new OutletExport,'outlet '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportPaketExcel()
+    {
+        return Excel::download(new PaketExport,'paket '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportBarangInventarisExcel()
+    {
+        return Excel::download(new BarangInventarisExport,'barang inventaris '.date('d-m-Y').'.xlsx');
     }
 
     public function exportPDF()
@@ -66,282 +112,11 @@ class ExportService
 
     private function fakturXML($data)
     {
-        $title = 'Faktur Pembayaran';
-        $statusTransaksi = $data['status_transaksi'];
-        $statusPembayaran = $data['status_pembayaran'];
-        $metodePembayaran = $data['metode_pembayaran'];
-        $noInvoice = $data['kode_invoice'];
-        $namaMember = $data['member']['nama'];
-        $tlp = $data['member']['tlp'];
-        $tglBayar = $data['tgl_bayar'];
-        $batasWaktu = $data['batas_waktu'];
-        $biayaTambahan = number_format($data['pembayaran']['biaya_tambahan'], 0, ',', '.');
-        $diskon = $data['pembayaran']['diskon'];
-        $pajak = $data['pembayaran']['pajak'];
-        $totalPembayaran = number_format($data['pembayaran']['total_pembayaran'], 0, ',', '.');
-        $totalBayar = number_format($data['pembayaran']['total_bayar'], 0, ',', '.');
-        $kembalian = number_format(abs((int)$data['pembayaran']['total_pembayaran'] - (int)$data['pembayaran']['total_bayar']), 0, ',', '.');
-        // dd($kembalian);
-
-        $tbody = '';
-        foreach($data['detailTransaksi'] as $key => $item) {
-            $tbody .= '<tr>
-                            <td>'.($key+1).'</td>
-                            <td>'.$item['paket']['nama_paket'].'</td>
-                            <td>'.$item['paket']['jenis'].'</td>
-                            <td>Rp '.number_format($item['harga'], 0, ',', '.').'</td>
-                            <td>'.$item['qty'].'x</td>
-                            <td align="left">Rp '.number_format($item['harga'] * $item['qty'], 0, ',', '.').'</td>
-                        </tr>';
-        }
-
-        $tfoot = '';
-
-        if($data['status_pembayaran'] === 'lunas') {
-            $tfoot .= '<tr>
-                            <td colspan="5" align="right">Biaya Tambahan</td>
-                            <td align="left">Rp '.$biayaTambahan.'</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" align="right">Diskon</td>
-                            <td align="left">'.$diskon.'%</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" align="right">Pajak</td>
-                            <td align="left">'.$pajak.'%</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" align="right">Total Pembayaran</td>
-                            <td align="left">Rp '.$totalPembayaran.'</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" align="right">Total Bayar</td>
-                            <td align="left">Rp '.$totalBayar.'</td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" align="right">Kembalian</td>
-                            <td align="left">Rp '.$kembalian.'</td>
-                        </tr>';
-        } else {
-            $tfoot .= '<tr>
-                            <th colspan="6" align="center">Pembayaran Belum Lunas</th>
-                        </tr>';
-        }
-
-        return
-        <<<HTML
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <title>$title</title>
-
-                <style type="text/css">
-                    * {
-                        font-family: Verdana, Arial, sans-serif;
-                    }
-                    table {
-                        font-size: x-small;
-                    }
-                    .content-header tr, .content-header td {
-                        margin: 0;
-                        padding-top: 0;
-                        padding-bottom: 0;
-                    }
-                    thead {
-                        /* background: #202020; */
-                        border: 1px solid #202020;
-                        color: #202020;
-                        text-align: left;
-                    }
-                    tfoot tr td {
-                        /* font-weight: bold; */
-                        font-size: x-small;
-                    }
-                    .gray {
-                        background-color: lightgray;
-                    }
-                    h3 {
-                        text-transform: uppercase;
-                    }
-                    .text-uppercase {
-                        text-transform: uppercase;
-                    }
-                    .mp-0 {
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .px-1 {
-                        padding-right: .5rem !important;
-                        padding-left: .5rem !important;
-                    }
-                </style>
-            </head>
-            <body>
-                <h3 align="center">$title</h3>
-                <br/>
-                <table class="content-header" width="100%" cellpadding="5" cellspacing="0">
-                    <tr>
-                        <td width="50%">
-                            <table class="content-header" cellpadding="5" cellspacing="0">
-                                <tr>
-                                    <td>Status Transaksi</td>
-                                    <td class="px-1">:</td>
-                                    <td>$statusTransaksi</td>
-                                </tr>
-                                <tr>
-                                    <td>Status Pembayaran</td>
-                                    <td class="px-1">:</td>
-                                    <td>$statusPembayaran</td>
-                                </tr>
-                                <tr>
-                                    <td>Metode Pembayaran</td>
-                                    <td class="px-1">:</td>
-                                    <td>$metodePembayaran</td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td width="50%">
-                            <table class="content-header" cellpadding="5" cellspacing="0">
-                                <tr>
-                                    <td>No Invoice</td>
-                                    <td class="px-1">:</td>
-                                    <td>$noInvoice</td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Member</td>
-                                    <td class="px-1">:</td>
-                                    <td>$namaMember</td>
-                                </tr>
-                                <tr>
-                                    <td>No Telepon</td>
-                                    <td class="px-1">:</td>
-                                    <td>$tlp</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <br/>
-                <div style="width: 100%; border: 1px solid #202020; padding-top: .5rem; padding-bottom: .5rem; text-align: center;">
-                    <small style="display: block">Tanggal Bayar - Tanggal Selesai</small>
-                    <small><strong class="mp-0">$tglBayar sd $batasWaktu</strong></small>
-                </div>
-                <br/>
-                <h5 class="text-uppercase" style="margin: 0" align="left">Data Paket</h5>
-                <table width="100%" cellpadding="5" cellspacing="0" class="mp-0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Paket</th>
-                            <th>Jenis</th>
-                            <th>Harga</th>
-                            <th>QTY</th>
-                            <th>Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody style="text-align: center;">
-                        $tbody
-                    </tbody>
-                    <tfoot>
-                        $tfoot
-                    </tfoot>
-                </table>
-            </body>
-        </html>
-        HTML;
+        return View::make('export.faktur-transaksi', compact('data'))->render();
     }
 
     private function xml($data)
     {
-        $title = 'Laporan Transaksi';
-
-        $thead = '<thead>';
-        $thead .= '<tr>
-            <th>No</th>
-            <th align="left">Kode Invoice</th>
-            <th align="left">Nama Member</th>
-            <th align="left">Tanggal Transaksi</th>
-            <th align="left">Status Pembayaran</th>
-            <th align="left">Pemasukan</th>
-        </tr>';
-        $thead .= '</thead>';
-
-        $tbody = `<tbody>`;
-        $totalPemasukan = 0;
-        foreach($data as $key => $item) {
-            $totalPemasukan += $item->status_pembayaran === 'lunas' ? $item->pembayaran->total_pembayaran : 0;
-            $tbody .= '<tr>
-                <td align="center">'.($key + 1).'</td>
-                <td>'.$item->kode_invoice.'</td>
-                <td>'.$item->member->nama.'</td>
-                <td>'.date('d F Y', strtotime($item->created_at)).'</td>
-                <td>'.$item->status_pembayaran.'</td>
-                <td>Rp '.($item->status_pembayaran === 'lunas' ? number_format($item->pembayaran->total_pembayaran, 0, ',', '.') : 0).'</td>
-            </tr>';
-        }
-        $tbody .= `</tbody>`;
-        $totalPemasukan = number_format($totalPemasukan, 0, ',', '.');
-
-        return
-        <<<HTML
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <title>$title</title>
-
-                <style type="text/css">
-                    * {
-                        font-family: Verdana, Arial, sans-serif;
-                    }
-                    table {
-                        font-size: x-small;
-                    }
-                    thead {
-                        /* background: #202020; */
-                        border: 1px solid #202020;
-                        color: #202020;
-                        text-align: left;
-                    }
-                    tfoot tr td {
-                        font-weight: bold;
-                        font-size: x-small;
-                    }
-                    .gray {
-                        background-color: lightgray;
-                    }
-                    h3 {
-                        text-transform: uppercase;
-                    }
-                    .text-uppercase {
-                        text-transform: uppercase;
-                    }
-                </style>
-            </head>
-            <body>
-                <h3 align="center">$title</h3>
-
-                <br/>
-                <br/>
-                <h5 class="text-uppercase" style="margin: 0" align="left">Data $title</h5>
-                <table width="100%" cellpadding="5" cellspacing="0">
-                    $thead
-                    $tbody
-                    <tfoot style="border-top: 1px solid black">
-                        <tr>
-                            <th colspan="5">Total Pemasukan</th>
-                            <th align="left">Rp $totalPemasukan</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </body>
-        </html>
-        HTML;
-        // <h5 align="center">
-        //             <br>
-        //             <small style="font-weight: normal">Tanggal: $from s/d $to</small>
-        //         </h5>
-        //         $tfoot
+        return View::make('export.laporan-transaksi', compact('data'))->render();
     }
 }

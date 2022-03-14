@@ -102,6 +102,16 @@ $(function() {
         showAlert('Peringatan', 'warning', 'Cant delete this data, because it has related data')
     })
 
+    $('#create-data-modal').on('hidden.bs.modal', function (e) {
+        clearForm('#create-data-modal')
+        clearErrors()
+    })
+
+    $('#update-data-modal').on('hidden.bs.modal', function (e) {
+        clearForm('#update-data-modal')
+        clearErrors()
+    })
+
     const getOutletData = () => {
         clientRequest('/api/outlet/create', 'GET', '', (status, res) => {
             if(status) {
@@ -111,7 +121,7 @@ $(function() {
     }
 
     const drawOutletData = (data) => {
-        let xml = '<option selected disabled>Choose Outlet...</option>'
+        let xml = '<option selected disabled value="">Choose Outlet...</option>'
         data.map(item => {
             xml += `<option value="${item.id}">${item.nama}</option>`
         })
@@ -189,12 +199,14 @@ $(function() {
 
 	const clearErrors = () => {
 		$('input.form-control').removeClass('is-invalid')
+		$('select.form-select').removeClass('is-invalid')
 		$('textarea.form-control').removeClass('is-invalid')
 		$('span.form-errors').text('')
 	}
 
 	const clearForm = (el) => {
 		$(`${el} input.form-control`).val('')
+		$(`${el} select.form-select`).val('')
 		$(`${el} textarea.form-control`).val('')
 	}
 
