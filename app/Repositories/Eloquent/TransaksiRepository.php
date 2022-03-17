@@ -77,4 +77,11 @@ class TransaksiRepository implements TransaksiRepositoryInterface
             $q->with('paket')->get();
         }])->where('kode_invoice', $noInvoice)->first();
     }
+
+    public function filterDataByStatusTransaksi(string $type, bool $hasPenjemputan) : object
+    {
+        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+            $q->with('paket')->get();
+        }])->where('status_transaksi', $type)->get();
+    }
 }

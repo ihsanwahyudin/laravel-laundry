@@ -109,10 +109,19 @@ class TransaksiService
 
     public function updateStatusTransaksi($payload)
     {
-        $array = [
-            'status_transaksi' => $payload['transaksi']['status_transaksi']
-        ];
-        return $this->transaksiRepository->updateTransaksi($array, $payload['transaksi']['id']);
+        $array = [];
+        foreach($payload['data_transaksi'] as $item) {
+            $data = [
+                'status_transaksi' => $payload['status_transaksi'],
+            ];
+            array_push($array, $this->transaksiRepository->updateTransaksi($data, $item['id']));
+        }
+        return $array;
+    }
+
+    public function filterDataByStatusTransaksi($type, $hasPenjemputan = false)
+    {
+        return $this->transaksiRepository->filterDataByStatusTransaksi($type, $hasPenjemputan);
     }
 }
 

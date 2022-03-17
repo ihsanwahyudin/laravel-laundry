@@ -43,68 +43,41 @@
             <div class="d-flex justify-content-between">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="baru-tab" data-bs-toggle="tab" href="#baru" role="tab" aria-controls="baru" aria-selected="true">Baru</a>
+                        <a class="nav-link active" id="baru-tab" data-bs-toggle="tab" href="baru" role="tab" aria-controls="baru" aria-selected="true">Baru</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="proses-tab" data-bs-toggle="tab" href="#proses" role="tab" aria-controls="proses" aria-selected="false">Proses</a>
+                        <a class="nav-link" id="proses-tab" data-bs-toggle="tab" href="proses" role="tab" aria-controls="proses" aria-selected="false">Proses</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="selesai-tab" data-bs-toggle="tab" href="#selesai" role="tab" aria-controls="selesai" aria-selected="false">Selesai</a>
+                        <a class="nav-link" id="selesai-tab" data-bs-toggle="tab" href="selesai" role="tab" aria-controls="selesai" aria-selected="false">Selesai</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="diambil-tab" data-bs-toggle="tab" href="#diambil" role="tab" aria-controls="diambil" aria-selected="false">Diambil</a>
+                        <a class="nav-link" id="diambil-tab" data-bs-toggle="tab" href="diambil" role="tab" aria-controls="diambil" aria-selected="false">Diambil</a>
                     </li>
                 </ul>
                 <div class="wrap">
-                    <button type="button" class="btn btn-outline-secondary rounded-pill" id="update-">
+                    <button type="button" class="btn btn-secondary rounded-pill" id="update-button">
                         Update
                     </button>
                 </div>
             </div>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="baru" role="tabpanel" aria-labelledby="baru-tab">
-                    <div class="table-responsive p-2">
-                        <table class="table w-100" id="daftar-transaksi-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Invoice</th>
-                                    <th>Nama Member</th>
-                                    <th>Tanggal Bayar</th>
-                                    <th>Batas Waktu</th>
-                                    <th>Metode Pembayaran</th>
-                                    <th>Status Transaksi</th>
-                                    <th>Status Pembayaran</th>
-                                    <th class="text-center">Detail</th>
-                                    <th class="text-center">Action</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="proses" role="tabpanel" aria-labelledby="proses-tab">
-                    Integer interdum diam eleifend metus lacinia, quis gravida eros mollis. Fusce non sapien
-                    sit amet magna dapibus
-                    ultrices. Morbi tincidunt magna ex, eget faucibus sapien bibendum non. Duis a mauris ex.
-                    Ut finibus risus sed massa
-                    mattis porta. Aliquam sagittis massa et purus efficitur ultricies. Integer pretium dolor
-                    at sapien laoreet ultricies.
-                    Fusce congue et lorem id convallis. Nulla volutpat tellus nec molestie finibus. In nec
-                    odio tincidunt eros finibus
-                    ullamcorper. Ut sodales, dui nec posuere finibus, nisl sem aliquam metus, eu accumsan
-                    lacus felis at odio. Sed lacus
-                    quam, convallis quis condimentum ut, accumsan congue massa. Pellentesque et quam vel
-                    massa pretium ullamcorper vitae eu
-                    tortor.
-                </div>
-                <div class="tab-pane fade" id="selesai" role="tabpanel" aria-labelledby="selesai-tab">
-                    <p class="mt-2">Duis ultrices purus non eros fermentum hendrerit. Aenean ornare interdum
-                        viverra. Sed ut odio velit. Aenean eu diam
-                        dictum nibh rhoncus mattis quis ac risus. Vivamus eu congue ipsum. Maecenas id
-                        sollicitudin ex. Cras in ex vestibulum,
-                        posuere orci at, sollicitudin purus. Morbi mollis elementum enim, in cursus sem
-                        placerat ut.</p>
-                </div>
+            <div class="table-responsive p-2 mt-3">
+                <table class="table w-100" id="daftar-transaksi-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Invoice</th>
+                            <th>Nama Member</th>
+                            <th>Tanggal Bayar</th>
+                            <th>Batas Waktu</th>
+                            <th>Metode Pembayaran</th>
+                            <th>Status Transaksi</th>
+                            <th>Status Pembayaran</th>
+                            <th class="text-center">Detail</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

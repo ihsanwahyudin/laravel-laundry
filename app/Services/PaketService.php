@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Repositories\Interfaces\Eloquent\PaketRepositoryInterface;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\DB;
 
 class PaketService
 {
@@ -22,9 +24,16 @@ class PaketService
 
     public function storeData($payload)
     {
-        $data = $this->paketRepository->create($payload);
-        $this->logActivityService->createLog('tb_paket', $data->toArray(), 1);
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->paketRepository->create($payload);
+            $this->logActivityService->createLog('tb_paket', $data->toArray(), 1);
+            DB::commit();
+            return $data;
+        } catch (QueryException $errors) {
+            DB::rollBack();
+            return $errors;
+        }
     }
 
     public function updateDataById($payload, $id)

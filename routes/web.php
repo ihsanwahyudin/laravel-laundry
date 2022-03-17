@@ -10,6 +10,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\PenjemputanController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
@@ -41,6 +42,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/transaksi/baru', [PagesController::class, 'transaksi']);
         Route::get('/transaksi/pembayaran', [PagesController::class, 'transaksiPembayaran']);
         Route::get('/transaksi/list', [PagesController::class, 'daftarTransaksi']);
+        Route::get('/penjemputan', [PagesController::class, 'penjemputan']);
+        Route::put('/api/penjemputan/update-status/{id}', [PenjemputanController::class, 'updateStatus']);
+        Route::resource('/api/penjemputan', PenjemputanController::class);
     });
     Route::middleware(['role:admin,kasir,owner'])->group(function () {
         Route::get('/laporan/transaksi', [PagesController::class, 'laporanTransaksi']);
@@ -62,6 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/api/user', UserController::class);
     Route::resource('/api/paket', PaketController::class);
     Route::resource('/api/barang-inventaris', BarangInventarisController::class);
+    Route::get('/api/data/transaksi/{type}', [TransaksiController::class, 'filter']);
     Route::get('/api/transaksi', [TransaksiController::class, 'index']);
     Route::get('/api/transaksi/non-cash', [TransaksiController::class, 'getNonCashData']);
     Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
@@ -99,8 +104,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/paket/import-excel', [ImportController::class, 'importPaketExcel']);
     Route::get('/barang-inventaris/export-excel', [ExportController::class, 'exportBarangInventarisExcel']);
     Route::post('/barang-inventaris/import-excel', [ImportController::class, 'importBarangInventarisExcel']);
+    Route::get('/penjemputan/export-excel', [ExportController::class, 'exportPenjemputanExcel']);
+    Route::post('/penjemputan/import-excel', [ImportController::class, 'importPenjemputanExcel']);
 });
 
 
 Route::get('/test', [TestController::class, 'test2']);
 Route::post('/test/simpan', [TestController::class, 'simpan'])->name('test.simpan');
+
+Route::get('/kelola/gaji', [PagesController::class, 'kelolaGaji']);
+// Route::get('/data/karyawan', [TestController::class, 'getDataKaryawan']);

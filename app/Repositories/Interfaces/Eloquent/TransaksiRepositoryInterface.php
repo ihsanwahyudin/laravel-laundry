@@ -23,4 +23,6 @@ interface TransaksiRepositoryInterface
     public function getNonCashData();
 
     public function findTransaksiByInvoice(string $noInvoice);
+
+    public function filterDataByStatusTransaksi(string $type, bool $hasPenjemputan) : object;
 }

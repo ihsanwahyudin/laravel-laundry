@@ -16,7 +16,7 @@ class CreateTransaksisTable extends Migration
         Schema::create('tb_transaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('outlet_id');
-            $table->string('kode_invoice', 100);
+            $table->string('kode_invoice', 100)->unique();
             $table->unsignedBigInteger('member_id');
             $table->date('tgl_bayar');
             $table->date('batas_waktu');

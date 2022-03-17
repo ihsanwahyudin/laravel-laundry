@@ -7,6 +7,7 @@ use App\Exports\ExampleExport;
 use App\Exports\MemberExport;
 use App\Exports\OutletExport;
 use App\Exports\PaketExport;
+use App\Exports\PenjemputanExport;
 use App\Exports\TransaksiExport;
 use App\Exports\TransaksiExportByDate;
 use App\Repositories\Interfaces\Eloquent\TransaksiRepositoryInterface;
@@ -71,6 +72,11 @@ class ExportService
     public function exportBarangInventarisExcel()
     {
         return Excel::download(new BarangInventarisExport,'barang inventaris '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportPenjemputanExcel()
+    {
+        return Excel::download(new PenjemputanExport,'penjemputan '.date('d-m-Y').'.xlsx');
     }
 
     public function exportPDF()

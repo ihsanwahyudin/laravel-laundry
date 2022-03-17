@@ -90,4 +90,14 @@ class PagesController extends Controller
     {
         return view('admin.barang-inventaris.index');
     }
+
+    public function kelolaGaji()
+    {
+        return view('admin.kelola-gaji.index');
+    }
+
+    public function penjemputan()
+    {
+        return view('admin.penjemputan.index');
+    }
 }

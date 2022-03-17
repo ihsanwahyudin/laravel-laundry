@@ -65,8 +65,8 @@ class TransaksiController extends Controller
     public function updateStatusTransaksi(Request $request)
     {
         $validated = $request->validate([
-            'transaksi.id' => ['required', 'exists:tb_transaksi,id'],
-            'transaksi.status_transaksi' => ['required', 'in:baru,proses,selesai,diambil'],
+            'data_transaksi.*.id' => ['required', 'exists:tb_transaksi,id'],
+            'status_transaksi' => ['required', 'in:baru,proses,selesai,diambil'],
         ]);
         $data['transaksi'] = $this->transaksiService->updateStatusTransaksi($validated);
 
@@ -76,5 +76,11 @@ class TransaksiController extends Controller
     public function cetakFaktur($noInvoice)
     {
         return $this->exportService->cetakFaktur($noInvoice);
+    }
+
+    public function filter($type)
+    {
+        $data = $this->transaksiService->filterDataByStatusTransaksi($type);
+        return response()->json($data, Response::HTTP_OK);
     }
 }
