@@ -27,7 +27,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <h3>Data Outlet</h3>
+                <h3>Data Penjemputan</h3>
             </div>
             <div class="card-body">
                 <div class="d-flex mb-3 justify-content-between">
