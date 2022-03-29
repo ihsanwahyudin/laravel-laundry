@@ -2,7 +2,12 @@
 
 namespace App\Services;
 
+use App\Logging\AllowedArrayLog;
 use App\Repositories\Interfaces\Eloquent\BarangInventarisRepositoryInterface;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class BarangInventarisService
 {
@@ -20,26 +25,66 @@ class BarangInventarisService
 
     public function storeData($payload)
     {
-        $data = $this->barangInventarisRepository->create($payload);
-        // $this->logActivityService->createLog('tb_outlet', $data->toArray(), 1);
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->barangInventarisRepository->create($payload);
+            Log::channel('activity')->info('Membuat data barang inventaris baru', [
+                'reference' => 'barang inventaris',
+                'status' => 'created',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
+        }
     }
 
     public function updateDataById($payload, $id)
     {
-        $data = $this->barangInventarisRepository->updateDataById($payload, $id);
-        // $changed = $data->getChanges();
-        // if(count($changed) > 0) {
-        //     $changed['id'] = $data->id;
-        //     $this->logActivityService->createLog('tb_outlet', $changed, 3);
-        // }
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->barangInventarisRepository->updateDataById($payload, $id);
+            $changed = $data->getChanges();
+            if(count($changed) > 0) {
+                $changed['id'] = $data->id;
+                Log::channel('activity')->info('Mengubah data barang inventaris', [
+                    'reference' => 'barang inventaris',
+                    'status' => 'updated',
+                    'user_id' => Auth::user()->id,
+                    'user_name' => Auth::user()->name,
+                    'data' => [...AllowedArrayLog::filter($data->toArray())],
+                    'changed_data' => [...AllowedArrayLog::filter($changed)]
+                ]);
+            }
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
+        }
     }
 
     public function deleteDataById($id)
     {
-        $data = $this->barangInventarisRepository->deleteDataById($id);
-        // $this->logActivityService->createLog('tb_outlet', ['id' => $data->id, 'nama' => $data->nama], 4);
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->barangInventarisRepository->deleteDataById($id);
+            Log::channel('activity')->info('Menghapus data barang inventaris', [
+                'reference' => 'barang inventaris',
+                'status' => 'deleted',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
+        }
     }
 }

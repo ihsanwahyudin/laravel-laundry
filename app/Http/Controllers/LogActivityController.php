@@ -18,6 +18,7 @@ class LogActivityController extends Controller
     public function getAllActivities()
     {
         $data = $this->logActivityService->getAllLogs();
+        // return $data;
         return response()->json($data, Response::HTTP_OK);
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\BarangImport;
 use App\Imports\BarangInventarisImport;
 use App\Imports\MemberImport;
 use App\Imports\OutletImport;
@@ -58,6 +59,16 @@ class ImportController extends Controller
             'file' => 'required|mimes:xls,xlsx'
         ]);
         Excel::import(new PenjemputanImport, $request->file('file'));
+
+        return back()->with('success', 'Data imported successfully.');
+    }
+
+    public function importBarangExcel(Request $request)
+    {
+        $validated = $request->validate([
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
+        Excel::import(new BarangImport, $request->file('file'));
 
         return back()->with('success', 'Data imported successfully.');
     }

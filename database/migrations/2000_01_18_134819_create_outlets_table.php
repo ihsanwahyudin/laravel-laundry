@@ -22,31 +22,55 @@ class CreateOutletsTable extends Migration
             $table->timestamps();
         });
 
-        DB::unprepared('
-            DROP PROCEDURE IF EXISTS `insertOutlet`;
-            CREATE PROCEDURE `insertOutlet` (
-                IN nama VARCHAR(100),
-                IN alamat TEXT,
-                IN tlp VARCHAR(20)
-            )
-            BEGIN
-                INSERT INTO tb_outlet (nama, alamat, tlp)
-                VALUES (nama, alamat, tlp);
-            END;
-        ');
+        // DB::unprepared('
+        //     DROP TRIGGER IF EXISTS `on_insert_tb_outlet`;
+        //     CREATE TRIGGER `on_insert_tb_outlet` AFTER INSERT ON `tb_outlet` FOR EACH ROW
+        //     BEGIN
+        //         INSERT INTO `tb_logging` (`action`, `created_at`) VALUES (`INSERT DATA tb_outlet`, CURRENT_TIMESTAMP);
+        //     END;
+        // ');
 
-        DB::unprepared('
-            DROP FUNCTION IF EXISTS `getDataOutlet`;
-            CREATE FUNCTION `getDataOutlet`(pid INT)
-            RETURNS VARCHAR(100)
-            BEGIN
-                DECLARE nama_outlet VARCHAR(20);
+        // DB::unprepared('
+        //     DROP TRIGGER IF EXISTS `on_update_tb_outlet`;
+        //     CREATE TRIGGER `on_update_tb_outlet` AFTER UPDATE ON `tb_outlet` FOR EACH ROW
+        //     BEGIN
+        //         INSERT INTO `tb_logging` (`action`, `created_at`) VALUES (`UPDATE DATA tb_outlet`, CURRENT_TIMESTAMP);
+        //     END;
+        // ');
 
-                SELECT nama INTO nama_outlet FROM tb_outlet WHERE id = pid;
+        // DB::unprepared('
+        //     DROP TRIGGER IF EXISTS `on_delete_tb_outlet`;
+        //     CREATE TRIGGER `on_delete_tb_outlet` BEFORE DELETE ON `tb_outlet` FOR EACH ROW
+        //     BEGIN
+        //         INSERT INTO `tb_logging` (`action`, `created_at`) VALUES (`DELETE DATA tb_outlet`, CURRENT_TIMESTAMP);
+        //     END;
+        // ');
 
-                RETURN nama_outlet;
-            END;
-        ');
+        // DB::unprepared("
+        //     DROP PROCEDURE IF EXISTS `insertOutlet`;
+        //     CREATE PROCEDURE `insertOutlet` (
+        //         IN p_nama VARCHAR(100),
+        //         IN p_alamat TEXT,
+        //         IN p_tlp VARCHAR(20)
+        //     )
+        //     BEGIN
+        //         INSERT INTO `tb_outlet`(`nama`, `alamat`, `tlp`, `created_at`, `updated_at`)
+        //         VALUES (p_nama, p_alamat, p_tlp, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+        //     END;
+        // ");
+
+        // DB::unprepared('
+        //     DROP FUNCTION IF EXISTS `getDataOutlet`;
+        //     CREATE FUNCTION `getDataOutlet`(pid INT)
+        //     RETURNS VARCHAR(100)
+        //     BEGIN
+        //         DECLARE nama_outlet VARCHAR(20);
+
+        //         SELECT nama INTO nama_outlet FROM tb_outlet WHERE id = pid;
+
+        //         RETURN nama_outlet;
+        //     END;
+        // ');
     }
 
     /**

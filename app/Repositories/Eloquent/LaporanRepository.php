@@ -23,14 +23,18 @@ class LaporanRepository implements LaporanRepositoryInterface
 
     public function getLaporanTransaksi()
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran');
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->latest()->get();
     }
 
     public function getLaporanTransaksiBetweenDate($startDate, $endDate)
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran');
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->whereBetween('created_at', [$startDate, $endDate])->latest()->get();
     }

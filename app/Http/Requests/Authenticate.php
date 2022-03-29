@@ -24,7 +24,7 @@ class Authenticate extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'email'],
+            'username' => ['required'],
             'password' => ['required'],
             'remember' => ['nullable', 'in:true']
         ];

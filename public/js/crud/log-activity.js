@@ -11,7 +11,7 @@ $(function() {
     const getAllLogActivity = () => {
         clientRequest('/api/log-activity/all', 'GET', null, (status, res) => {
             if(status) {
-                renderLogActivity(res.data)
+                renderLogActivity(res.data.data)
             } else {
                 console.info(res)
             }
@@ -20,36 +20,11 @@ $(function() {
 
     const renderLogActivity = (data) => {
         let card = ''
-        for (const date in data) {
+        data.forEach(item => {
             let totalActivity = 0
             let logs = ''
-            data[date].map((item) => {
-                let activityXML = ''
+            item.logs.forEach(list => {
                 totalActivity++
-                if ('kode_invoice' in item) {
-                    activityXML += `Melakukan transaksi dengan nomor invoice "${item.kode_invoice}"`
-                } else {
-                    const allowedColumn = ['nama', 'nama_paket', 'nama_member', 'name']
-                    let dataName = ''
-                    for (const list of item.detail_log_activity) {
-                        if(allowedColumn.includes(list.table_column_list.column_name)) {
-                            dataName = list.data
-                            break;
-                        }
-                    }
-                    activityXML +=
-                    item.action === "1" ?
-                        `Menambah data "${dataName}" pada tabel ${item.reference_table.table_name.replace('tb_', '')}` :
-                    item.action === "2" ?
-                        `Membaca` :
-                    item.action === "3" ?
-                        `Mengubah data "${dataName}" pada tabel ${item.reference_table.table_name.replace('tb_', '')}` :
-                    item.action === "4" ?
-                        `Menghapus data "${dataName}" pada tabel ${item.reference_table.table_name.replace('tb_', '')}` :
-                    item.action === "5" ?
-                        `Login dengan IP Address "${item.detail_log_activity[0].data}"` :
-                    ""
-                }
                 logs +=
                 `<div class="recent-message d-flex px-4 py-3">
                     <div class="avatar avatar-lg">
@@ -57,31 +32,31 @@ $(function() {
                     </div>
                     <div class="name ms-4">
                         <div class="title">
-                            <h5>${item.user.name}</h5>
-                            <span><small>${moment(item.created_at).startOf('minute').fromNow()}</small></span>
+                            <h5>${list.context.user_name}</h5>
+                            <span><small>${moment(list.timestamp).startOf('minute').fromNow()}</small></span>
                         </div>
-                        <h6 class="text-muted mb-0">${activityXML}</h6>
+                        <h6 class="text-muted mb-0">${list.message}</h6>
                     </div>
                 </div>`
             })
             card +=
             `<div class="card">
                 <div class="card-header d-flex justify-content-between">
-                        <h4>${moment(date).format('DD MMMM YYYY')}</h4>
+                        <h4>${moment(item.date).format('DD MMMM YYYY')}</h4>
                     <h4>${totalActivity} Aktivitas</h4>
                 </div>
                 <div class="card-content pb-4">
                     ${logs}
                 </div>
             </div>`
-        }
+        })
         $('#log-data').html(card)
     }
 
     const filterLogs = (data) => {
         clientRequest('/api/log-activity/filter', 'POST', data, (status, res) => {
             if(status) {
-                renderLogActivity(res.data)
+                renderLogActivity(res.data.data)
             } else {
                 if(res.status === 422) {
                     showToast('Failed', 'warning', 'Harap masukkan tanggal yang valid')

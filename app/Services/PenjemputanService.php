@@ -2,9 +2,12 @@
 
 namespace App\Services;
 
+use App\Logging\AllowedArrayLog;
 use App\Repositories\Interfaces\Eloquent\PenjemputanRepositoryInterface;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PenjemputanService
 {
@@ -28,7 +31,13 @@ class PenjemputanService
         try {
             DB::beginTransaction();
             $data = $this->penjemputanRepository->create($payload);
-            $this->logActivityService->createLog('tb_penjemputan', $data->toArray(), 1);
+            Log::channel('activity')->info('Membuat data penjemputan baru', [
+                'reference' => 'penjemputan',
+                'status' => 'created',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
             DB::commit();
             return $data;
         } catch (QueryException $error) {
@@ -39,19 +48,46 @@ class PenjemputanService
 
     public function updateDataById($payload, $id)
     {
-        $data = $this->penjemputanRepository->updateDataById($payload, $id);
-        $changed = $data->getChanges();
-        if(count($changed) > 0) {
-            $changed['id'] = $data->id;
-            $this->logActivityService->createLog('tb_penjemputan', $changed, 3);
+        try {
+            DB::beginTransaction();
+            $data = $this->penjemputanRepository->updateDataById($payload, $id);
+            $changed = $data->getChanges();
+            if(count($changed) > 0) {
+                $changed['id'] = $data->id;
+                Log::channel('activity')->info('Mengubah data penjemputan', [
+                    'reference' => 'penjemputan',
+                    'status' => 'updated',
+                    'user_id' => Auth::user()->id,
+                    'user_name' => Auth::user()->name,
+                    'data' => [...AllowedArrayLog::filter($data->toArray())],
+                    'changed_data' => [...AllowedArrayLog::filter($changed)]
+                ]);
+            }
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
         }
-        return $data;
     }
 
     public function deleteDataById($id)
     {
-        $data = $this->penjemputanRepository->deleteDataById($id);
-        $this->logActivityService->createLog('tb_penjemputan', ['id' => $data->id, 'petugas_penjemput' => $data->petugas_penjemput], 4);
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->penjemputanRepository->deleteDataById($id);
+            Log::channel('activity')->info('Menghapus data penjemputan', [
+                'reference' => 'penjemputan',
+                'status' => 'deleted',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
+        }
     }
 }

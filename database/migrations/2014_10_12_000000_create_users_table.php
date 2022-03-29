@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->enum('role', ['admin', 'kasir', 'owner']);
             $table->unsignedBigInteger('outlet_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();

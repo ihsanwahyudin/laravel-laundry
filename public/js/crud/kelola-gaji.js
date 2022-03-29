@@ -5,25 +5,6 @@ $(function() {
     const dataKaryawan = []
     localStorage.getItem('dataKaryawan') && dataKaryawan.push(...JSON.parse(localStorage.getItem('dataKaryawan')))
 
-    // const getDataKaryawan = async ()  => {
-    //     try {
-    //         const res = await axios.get('/data/karyawan')
-    //         return res.data
-    //     } catch (error) {
-    //         console.log(res)
-    //     }
-    // }
-
-    // getDataKaryawan().then(data => {
-    //     let xml = '<option selected disabled value="">Pilih Karyawan</option>'
-    //     data.map(item => {
-    //         xml += `
-    //             <option value="${item.id}">${item.name}</option>
-    //         `
-    //     })
-    //     $('#id_karyawan').html(xml)
-    // })
-
     $('#status-menikah').on('change', function() {
         const value = $(this).val()
         if (value === 'single') {
@@ -48,8 +29,8 @@ $(function() {
         const orderBy = $(this).val()
         const groupBy = $('#group-by').val()
         if(orderBy) {
-            const sort = insertionSort(dataKaryawan, dataKaryawan.length, orderBy, groupBy)
-            renderTable(dataKaryawan)
+            const sort = quickSort(dataKaryawan, 0, dataKaryawan.length - 1, orderBy, groupBy)
+            renderTable(sort)
         }
     })
 
@@ -58,15 +39,15 @@ $(function() {
         const groupBy = $(this).val()
         const orderBy = $('#sorting').val()
         if(orderBy) {
-            const sort = insertionSort(dataKaryawan, dataKaryawan.length, orderBy, groupBy)
-            renderTable(dataKaryawan)
+            const sort = quickSort(dataKaryawan, 0, dataKaryawan.length - 1, orderBy, groupBy)
+            renderTable(sort)
         }
     })
 
     $('#search').on('keypress', function(e) {
         if (e.keyCode === 13) {
             const text = $("#search").val()
-            const arr = searching(dataKaryawan, text)
+            const arr = binarySearch(dataKaryawan, text)
             renderTable(arr)
         }
     })
@@ -138,7 +119,7 @@ $(function() {
         }
     }
 
-    const searching = (arr, text) => {
+    const linearSearch = (arr, text) => {
         // Melakukan Pengecekan jika text === kosong
         if(text !== '' && text !== null) {
             // Deklarasi Variable untuk menampung semua data yang telah di cari
@@ -165,7 +146,7 @@ $(function() {
                     }
                 }
             }
-            // Mengembalikan array yang telah di searching
+            // Mengembalikan array yang telah di cari
             return data
         } else {
             // Mengembalikan array sebelumnya karena text yang di masukan itu null atau kosong
@@ -255,4 +236,241 @@ $(function() {
     }
 
     renderTable(dataKaryawan)
+
+    // Javascript program for implementation of selection sort
+
+    function selectionSort(arr, n, orderBy, groupBy)
+    {
+        function swap(arr,xp, yp)
+        {
+            var temp = arr[xp]
+            arr[xp] = arr[yp]
+            arr[yp] = temp
+        }
+        var i, j, min_idx
+
+        // One by one move boundary of unsorted subarray
+        for (i = 0; i < n-1; i++)
+        {
+            // Find the minimum element in unsorted array
+            min_idx = i
+            for (j = i + 1; j < n; j++) {
+                if(orderBy === 'desc') {
+                    if (arr[j][groupBy] < arr[min_idx][groupBy]) {
+                        min_idx = j
+                    }
+                } else {
+                    if (arr[j][groupBy] > arr[min_idx][groupBy]) {
+                        min_idx = j
+                    }
+                }
+                // Swap the found minimum element with the first element
+                swap(arr, min_idx, i)
+            }
+        }
+        return arr
+    }
+
+    // An optimized version of Bubble Sort
+    function bubbleSort(arr, n, orderBy, groupBy) {
+        function swap(arr, xp, yp) {
+            var temp = arr[xp]
+            arr[xp] = arr[yp]
+            arr[yp] = temp
+        }
+        var i, j;
+        for (i = 0; i < n-1; i++) {
+            for (j = 0; j < n-i-1; j++) {
+                if(orderBy === 'desc') {
+                    if (arr[j][groupBy] > arr[j+1][groupBy]) {
+                        swap(arr,j,j+1)
+                    }
+                } else {
+                    if (arr[j][groupBy] < arr[j+1][groupBy]) {
+                        swap(arr,j,j+1)
+                    }
+                }
+            }
+
+        }
+        return arr
+    }
+
+    // A utility function to swap two elements
+    function swap(arr, i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    /* This function takes last element as pivot, places
+    the pivot element at its correct position in sorted
+    array, and places all smaller (smaller than pivot)
+    to left of pivot and all greater elements to right
+    of pivot */
+    function partition(arr, low, high, orderBy, groupBy) {
+
+        // pivot
+        let pivot = arr[high];
+
+        // Index of smaller element and
+        // indicates the right position
+        // of pivot found so far
+        let i = (low - 1);
+
+        for (let j = low; j <= high - 1; j++) {
+
+            // If current element is smaller
+            // than the pivot
+            if(orderBy === 'desc') {
+                if (arr[j][groupBy] < pivot[groupBy]) {
+
+                    // Increment index of
+                    // smaller element
+                    i++;
+                    swap(arr, i, j);
+                }
+            } else {
+                if (arr[j][groupBy] > pivot[groupBy]) {
+                    i++;
+                    swap(arr, i, j);
+                }
+            }
+        }
+        swap(arr, i + 1, high);
+        return (i + 1);
+    }
+
+    /* The main function that implements QuickSort
+            arr[] --> Array to be sorted,
+            low --> Starting index,
+            high --> Ending index
+    */
+    function quickSort(arr, low, high, orderBy, groupBy) {
+        if (low < high) {
+
+            // pi is partitioning index, arr[p]
+            // is now at right place
+            let pi = partition(arr, low, high, orderBy, groupBy);
+
+            // Separately sort elements before
+            // partition and after partition
+            quickSort(arr, low, pi - 1, orderBy, groupBy);
+            quickSort(arr, pi + 1, high, orderBy, groupBy);
+        }
+        return arr
+    }
+
+    // const binarySearch = (arr, text) => {
+    //     const searchText = (arr, mid, key, text, position) => {
+    //         let data = []
+    //         if(position === 'right') {
+    //             for (let i = mid; i < arr.length; i++) {
+    //                 const value = arr[i][key].toString()
+    //                 for (let x = 0; x < value.length; x++) {
+    //                     if (value.substring(x, x + text.length).toLowerCase() == text.toLowerCase()) {
+    //                         data.push(arr[i])
+    //                         break
+    //                     }
+    //                 }
+    //             }
+    //             return data
+    //         } else {
+    //             for (let i = mid; i > 0; i--) {
+    //                 const value = arr[i][key].toString()
+    //                 for (let x = 0; x < value.length; x++) {
+    //                     if (value.substring(x, x + text.length).toLowerCase() == text.toLowerCase()) {
+    //                         data.push(arr[i])
+    //                         break
+    //                     }
+    //                 }
+    //             }
+    //             return data
+    //         }
+    //     }
+
+    //     const subArray = (arr, index, key, text) => {
+    //         const value = arr[index][key].toString()
+    //         for (let x = 0; x < value.length; x++) {
+    //             if (value.toLowerCase() == text.toLowerCase() || text.toLowerCase() > value.toLowerCase()) {
+    //                 return "right"
+    //             } else {
+    //                 return "left"
+    //             }
+    //         }
+    //     }
+
+    //     if(text !== '' && text !== null) {
+    //         let range = arr.length - 1
+    //         let mid = Math.floor((range) / 2)
+    //         for (const key in arr[mid]) {
+    //             const sorted = insertionSort(arr, arr.length, "desc", key)
+    //             const position = subArray(sorted, mid, key, text)
+    //             if(position === 'right') {
+    //                 const data = searchText(arr, mid, key, text, position)
+    //                 if(data.length > 0) {
+    //                     return data
+    //                 }
+    //             } else {
+    //                 const data = searchText(arr, mid, key, text, position)
+    //                 if(data.length > 0) {
+    //                     return data
+    //                 }
+    //             }
+    //         }
+    //         return []
+    //     } else {
+    //         return arr
+    //     }
+    // }
+
+    const binarySearch = (arr, text) => {
+        const searchText = (arr, index, key, text) => {
+            const value = arr[index][key].toString()
+            for (let x = 0; x < value.length; x++) {
+                if (value.substring(x, x + text.length).toLowerCase() == text.toLowerCase()) {
+                    return index
+                }
+            }
+            return -1
+        }
+
+        const subArrayPosition = (arr, mid, key, text) => {
+            let value = arr[mid][key].toString()
+            if (text.localeCompare(value) >= 0) {
+                return "right"
+            } else {
+                return "left"
+            }
+        }
+
+        if(text !== '' && text !== null) {
+            let data = []
+            let range = arr.length - 1
+            let mid = Math.floor((range) / 2)
+            for (const key in arr[mid]) {
+                const sorted = insertionSort(arr, arr.length, "desc", key)
+                const position = subArrayPosition(sorted, mid, key, text)
+                if(position === 'right') {
+                    for(let i = mid; i < arr.length; i++) {
+                        const index = searchText(arr, i, key, text)
+                        if(index !== -1 && typeof data.find(x => x.id == arr[index].id) === 'undefined') {
+                            data.push(arr[index])
+                        }
+                    }
+                } else {
+                    for(let i = mid; i >= 0; i--) {
+                        const index = searchText(arr, i, key, text)
+                        if(index !== -1 && typeof data.find(x => x.id == arr[index].id) === 'undefined') {
+                            data.push(arr[index])
+                        }
+                    }
+                }
+            }
+            return data
+        } else {
+            return arr
+        }
+    }
+
 })

@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Logging\AllowedArrayLog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AuthService
 {
@@ -31,14 +33,22 @@ class AuthService
 
     public function credentialsCheck($payload)
     {
-        if(Auth::attempt($payload->only(['email', 'password']), (boolean)$payload->remember)) {
+
+        if(Auth::attempt($payload->only(['username', 'password']), (boolean)$payload->remember)) {
             $payload->session()->regenerate();
-            $this->logActivityService->createLog('tb_user', ['id' => Auth::user()->id, 'name' => $this->getIPAddress()], 5);
+            $context = ['user_id' => Auth::user()->id, 'user_name' => Auth::user()->name, 'IP_Address' => $this->getIPAddress()];
+            Log::channel('activity')->info("Akses Login dengan IP Address \"" . $this->getIPAddress() . "\"", [
+                'reference' => 'user',
+                'status' => 'login',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($context)]
+            ]);
             return redirect()->intended('/');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'username' => 'The provided credentials do not match our records.',
         ]);
     }
 }

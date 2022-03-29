@@ -18,4 +18,9 @@ class Pembayaran extends Model
     {
         return $this->belongsTo(Transaksi::class, 'transaksi_id');
     }
+
+    public function detailPembayaran()
+    {
+        return $this->hasMany(DetailPembayaran::class, 'pembayaran_id');
+    }
 }

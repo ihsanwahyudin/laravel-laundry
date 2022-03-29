@@ -14,6 +14,8 @@ interface TransaksiRepositoryInterface
 
     public function createPembayaran(array $payload);
 
+    public function createDetailPembayaran(array $payload);
+
     public function createDetailTransaksi(array $payload);
 
     public function updateTransaksi(array $payload, $id);
@@ -25,4 +27,6 @@ interface TransaksiRepositoryInterface
     public function findTransaksiByInvoice(string $noInvoice);
 
     public function filterDataByStatusTransaksi(string $type, bool $hasPenjemputan) : object;
+
+    public function doesntHavePenjemputan() : object|null;
 }

@@ -64,4 +64,9 @@ class ExportController extends Controller
     {
         return $this->exportService->exportPenjemputanExcel();
     }
+
+    public function exportBarangExcel()
+    {
+        return $this->exportService->exportBarangExcel();
+    }
 }

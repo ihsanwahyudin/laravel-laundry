@@ -20,7 +20,6 @@ class CreatePembayaransTable extends Migration
             $table->double('diskon');
             $table->double('pajak');
             $table->double('total_pembayaran');
-            $table->double('total_bayar');
             $table->timestamps();
             $table->foreign('transaksi_id')->references('id')->on('tb_transaksi');
         });

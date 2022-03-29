@@ -28,15 +28,15 @@ class OutletExport implements FromCollection, WithEvents, WithHeadings
         return collect($array);
     }
 
-public function headings(): array
-{
-    return [
-        'No',
-        'Nama',
-        'Alamat',
-        'Tlp'
-    ];
-}
+    public function headings(): array
+    {
+        return [
+            'No',
+            'Nama',
+            'Alamat',
+            'Tlp'
+        ];
+    }
 
     public function registerEvents(): array
     {

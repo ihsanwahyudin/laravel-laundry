@@ -35,55 +35,56 @@ class DatabaseSeeder extends Seeder
         \App\Models\Outlet::factory(10)->create();
         \App\Models\User::factory(10)->create();
         \App\Models\Paket::factory(10)->create();
-        $transaksi = 50;
+        // $transaksi = 50;
 
         // \App\Models\Transaksi::factory($transaksi)->create();
 
-        $faker = \Faker\Factory::create();
+        // $faker = \Faker\Factory::create();
 
-        for($i = 1; $i <= $transaksi; $i++) {
-            $user = User::inRandomOrder()->where('outlet_id', '!=', null)->first();
-            $member = Member::inRandomOrder()->first();
+        // for($i = 1; $i <= $transaksi; $i++) {
+        //     $user = User::inRandomOrder()->where('outlet_id', '!=', null)->first();
+        //     $member = Member::inRandomOrder()->first();
 
-            Transaksi::create([
-                'outlet_id' => $user->outlet_id,
-                'kode_invoice' => "INV" . date('Ym') . (Str::length((string)$i) < 3 ? str_repeat('0', 3 - Str::length((string)$i)) . $i : (string)$i),
-                'member_id' => $member->id,
-                'tgl_bayar' => date('Y-m-d', strtotime($faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'))),
-                'batas_waktu' => date('Y-m-d', strtotime($faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'))),
-                'metode_pembayaran' => $faker->randomElement(['cash', 'dp', 'bayar nanti']),
-                'status_transaksi' => $faker->randomElement(['baru', 'proses', 'selesai', 'diambil']),
-                'status_pembayaran' => $faker->randomElement(['lunas', 'belum lunas']),
-                'user_id' => $user->id
-            ]);
-        }
+        //     Transaksi::create([
+        //         'outlet_id' => $user->outlet_id,
+        //         'kode_invoice' => "INV" . date('Ym') . (Str::length((string)$i) < 3 ? str_repeat('0', 3 - Str::length((string)$i)) . $i : (string)$i),
+        //         'member_id' => $member->id,
+        //         'tgl_bayar' => date('Y-m-d', strtotime($faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'))),
+        //         'batas_waktu' => date('Y-m-d', strtotime($faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'))),
+        //         'metode_pembayaran' => $faker->randomElement(['cash', 'dp', 'bayar nanti']),
+        //         'status_transaksi' => $faker->randomElement(['baru', 'proses', 'selesai', 'diambil']),
+        //         'status_pembayaran' => $faker->randomElement(['lunas', 'belum lunas']),
+        //         'user_id' => $user->id
+        //     ]);
+        // }
 
-        \App\Models\DetailTransaksi::factory($transaksi * 5)->create();
+        // \App\Models\DetailTransaksi::factory($transaksi * 5)->create();
 
-        $data = Transaksi::with('detailTransaksi')->get();
-        foreach($data as $item) {
-            $faker = new Generator();
-            $totalPembayaran = $item->detailTransaksi->sum('harga');
-            $biayaTambahan = round($faker->numberBetween(1000, 10000), -3);
-            $diskon = $faker->numberBetween(0, 25);
-            $afterDiskon = ($totalPembayaran + $biayaTambahan) * $diskon / 100;
-            $totalPembayaran = $totalPembayaran - $afterDiskon;
-            $afterPajak = $totalPembayaran * 10 / 100;
-            $totalPembayaran = $totalPembayaran + $afterPajak;
+        // $data = Transaksi::with('detailTransaksi')->get();
+        // foreach($data as $item) {
+        //     $faker = new Generator();
+        //     $totalPembayaran = $item->detailTransaksi->sum('harga');
+        //     $biayaTambahan = round($faker->numberBetween(1000, 10000), -3);
+        //     $diskon = $faker->numberBetween(0, 25);
+        //     $afterDiskon = ($totalPembayaran + $biayaTambahan) * $diskon / 100;
+        //     $totalPembayaran = $totalPembayaran - $afterDiskon;
+        //     $afterPajak = $totalPembayaran * 10 / 100;
+        //     $totalPembayaran = $totalPembayaran + $afterPajak;
 
-            Pembayaran::create([
-                'transaksi_id' => $item->id,
-                'biaya_tambahan' => $biayaTambahan,
-                'diskon' => $diskon,
-                'pajak' => 10,
-                'total_pembayaran' => $totalPembayaran,
-                'total_bayar' => round($faker->numberBetween($totalPembayaran, $totalPembayaran + 100000), -3),
-            ]);
-        }
+        //     Pembayaran::create([
+        //         'transaksi_id' => $item->id,
+        //         'biaya_tambahan' => $biayaTambahan,
+        //         'diskon' => $diskon,
+        //         'pajak' => 10,
+        //         'total_pembayaran' => $totalPembayaran,
+        //         'total_bayar' => round($faker->numberBetween($totalPembayaran, $totalPembayaran + 100000), -3),
+        //     ]);
+        // }
 
         User::create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
+            'username' => 'admin',
             'role' => 'admin',
             'outlet_id' => 1,
             'password' => Hash::make('admin')
@@ -92,7 +93,8 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'ihsan',
             'email' => 'm.ihsanwahyudin@outlook.com',
-            'role' => 'admin',
+            'username' => 'ihsan',
+            'role' => 'kasir',
             'outlet_id' => 1,
             'password' => Hash::make('ihsan')
         ]);
@@ -100,6 +102,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'owner',
             'email' => 'owner@owner.com',
+            'username' => 'owner',
             'role' => 'owner',
             'outlet_id' => 1,
             'password' => Hash::make('owner')

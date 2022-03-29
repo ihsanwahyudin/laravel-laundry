@@ -109,7 +109,14 @@ $(function() {
                         break;
                     case 'pembayaran':
                         for (const pembayaranKey in selectedLaporan[key]) {
-                            $(`#detail-transaksi-modal [name="${pembayaranKey}"]`).text(formatNumber(selectedLaporan[key][pembayaranKey]))
+                            if(pembayaranKey === 'detail_pembayaran') {
+                                let totalBayar = selectedLaporan[key][pembayaranKey].map(item => item.total_bayar).reduce((a, b) => a + b, 0)
+                                let kembalian = totalBayar - selectedLaporan[key]["total_pembayaran"]
+                                $(`#detail-transaksi-modal [name="total_bayar"]`).text(formatNumber(totalBayar))
+                                $(`#detail-transaksi-modal [name="kembalian"]`).text(formatNumber(kembalian < 0 ? 0 : kembalian))
+                            } else {
+                                $(`#detail-transaksi-modal [name="${pembayaranKey}"]`).text(formatNumber(selectedLaporan[key][pembayaranKey]))
+                            }
                         }
                         break;
                 }

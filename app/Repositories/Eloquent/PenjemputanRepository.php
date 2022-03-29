@@ -23,10 +23,10 @@ class PenjemputanRepository implements PenjemputanRepositoryInterface
         }])->get();
     }
 
-public function create(array $payload) : object
-{
-    return $this->penjemputan->create($payload);
-}
+    public function create(array $payload) : object
+    {
+        return $this->penjemputan->create($payload);
+    }
 
     public function updateDataById(array $payload, int $id) : object
     {

@@ -27,12 +27,6 @@ class TransaksiService
 
     private function generateCode()
     {
-        // $latest = $this->transaksiRepository->getLatestTransaksiData();
-        // $noUrut = ($latest == null) ? "001" : (int)Str::substr($latest->kode_invoice, 8, Str::length($latest->kode_invoice)) + 1;
-        // $noUrutAfter = (Str::length($noUrut) < 3) ? str_repeat('0', 3 - Str::length($noUrut)) . $noUrut : $noUrut;
-        // $kodeInvoice = 'INV' . date('Ym') . $noUrutAfter;
-
-        // return $kodeInvoice;
         $latest = $this->transaksiRepository->getLatestTransaksiData();
         $format = "INV" . date('Ym');
         $noUrut = (is_null($latest)) ? "001" : (int)Str::substr($latest->kode_invoice, Str::length($format) + 1, Str::length($latest->kode_invoice)) + 1;
@@ -44,7 +38,7 @@ class TransaksiService
 
     public function storeTransaksi($payload)
     {
-        $array = [
+        $data = [
             'outlet_id' => Auth::user()->outlet_id,
             'kode_invoice' => $this->generateCode(),
             'member_id' => $payload['member_id'],
@@ -55,25 +49,33 @@ class TransaksiService
             'status_pembayaran' => (int)$payload['total_pembayaran'] - (int)$payload['total_bayar'] <= 0 ? 'lunas' : 'belum lunas',
             'user_id' => Auth::user()->id
         ];
-        return $this->transaksiRepository->createTransaksi($array);
+        return $this->transaksiRepository->createTransaksi($data)->toArray();
     }
 
     public function storePembayaran($payload, $transaksiID)
     {
-        $array = [
+        $data = [
             'transaksi_id' => $transaksiID,
             'biaya_tambahan' => $payload['biaya_tambahan'],
             'diskon' => $payload['diskon'],
             'pajak' => $payload['pajak'],
             'total_pembayaran' => $payload['total_pembayaran'],
+        ];
+        return $this->transaksiRepository->createPembayaran($data)->toArray();
+    }
+
+    public function storeDetailPembayaran($payload, $pembayaranID)
+    {
+        $data = [
+            'pembayaran_id' => $pembayaranID,
             'total_bayar' => $payload['total_bayar'],
         ];
-        return $this->transaksiRepository->createPembayaran($array);
+        return $this->transaksiRepository->createDetailPembayaran($data)->toArray();
     }
 
     public function storeDetailTransaksi($payload, $transaksiID)
     {
-        $array = [];
+        $data = [];
         for($i = 0; $i < count($payload); $i++) {
             $paket = [
                 'transaksi_id' => $transaksiID,
@@ -82,46 +84,50 @@ class TransaksiService
                 'harga' => $payload[$i]['harga'],
                 'keterangan' => $payload[$i]['ket'],
             ];
-            array_push($array, $this->transaksiRepository->createDetailTransaksi($paket));
+            array_push($data, $this->transaksiRepository->createDetailTransaksi($paket)->toArray());
         }
-        return $array;
+        return $data;
     }
 
     public function updateTransaksi($payload, $transaksiID)
     {
-        $array = [
-            'status_pembayaran' => $payload['pembayaran']['total_pembayaran'] - $payload['pembayaran']['total_bayar'] <= 0 ? 'lunas' : 'belum lunas',
+        $data = [
+            'status_pembayaran' => $payload['pembayaran']['sisa_pembayaran'] <= 0 ? 'lunas' : 'belum lunas',
         ];
-        return $this->transaksiRepository->updateTransaksi($array, $transaksiID);
+        return $this->transaksiRepository->updateTransaksi($data, $transaksiID);
     }
 
     public function updatePembayaran($payload, $transaksiID)
     {
-        $array = [
+        $data = [
             'biaya_tambahan' => $payload['biaya_tambahan'],
             'diskon' => $payload['diskon'],
             'total_pembayaran' => $payload['total_pembayaran'],
-            'total_bayar' => $payload['total_bayar'],
         ];
 
-        return $this->transaksiRepository->updatePembayaran($array, $transaksiID);
+        return $this->transaksiRepository->updatePembayaran($data, $transaksiID);
     }
 
     public function updateStatusTransaksi($payload)
     {
-        $array = [];
+        $data = [];
         foreach($payload['data_transaksi'] as $item) {
             $data = [
                 'status_transaksi' => $payload['status_transaksi'],
             ];
-            array_push($array, $this->transaksiRepository->updateTransaksi($data, $item['id']));
+            array_push($data, $this->transaksiRepository->updateTransaksi($data, $item['id']));
         }
-        return $array;
+        return $data;
     }
 
     public function filterDataByStatusTransaksi($type, $hasPenjemputan = false)
     {
         return $this->transaksiRepository->filterDataByStatusTransaksi($type, $hasPenjemputan);
+    }
+
+    public function doesntHavePenjemputan()
+    {
+        return $this->transaksiRepository->doesntHavePenjemputan();
     }
 }
 

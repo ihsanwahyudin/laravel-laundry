@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Exports\BarangExport;
 use App\Exports\BarangInventarisExport;
 use App\Exports\ExampleExport;
 use App\Exports\MemberExport;
@@ -77,6 +78,11 @@ class ExportService
     public function exportPenjemputanExcel()
     {
         return Excel::download(new PenjemputanExport,'penjemputan '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportBarangExcel()
+    {
+        return Excel::download(new BarangExport,'barang '.date('d-m-Y').'.xlsx');
     }
 
     public function exportPDF()

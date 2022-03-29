@@ -113,6 +113,16 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'activity' => [
+            'driver' => 'daily',
+            'tap' => [App\Logging\CustomizeFormatter::class],
+            'path' => storage_path('logs/' . date('Y/m/') . 'activity.log'), // add dynamic folder structure
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 31,
+            // 'driver' => 'single',
+            // 'path' => storage_path('logs/activity.log'),
+        ]
     ],
 
 ];

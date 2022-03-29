@@ -5,7 +5,7 @@
 @endpush
 @section('main')
 <div class="page-heading">
-    <div class="card">
+    <div class="card shadow-sm">
         <div class="card-body">
             @php
                 $url = explode("/", $_SERVER["REQUEST_URI"]);
@@ -24,7 +24,7 @@
 </div>
 <div class="page-content">
     <form id="store-transaction">
-        <section class="section sticky-top">
+        <section class="section sticky-top shadow-sm">
             <div class="card">
                 <div class="card-header">
                     <h3>Transaksi</h3>
@@ -86,7 +86,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section shadow-sm">
             <div class="card">
                 <div class="card-header">
                     <h3>Data Penjualan</h3>
@@ -113,27 +113,8 @@
                 </div>
             </div>
         </section>
-        {{-- <div class="card">
-            <div class="card-body">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <div class="alert alert-success d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                <p>Transaksi Berhasil</p>
-                                <button type="button" class="btn btn-primary">Copy</button>
-                            </div>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <section class="sticky-bottom row justify-content-end">
-            <div class="card border-less col-6 border">
+            <div class="card shadow-sm col-6">
                 <div class="card-header">
                     <h3>Masukan Pembayaran</h3>
                 </div>

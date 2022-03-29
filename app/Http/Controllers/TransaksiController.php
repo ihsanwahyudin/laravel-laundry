@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TransaksiRequest;
+use App\Logging\AllowedArrayLog;
 use App\Services\ExportService;
 use App\Services\TransaksiService;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\DataTables;
 
@@ -38,11 +43,26 @@ class TransaksiController extends Controller
 
     public function store(TransaksiRequest $request)
     {
-        $data['transaksi'] = $this->transaksiService->storeTransaksi($request->transaksi);
-        $data['pembayaran'] = $this->transaksiService->storePembayaran($request->transaksi, $data['transaksi']['id']);
-        $data['detailTransaksi'] = $this->transaksiService->storeDetailTransaksi($request->detailTransaksi, $data['transaksi']['id']);
+        try {
+            DB::beginTransaction();
+            $data['transaksi'] = $this->transaksiService->storeTransaksi($request->transaksi);
+            $data['pembayaran'] = $this->transaksiService->storePembayaran($request->transaksi, $data['transaksi']['id']);
+            $data['detailPembayaran'] = $this->transaksiService->storeDetailPembayaran($request->transaksi, $data['pembayaran']['id']);
+            $data['detailTransaksi'] = $this->transaksiService->storeDetailTransaksi($request->detailTransaksi, $data['transaksi']['id']);
+            Log::channel('activity')->info('Melakukan Transaksi dengan kode invoice '.$data['transaksi']['kode_invoice'], [
+                'reference' => 'transaksi',
+                'status' => 'created',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => $data
+            ]);
+            DB::commit();
+            return response()->json($data, Response::HTTP_OK);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return response()->json($th, Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
 
-        return response()->json($data, Response::HTTP_OK);
     }
 
     public function update(Request $request)
@@ -57,9 +77,17 @@ class TransaksiController extends Controller
             'pembayaran.total_bayar' => [$request['transaksi']['status_pembayaran'] === 'lunas' ? 'nullable' : 'required' , 'numeric'],
         ]);
 
-        $data['transaksi'] = $this->transaksiService->updateTransaksi($request->all(), $request['transaksi']['id']);
-        $data['pembayaran'] = $this->transaksiService->updatePembayaran($request['pembayaran'], $request['transaksi']['id']);
-        return response()->json($data, Response::HTTP_OK);
+        try {
+            DB::beginTransaction();
+            $data['transaksi'] = $this->transaksiService->updateTransaksi($request->all(), $request['transaksi']['id']);
+            $data['pembayaran'] = $this->transaksiService->updatePembayaran($request['pembayaran'], $request['transaksi']['id']);
+            $data['detailPembayaran'] = $this->transaksiService->storeDetailPembayaran($request['pembayaran'], $data['pembayaran']['id']);
+            DB::commit();
+            return response()->json($data, Response::HTTP_OK);
+        } catch (QueryException $th) {
+            DB::rollBack();
+            return response()->json($th, Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     public function updateStatusTransaksi(Request $request)
@@ -81,6 +109,12 @@ class TransaksiController extends Controller
     public function filter($type)
     {
         $data = $this->transaksiService->filterDataByStatusTransaksi($type);
+        return response()->json($data, Response::HTTP_OK);
+    }
+
+    public function doesntHavePenjemputan()
+    {
+        $data = $this->transaksiService->doesntHavePenjemputan();
         return response()->json($data, Response::HTTP_OK);
     }
 }

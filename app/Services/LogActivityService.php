@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Logging\LogReader;
 use App\Repositories\Interfaces\Eloquent\LogActivityRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -66,25 +67,27 @@ class LogActivityService
 
     public function getAllLogs()
     {
-        $masterData = $this->logActivityRepository->getMasterDataLogs()->toArray();
-        $transaksiData = $this->logActivityRepository->getTransaksiLogs()->toArray();
+        // $masterData = $this->logActivityRepository->getMasterDataLogs()->toArray();
+        // $transaksiData = $this->logActivityRepository->getTransaksiLogs()->toArray();
 
-        $data = new Collection(array_merge($masterData, $transaksiData));
-        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
-            return Carbon::parse($date['created_at'])->format('d-M-Y');
-        });
+        // $data = new Collection(array_merge($masterData, $transaksiData));
+        $data = LogReader::getLogs();
+        // $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+        //     return Carbon::parse($date['created_at'])->format('d-M-Y');
+        // });
         return $data;
     }
 
     public function filterLogs($payload)
     {
-        $masterData = $this->logActivityRepository->filterLogsMasterData($payload['start_date'], $payload['end_date'])->toArray();
-        $transaksiData = $this->logActivityRepository->filterLogsTransaksi($payload['start_date'], $payload['end_date'])->toArray();
+        // $masterData = $this->logActivityRepository->filterLogsMasterData($payload['start_date'], $payload['end_date'])->toArray();
+        // $transaksiData = $this->logActivityRepository->filterLogsTransaksi($payload['start_date'], $payload['end_date'])->toArray();
 
-        $data = new Collection(array_merge($masterData, $transaksiData));
-        $data = $data->sortByDesc('created_at')->groupBy(function($date) {
-            return Carbon::parse($date['created_at'])->format('d-M-Y');
-        });
+        $data = new Collection(LogReader::getLogs());
+        $data['data'] = [...(new Collection($data['data']))->whereBetween('date', [$payload['start_date'], $payload['end_date']])];
+        // $data = $data->sortByDesc('created_at')->groupBy(function($date) {
+        //     return Carbon::parse($date['created_at'])->format('d-M-Y');
+        // });
         return $data;
     }
 

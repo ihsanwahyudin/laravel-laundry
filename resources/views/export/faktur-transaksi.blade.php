@@ -153,11 +153,19 @@
                 </tr>
                 <tr>
                     <td colspan="5" align="right">Total Bayar</td>
-                    <td align="left">Rp {{ number_format($data['pembayaran']['total_bayar'], 0, ',', '.') }}</td>
+                    @php
+                        $totalBayar = 0;
+                    @endphp
+                    @foreach ($data['pembayaran']['detailPembayaran'] as $item)
+                        @php
+                            $totalBayar += $item['total_bayar'];
+                        @endphp
+                    @endforeach
+                    <td align="left">Rp {{ number_format($totalBayar, 0, ',', '.') }}</td>
                 </tr>
                 <tr>
                     <td colspan="5" align="right">Kembalian</td>
-                    <td align="left">Rp {{ number_format(abs((int)$data['pembayaran']['total_pembayaran'] - (int)$data['pembayaran']['total_bayar']), 0, ',', '.') }}</td>
+                    <td align="left">Rp {{ number_format(abs((int)$data['pembayaran']['total_pembayaran'] - (int)$totalBayar), 0, ',', '.') }}</td>
                 </tr>
             @else
                 <tr>

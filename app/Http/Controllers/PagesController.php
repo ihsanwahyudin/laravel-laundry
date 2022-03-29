@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Logging\LogReader;
 use App\Services\LogActivityService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ class PagesController extends Controller
 
     public function home()
     {
-        $data['logs'] = $this->logActivityService->getLogsByUserId(Auth::user()->id);
+        $data = LogReader::getLogs(['user_id' => Auth::user()->id]);
         return view('admin.home.index', $data);
     }
 
@@ -99,5 +100,15 @@ class PagesController extends Controller
     public function penjemputan()
     {
         return view('admin.penjemputan.index');
+    }
+
+    public function simulasiTransaksi()
+    {
+        return view('admin.simulasi-transaksi.index');
+    }
+
+    public function barang()
+    {
+        return view('admin.barang.index');
     }
 }

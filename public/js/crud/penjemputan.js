@@ -89,6 +89,7 @@ $(function() {
             if(status) {
                 showToast('Success', 'success', 'Create Data Successfully')
                 renderPenjemputanTable()
+                renderDaftarTransaksiTable()
                 clearErrors()
                 clearForm('#create-data-modal')
                 $('#create-data-modal').modal('toggle')
@@ -236,9 +237,10 @@ $(function() {
     renderPenjemputanTable()
 
     const renderDaftarTransaksiTable = () => {
+        $('#daftar-transaksi-table').DataTable().destroy()
         $('#daftar-transaksi-table').DataTable({
             ajax: {
-                url: `/api/data/transaksi/selesai`,
+                url: `/api/transaksi/not-exists-penjemputan/`,
                 dataSrc: function ( json ) {
                     transaksiData = json
                     return json

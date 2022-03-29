@@ -2,9 +2,12 @@
 
 namespace App\Services;
 
+use App\Logging\AllowedArrayLog;
 use App\Repositories\Interfaces\Eloquent\PaketRepositoryInterface;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PaketService
 {
@@ -27,30 +30,64 @@ class PaketService
         try {
             DB::beginTransaction();
             $data = $this->paketRepository->create($payload);
-            $this->logActivityService->createLog('tb_paket', $data->toArray(), 1);
+            Log::channel('activity')->info('Membuat data paket baru', [
+                'reference' => 'paket',
+                'status' => 'created',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
             DB::commit();
             return $data;
-        } catch (QueryException $errors) {
+        } catch (QueryException $error) {
             DB::rollBack();
-            return $errors;
+            return $error;
         }
     }
 
     public function updateDataById($payload, $id)
     {
-        $data = $this->paketRepository->updateDataById($payload, $id);
-        $changed = $data->getChanges();
-        if(count($changed) > 0) {
-            $changed['id'] = $data->id;
-            $this->logActivityService->createLog('tb_paket', $changed, 3);
+
+        try {
+            DB::beginTransaction();
+            $data = $this->paketRepository->updateDataById($payload, $id);
+            $changed = $data->getChanges();
+            if(count($changed) > 0) {
+                $changed['id'] = $data->id;
+                Log::channel('activity')->info('Mengubah data paket', [
+                    'reference' => 'paket',
+                    'status' => 'updated',
+                    'user_id' => Auth::user()->id,
+                    'user_name' => Auth::user()->name,
+                    'data' => [...AllowedArrayLog::filter($data->toArray())],
+                    'changed_data' => [...AllowedArrayLog::filter($changed)]
+                ]);
+            }
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
         }
-        return $data;
     }
 
     public function deleteDataById($id)
     {
-        $data = $this->paketRepository->deleteDataById($id);
-        $this->logActivityService->createLog('tb_paket', ['id' => $data->id, 'nama_paket' => $data->nama_paket], 4);
-        return $data;
+        try {
+            DB::beginTransaction();
+            $data = $this->paketRepository->deleteDataById($id);
+            Log::channel('activity')->info('Menghapus data paket', [
+                'reference' => 'paket',
+                'status' => 'deleted',
+                'user_id' => Auth::user()->id,
+                'user_name' => Auth::user()->name,
+                'data' => [...AllowedArrayLog::filter($data->toArray())]
+            ]);
+            DB::commit();
+            return $data;
+        } catch (QueryException $error) {
+            DB::rollBack();
+            return $error;
+        }
     }
 }

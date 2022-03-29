@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangInventarisController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\ImportController;
@@ -45,6 +46,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/penjemputan', [PagesController::class, 'penjemputan']);
         Route::put('/api/penjemputan/update-status/{id}', [PenjemputanController::class, 'updateStatus']);
         Route::resource('/api/penjemputan', PenjemputanController::class);
+        Route::put('/api/barang/update-status/{id}', [BarangController::class, 'updateStatus']);
+        Route::get('/data/barang', [PagesController::class, 'barang']);
+        Route::resource('/api/barang', BarangController::class);
     });
     Route::middleware(['role:admin,kasir,owner'])->group(function () {
         Route::get('/laporan/transaksi', [PagesController::class, 'laporanTransaksi']);
@@ -61,6 +65,7 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+    Route::get('/simulasi/transaksi', [PagesController::class, 'simulasiTransaksi']);
     Route::resource('/api/outlet', OutletController::class);
     Route::resource('/api/member', MemberController::class);
     Route::resource('/api/user', UserController::class);
@@ -71,6 +76,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/api/transaksi/non-cash', [TransaksiController::class, 'getNonCashData']);
     Route::post('/api/transaksi/store', [TransaksiController::class, 'store']);
     Route::post('/api/transaksi/update', [TransaksiController::class, 'update']);
+    Route::get('/api/transaksi/not-exists-penjemputan/', [TransaksiController::class, 'doesntHavePenjemputan']);
     Route::post('/api/transaksi/update/status-transaksi', [TransaksiController::class, 'updateStatusTransaksi']);
     Route::get('/api/transaksi/cetak-faktur/{noInvoice}', [TransaksiController::class, 'cetakFaktur']);
 
@@ -106,9 +112,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/barang-inventaris/import-excel', [ImportController::class, 'importBarangInventarisExcel']);
     Route::get('/penjemputan/export-excel', [ExportController::class, 'exportPenjemputanExcel']);
     Route::post('/penjemputan/import-excel', [ImportController::class, 'importPenjemputanExcel']);
+    Route::get('/barang/export-excel', [ExportController::class, 'exportBarangExcel']);
+    Route::post('/barang/import-excel', [ImportController::class, 'importBarangExcel']);
 });
 
-
+Route::get('/logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 Route::get('/test', [TestController::class, 'test2']);
 Route::post('/test/simpan', [TestController::class, 'simpan'])->name('test.simpan');
 

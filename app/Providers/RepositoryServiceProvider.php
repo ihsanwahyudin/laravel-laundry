@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Repositories\Eloquent\BarangInventarisRepository;
+use App\Repositories\Eloquent\BarangRepository;
 use App\Repositories\Eloquent\LaporanRepository;
 use App\Repositories\Eloquent\LogActivityRepository;
 use App\Repositories\Eloquent\MemberRepository;
@@ -12,6 +13,7 @@ use App\Repositories\Eloquent\PenjemputanRepository;
 use App\Repositories\Eloquent\TransaksiRepository;
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\Eloquent\BarangInventarisRepositoryInterface;
+use App\Repositories\Interfaces\Eloquent\BarangRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\LaporanRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\LogActivityRepositoryInterface;
 use App\Repositories\Interfaces\Eloquent\MemberRepositoryInterface;
@@ -40,6 +42,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(LogActivityRepositoryInterface::class, LogActivityRepository::class);
         $this->app->bind(BarangInventarisRepositoryInterface::class, BarangInventarisRepository::class);
         $this->app->bind(PenjemputanRepositoryInterface::class, PenjemputanRepository::class);
+        $this->app->bind(BarangRepositoryInterface::class, BarangRepository::class);
     }
 
     /**

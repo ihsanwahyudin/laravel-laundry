@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\DetailPembayaran;
 use App\Models\DetailTransaksi;
 use App\Models\Pembayaran;
 use App\Models\Transaksi;
@@ -12,24 +13,30 @@ class TransaksiRepository implements TransaksiRepositoryInterface
     private $transaksi;
     private $pembayaran;
     private $detailTransaksi;
+    private $detailPembayaran;
 
-    public function __construct(Transaksi $transaksi, Pembayaran $pembayaran, DetailTransaksi $detailTransaksi)
+    public function __construct(Transaksi $transaksi, Pembayaran $pembayaran, DetailTransaksi $detailTransaksi, DetailPembayaran $detailPembayaran)
     {
         $this->transaksi = $transaksi;
         $this->pembayaran = $pembayaran;
         $this->detailTransaksi = $detailTransaksi;
+        $this->detailPembayaran = $detailPembayaran;
     }
 
     public function getAllTransactionData()
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran')->get();
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->get();
     }
 
     public function filterTransactionDataByDate($startDate, $endDate)
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran')->get();
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->whereBetween('created_at', [$startDate, $endDate])->get();
     }
@@ -44,6 +51,11 @@ class TransaksiRepository implements TransaksiRepositoryInterface
         return $this->pembayaran->create($payload);
     }
 
+    public function createDetailPembayaran(array $payload)
+    {
+        return $this->detailPembayaran->create($payload);
+    }
+
     public function createDetailTransaksi(array $payload)
     {
         return $this->detailTransaksi->create($payload);
@@ -51,37 +63,62 @@ class TransaksiRepository implements TransaksiRepositoryInterface
 
     public function getLatestTransaksiData()
     {
-        return $this->transaksi->latest()->first();
+        return $this->transaksi->orderBy('kode_invoice', 'DESC')->first();
     }
 
     public function updateTransaksi(array $payload, $id)
     {
-        return $this->transaksi->findOrFail($id)->update($payload);
+        $data = $this->transaksi->findOrFail($id);
+        $data->update($payload);
+        return $data;
     }
 
     public function updatePembayaran(array $payload, $id)
     {
-        return $this->pembayaran->where('transaksi_id', $id)->update($payload);
+        $data = $this->pembayaran->where('transaksi_id', $id)->first();
+        $data->update($payload);
+        return $data;
     }
 
     public function getNonCashData()
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran')->get();
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->where('metode_pembayaran', '!=', 'cash')->where('status_pembayaran', 'belum lunas')->get();
     }
 
     public function findTransaksiByInvoice(string $noInvoice)
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran')->get();
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->where('kode_invoice', $noInvoice)->first();
     }
 
     public function filterDataByStatusTransaksi(string $type, bool $hasPenjemputan) : object
     {
-        return $this->transaksi->with(['pembayaran', 'member', 'detailTransaksi' => function($q) {
+        return $this->transaksi->with(['pembayaran' => function($q) {
+            $q->with('detailPembayaran')->get();
+        }, 'member', 'detailTransaksi' => function($q) {
             $q->with('paket')->get();
         }])->where('status_transaksi', $type)->get();
+    }
+
+    public function doesntHavePenjemputan(): ?object
+    {
+        // if($statusPenjemputan === 'exists') {
+        //     return $this->transaksi->with(['detailTransaksi' => function($q) {
+        //         $q->with('paket');
+        //     }, 'pembayaran', 'member'])->whereHas('penjemputan')->where('status_transaksi', 'selesai')->get();
+        // } else {
+            return $this->transaksi->with(['pembayaran' => function($q) {
+                $q->with('detailPembayaran')->get();
+            }, 'member', 'detailTransaksi' => function($q) {
+                $q->with('paket')->get();
+            }])->where('status_transaksi', 'selesai')->whereDoesntHave('penjemputan')->get();
+        // }
     }
 }
