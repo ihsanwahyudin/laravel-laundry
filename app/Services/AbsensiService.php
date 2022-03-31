@@ -3,40 +3,40 @@
 namespace App\Services;
 
 use App\Logging\AllowedArrayLog;
-use App\Repositories\Interfaces\Eloquent\BarangRepositoryInterface;
+use App\Repositories\Interfaces\Eloquent\AbsensiRepositoryInterface;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class BarangService
+class AbsensiService
 {
     /**
-     * Membuat property barangRepository untuk mengakses repository
+     * Membuat property absensiRepository untuk mengakses repository
      */
-    private $barangRepository;
+    private $absensiRepository;
 
     /**
      * Membuat constructor untuk mengambil repository
-     * @param BarangRepositoryInterface $barangRepository
+     * @param AbsensiRepositoryInterface $absensiRepository
      */
-    public function __construct(BarangRepositoryInterface $barangRepository)
+    public function __construct(AbsensiRepositoryInterface $absensiRepository)
     {
-        $this->barangRepository = $barangRepository;
+        $this->absensiRepository = $absensiRepository;
     }
 
     public function getAllData()
     {
-        return $this->barangRepository->allData();
+        return $this->absensiRepository->allData();
     }
 
     public function storeData($payload)
     {
         try {
             DB::beginTransaction();
-            $data = $this->barangRepository->create($payload);
-            Log::channel('activity')->info('Membuat data barang baru', [
-                'reference' => 'barang',
+            $data = $this->absensiRepository->create($payload);
+            Log::channel('activity')->info('Membuat data absensi baru', [
+                'reference' => 'absensi',
                 'status' => 'created',
                 'user_id' => Auth::user()->id,
                 'user_name' => Auth::user()->name,
@@ -54,12 +54,12 @@ class BarangService
     {
         try {
             DB::beginTransaction();
-            $data = $this->barangRepository->updateDataById($payload, $id);
+            $data = $this->absensiRepository->updateDataById($payload, $id);
             $changed = $data->getChanges();
             if(count($changed) > 0) {
                 $changed['id'] = $data->id;
-                Log::channel('activity')->info('Mengubah data barang', [
-                    'reference' => 'barang',
+                Log::channel('activity')->info('Mengubah data absensi', [
+                    'reference' => 'absensi',
                     'status' => 'updated',
                     'user_id' => Auth::user()->id,
                     'user_name' => Auth::user()->name,
@@ -79,9 +79,9 @@ class BarangService
     {
         try {
             DB::beginTransaction();
-            $data = $this->barangRepository->deleteDataById($id);
-            Log::channel('activity')->info('Menghapus data barang', [
-                'reference' => 'barang',
+            $data = $this->absensiRepository->deleteDataById($id);
+            Log::channel('activity')->info('Menghapus data absensi', [
+                'reference' => 'absensi',
                 'status' => 'deleted',
                 'user_id' => Auth::user()->id,
                 'user_name' => Auth::user()->name,

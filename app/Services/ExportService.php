@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Exports\AbsensiExport;
 use App\Exports\BarangExport;
 use App\Exports\BarangInventarisExport;
 use App\Exports\ExampleExport;
@@ -83,6 +84,11 @@ class ExportService
     public function exportBarangExcel()
     {
         return Excel::download(new BarangExport,'barang '.date('d-m-Y').'.xlsx');
+    }
+
+    public function exportAbsensiExcel()
+    {
+        return Excel::download(new AbsensiExport,'absensi karyawan '.date('d-m-Y').'.xlsx');
     }
 
     public function exportPDF()

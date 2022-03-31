@@ -36,14 +36,14 @@ class AuthService
 
         if(Auth::attempt($payload->only(['username', 'password']), (boolean)$payload->remember)) {
             $payload->session()->regenerate();
-            $context = ['user_id' => Auth::user()->id, 'user_name' => Auth::user()->name, 'IP_Address' => $this->getIPAddress()];
-            Log::channel('activity')->info("Akses Login dengan IP Address \"" . $this->getIPAddress() . "\"", [
-                'reference' => 'user',
-                'status' => 'login',
-                'user_id' => Auth::user()->id,
-                'user_name' => Auth::user()->name,
-                'data' => [...AllowedArrayLog::filter($context)]
-            ]);
+            // $context = ['user_id' => Auth::user()->id, 'user_name' => Auth::user()->name, 'IP_Address' => $this->getIPAddress()];
+            // Log::channel('activity')->info("Akses Login dengan IP Address \"" . $this->getIPAddress() . "\"", [
+            //     'reference' => 'user',
+            //     'status' => 'login',
+            //     'user_id' => Auth::user()->id,
+            //     'user_name' => Auth::user()->name,
+            //     'data' => [...AllowedArrayLog::filter($context)]
+            // ]);
             return redirect()->intended('/');
         }
 

@@ -76,7 +76,7 @@ class TestController extends Controller
 
         dd($query);
         $data = User::all()->first()->toArray();
-        $filtered = AllowedArrayLog::filtered($data);
+        $filtered = AllowedArrayLog::filter($data, 'me');
         dd($filtered);
 
         // $log = LogReader::getLogs();

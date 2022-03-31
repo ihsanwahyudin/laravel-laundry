@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BarangInventarisController;
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/transaksi/pembayaran', [PagesController::class, 'transaksiPembayaran']);
         Route::get('/transaksi/list', [PagesController::class, 'daftarTransaksi']);
         Route::get('/penjemputan', [PagesController::class, 'penjemputan']);
+        Route::get('/simulasi/penjualan', [PagesController::class, 'simulasiPenjualan']);
         Route::put('/api/penjemputan/update-status/{id}', [PenjemputanController::class, 'updateStatus']);
         Route::resource('/api/penjemputan', PenjemputanController::class);
         Route::put('/api/barang/update-status/{id}', [BarangController::class, 'updateStatus']);
@@ -62,6 +64,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/data/paket', [PagesController::class, 'paket']);
         Route::get('/log-aktivitas', [PagesController::class, 'logAktivitas']);
         Route::get('/data/barang-inventaris', [PagesController::class, 'barangInventaris']);
+        Route::get('/data/absensi', [PagesController::class, 'absensi']);
+        Route::resource('/api/absensi', AbsensiController::class);
     });
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -114,6 +118,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/penjemputan/import-excel', [ImportController::class, 'importPenjemputanExcel']);
     Route::get('/barang/export-excel', [ExportController::class, 'exportBarangExcel']);
     Route::post('/barang/import-excel', [ImportController::class, 'importBarangExcel']);
+    Route::get('/absensi/export-excel', [ExportController::class, 'exportAbsensiExcel']);
+    Route::post('/absensi/import-excel', [ImportController::class, 'importAbsensiExcel']);
+
+    Route::get('/template-crud', [PagesController::class, 'templateCrud']);
 });
 
 Route::get('/logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);

@@ -1,0 +1,70 @@
+<?php
+
+namespace Tests\Feature;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Symfony\Component\HttpFoundation\Response;
+use Tests\TestCase;
+
+class BarangTest extends TestCase
+{
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    // public function test_example()
+    // {
+    //     $response = $this->get('/login');
+
+    //     $response->assertStatus(200);
+    // }
+
+    // public function test_post()
+    // {
+    //     // $arr = [
+    //     //     'nama_barang' => 'Baju',
+    //     //     'qty' => '10',
+    //     //     'harga' => '10000',
+    //     //     'waktu_beli' => '2020-01-01',
+    //     //     'supplier' => 'PT Baju',
+    //     //     'status_barang' => 'tersedia'
+    //     // ];
+    //     // $response = $this->post('/api/barang', $arr);
+
+    //     // $response->assertStatus(Response::HTTP_CREATED)->assertJson($arr);
+    //     // $response = $this->post('/login', [
+    //     //     'username' => 'ihsan',
+    //     //     'password' => 'ihsan'
+    //     // ]);
+    //     // $user = User::latest()->first();
+    //     // $response = $this->actingAs($user)->post('/api/barang', [
+    //     //     'nama_barang' => 'Baju',
+    //     //     'qty' => '10',
+    //     //     'harga' => '10000',
+    //     //     'waktu_beli' => '2020-01-01',
+    //     //     'supplier' => 'PT Baju',
+    //     //     'status_barang' => 'tersedia'
+    //     // ]);
+    //     // $response->assertStatus(Response::HTTP_CREATED)->assertJson([
+    //     //     'nama_barang' => 'Baju',
+    //     //     'qty' => '10',
+    //     //     'harga' => '10000',
+    //     //     'waktu_beli' => '2020-01-01',
+    //     //     'supplier' => 'PT Baju',
+    //     //     'status_barang' => 'tersedia'
+    //     // ]);
+    //     $this->assertTrue(true);
+    // }
+
+    // public function test_get_data_barang()
+    // {
+    //     $user = User::latest()->first();
+    //     $response = $this->actingAs($user)->json('GET', '/api/barang')->dd();
+    //     $response->assertStatus(Response::HTTP_OK);
+    //     $this->assertEquals(1, 1);
+    //     // $response->assertExact($response);
+    // }
+}

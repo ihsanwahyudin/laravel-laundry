@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\AbsensiImport;
 use App\Imports\BarangImport;
 use App\Imports\BarangInventarisImport;
 use App\Imports\MemberImport;
@@ -69,6 +70,16 @@ class ImportController extends Controller
             'file' => 'required|mimes:xls,xlsx'
         ]);
         Excel::import(new BarangImport, $request->file('file'));
+
+        return back()->with('success', 'Data imported successfully.');
+    }
+
+    public function importAbsensiExcel(Request $request)
+    {
+        $validated = $request->validate([
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
+        Excel::import(new AbsensiImport, $request->file('file'));
 
         return back()->with('success', 'Data imported successfully.');
     }

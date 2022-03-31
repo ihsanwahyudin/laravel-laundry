@@ -111,4 +111,19 @@ class PagesController extends Controller
     {
         return view('admin.barang.index');
     }
+
+    public function simulasiPenjualan()
+    {
+        return view('admin.simulasi-penjualan.index');
+    }
+
+    public function templateCrud()
+    {
+        return view('admin.template-crud.index');
+    }
+
+    public function absensi()
+    {
+        return view('admin.absensi.index');
+    }
 }

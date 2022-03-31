@@ -2,50 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BarangRequest;
-use App\Services\BarangService;
+use App\Http\Requests\AbsensiRequest;
+use App\Services\AbsensiService;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BarangController extends Controller
+class AbsensiController extends Controller
 {
-    private $barangService;
+    private $absensiService;
     /**
-     * Membuat property barangService untuk mengakses service
+     * Membuat property absensiService untuk mengakses service
      *
-     * @param BarangService $barangService
      */
 
     /**
      * Membuat Constructor untuk mengambil service
      *
-     * @param BarangService $barangService
+     * @param AbsensiService $absensiService
      */
-    public function __construct(BarangService $barangService)
+    public function __construct(AbsensiService $absensiService)
     {
-        $this->barangService = $barangService;
+        $this->absensiService = $absensiService;
     }
     /**
-     * Fungsi Index digunakan untuk mengambil seluruh data barang dari database
+     * Fungsi Index digunakan untuk mengambil seluruh data absensi dari database
      *
      * @return JSON
      */
     public function index()
     {
-        $data = $this->barangService->getAllData();
-
+        $data = $this->absensiService->getAllData();
+        
         return response()->json($data, Response::HTTP_OK);
     }
 
     /**
-     * Fungsi Store untuk menyimpan data barang
+     * Fungsi Store untuk menyimpan data absensi
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Symfony\Component\HttpFoundation\Response $data JSON
      */
-    public function store(BarangRequest $request)
+    public function store(AbsensiRequest $request)
     {
-        $data = $this->barangService->storeData($request->all());
+        $data = $this->absensiService->storeData($request->all());
 
         return response()->json($data, Response::HTTP_CREATED);
     }
@@ -57,9 +56,9 @@ class BarangController extends Controller
      * @param  int  $id
      * @return JSON
      */
-    public function update(BarangRequest $request, $id)
+    public function update(AbsensiRequest $request, $id)
     {
-        $data = $this->barangService->updateDataById($request->all(), $id);
+        $data = $this->absensiService->updateDataById($request->all(), $id);
 
         return response()->json($data, Response::HTTP_OK);
     }
@@ -72,20 +71,20 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        $data = $this->barangService->deleteDataById($id);
+        $data = $this->absensiService->deleteDataById($id);
 
         return response()->json($data, Response::HTTP_OK);
     }
 
     /**
-     * Fungsi updateStatus digunakan untuk mengubah status barang di database berdasarkan ID
+     * Fungsi updateStatus digunakan untuk mengubah status absensi di database berdasarkan ID
      *
      * @param  int  $id
      * @return JSON
      */
     public function updateStatus(Request $request, $id)
     {
-        $data = $this->barangService->updateDataById($request->all(), $id);
+        $data = $this->absensiService->updateDataById($request->all(), $id);
 
         return response()->json($data, Response::HTTP_OK);
     }
