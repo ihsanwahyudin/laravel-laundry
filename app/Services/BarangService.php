@@ -25,11 +25,21 @@ class BarangService
         $this->barangRepository = $barangRepository;
     }
 
+    /**
+     * Membuat method untuk mengambil semua data
+     * @return Object | null
+     */
     public function getAllData()
     {
         return $this->barangRepository->allData();
     }
 
+
+    /**
+     * Membuat method untuk menyimpan data sekaligus track log aktivitas
+     * @param Array $payload
+     * @return Object
+     */
     public function storeData($payload)
     {
         try {
@@ -50,6 +60,11 @@ class BarangService
         }
     }
 
+    /**
+     * Membuat method untuk mengubah data sekaligus track log aktivitas
+     * @param Array $payload, Int $id
+     * @return Object
+     */
     public function updateDataById($payload, $id)
     {
         try {
@@ -75,6 +90,11 @@ class BarangService
         }
     }
 
+    /**
+     * Membuat method untuk menghapus data sekaligus track log aktivitas
+     * @param Int $id
+     * @return Object
+     */
     public function deleteDataById($id)
     {
         try {
