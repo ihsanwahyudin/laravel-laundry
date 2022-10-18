@@ -91,9 +91,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'ihsan',
-            'email' => 'm.ihsanwahyudin@outlook.com',
-            'username' => 'ihsan',
+            'name' => 'kasir',
+            'email' => 'kasir@kasir.com',
+            'username' => 'kasir',
             'role' => 'kasir',
             'outlet_id' => 1,
             'password' => Hash::make('ihsan')
